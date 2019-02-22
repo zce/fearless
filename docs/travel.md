@@ -23,16 +23,16 @@ GET  https://api.douban.com/v2/travel/user/:name/collections
 
 ## 获取地点信息
 
-```
+```json
 {
-  "name":"世界",
-  "url":"\/trip\/place\/1000001\/",
-  "pic":"http:\/\/img3.douban.com\/view\/photo\/albumcover\/public\/p1921930761.jpg",
-  "zoom":1,
-  "longitude":-26.8333,
-  "latitude":11.83,
-  "id":1000001
- }
+  "name": "世界",
+  "url": "/trip/place/1000001/",
+  "pic": "http://img3.douban.com/view/photo/albumcover/public/p1921930761.jpg",
+  "zoom": 1,
+  "longitude": -26.8333,
+  "latitude": 11.83,
+  "id": 1000001
+}
 ```
 
 ## 使用案例

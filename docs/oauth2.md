@@ -92,12 +92,12 @@ https://www.douban.com/service/auth2/token?
 
 返回结果：
 
-```
+```json
 {
-  "access_token":"a14afef0f66fcffce3e0fcd2e34f6ff4",
-  "expires_in":3920,
-  "refresh_token":"5d633d136b6d56a41829b73a424803ec",
-  "douban_user_id":"1221"
+  "access_token": "a14afef0f66fcffce3e0fcd2e34f6ff4",
+  "expires_in": 3920,
+  "refresh_token": "5d633d136b6d56a41829b73a424803ec",
+  "douban_user_id": "1221"
 }
 ```
 
@@ -143,12 +143,12 @@ https://www.douban.com/service/auth2/token?
 
 返回结果：
 
-```
+```json
 {
-  "access_token":"0e63c03dfb66c4172b2b40b9f2344c45",
-  "expires_in":3920,
-  "refresh_token":"84406d40cc58e0ae8cc147c2650aa20a",
-  "douban_user_id":"1000"
+  "access_token": "0e63c03dfb66c4172b2b40b9f2344c45",
+  "expires_in": 3920,
+  "refresh_token": "84406d40cc58e0ae8cc147c2650aa20a",
+  "douban_user_id": "1000"
 }
 ```
 
@@ -191,11 +191,11 @@ https://www.douban.com/service/auth2/token?
 
 如果在 API 使用过程中，有错误，则返回结果为：
 
-```
+```json
 {
-  "code":113,
-  "msg":"required_parameter_is_missing: client_id",
-  "request":"GET /shuo/statuses/232323"
+  "code": 113,
+  "msg": "required_parameter_is_missing: client_id",
+  "request": "GET /shuo/statuses/232323"
 }
 ```
 

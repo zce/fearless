@@ -20,7 +20,7 @@ scope: community_basic_note
 
 ## 日记 Note
 
-```
+```json
 {
     "update_time": "2012-08-20 15:55:20",
     "publish_time": "2012-08-19 01:20:09",

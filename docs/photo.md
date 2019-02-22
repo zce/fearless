@@ -14,7 +14,7 @@ scope: community_basic_photo
 
 ## 照片 Photo
 
-```
+```json
 {
     "id": "1642354684",
     "alt": "http://www.douban.com/photos/photo/1642354684/",
@@ -46,7 +46,7 @@ scope: community_basic_photo
 
 ## 相册 Album
 
-```
+```json
 {
     "id": "74539453",
     "alt": "http://www.douban.com/photos/album/74539453/",
@@ -98,12 +98,12 @@ GET https://api.douban.com/v2/album/:id/photos
 
 返回：
 
-```
+```json
 {
-    "start": 0,
-    "count": 10,
-    "total": 30,
-    "photos" : [Photo, ]
+  "start": 0,
+  "count": 10,
+  "total": 30,
+  "photos": [Photo]
 }
 ```
 

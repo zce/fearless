@@ -44,7 +44,7 @@ scope: event_basic_w
 
 ## Event 数据格式 [#](#event)
 
-```
+```json
 {
   "is_priv": "no",
   "participant_count": 27,
@@ -52,11 +52,11 @@ scope: event_basic_w
   "adapt_url": "http: //www.douban.com/location/adapt/event/16878708/",
   "begin_time": "2012-08-1721: 00: 00",
   "owner": {
-      "avatar": "http: //img3.douban.com/view/site/small/public/ae2f20e33c40096.jpg",
-      "alt": "http: //site.douban.com/jianghujiubar/",
-      "id": "500313",
-      "name": "江湖酒吧",
-      "uid": "jianghujiubar"
+    "avatar": "http: //img3.douban.com/view/site/small/public/ae2f20e33c40096.jpg",
+    "alt": "http: //site.douban.com/jianghujiubar/",
+    "id": "500313",
+    "name": "江湖酒吧",
+    "uid": "jianghujiubar"
   },
   "alt": "http: //www.douban.com/event/16878708/",
   "geo": "39.935715 116.408653",
@@ -72,76 +72,76 @@ scope: event_basic_w
   "can_invite": "no",
   "address": "北京东城区交道口南大街东棉花胡同7号",
   "loc_name": "北京",
-  "loc_id":"108288"
+  "loc_id": "108288"
 }
 ```
 
 ## EventList 数据格式 [#](#events_list)
 
-```
+```json
 {
   "count": 20,
   "start": 0,
   "total": 2,
   "events": [
-      {
-          "is_priv": "no",
-          "participant_count": 509,
-          "image": "http://img6.douban.com/view/event_poster/median/public/9a0bde6b5b45029.jpg",
-          "adapt_url": "http://www.douban.com/location/adapt/event/15069059/",
-          "begin_time": "2011-11-16 17:30:00",
-          "owner": {
-              "avatar": "http://img6.douban.com/icon/u2205775-69.jpg",
-              "alt": "http://www.douban.com/people/hoccwong/",
-              "id": "2205775",
-              "name": "[已注销]",
-              "uid": "hoccwong"
-          },
-          "alt": "http://www.douban.com/event/15069059/",
-          "geo": "39.865021 116.379021",
-          "id": "15069059",
-          "album": "60239683",
-          "title": "【路有冻死骨】2011年冬季救助",
-          "wisher_count": 607,
-          "content": "（活动海报上的老人刘爷爷，是我们第一年的救助对象，已于2010年10月29日在地下通道去世，享年77岁，为纪念他，我们继续用这张海报，祝福老人早登极乐。）\r\n\r\n【活动介绍】\r\n他们是我们的同胞\r\n\r\n他们深陷苦难、举步维艰\r\n\r\n他们露宿街头、无家可归\r\n\r\n他们或老或小，如我们的父母、爷爷奶奶、兄弟姐妹\r\n\r\n一年一度的“路有冻死骨，寒流不等人”冬季救助活动，旨在向北京街头无家可归的露宿者发放御寒衣物、被褥、棉鞋、手套、食物、药品等过冬物资，帮助他们度过北京严寒。受助的无家可归者从2岁到90岁不等，有嗷嗷待哺的孩子，白发苍苍的老人、残障、病患，因各种原因滞留北京，无家可归。通过对他们生存状况的调查，我们了解到他们在寒冷的冬季严重缺乏御寒物资，有些露宿街头，有些住在地下人行通道，被褥单薄，衣食简陋。一旦进入气温低于零下的寒冬，他们将面临生存危机。",
-          "image-hlarge": "http://img6.douban.com/pics/event/hlarge_event_dft.jpg",
-          "end_time": "2012-02-16 23:30:00",
-          "image-lmobile": "http://img6.douban.com/pics/event/lmobile_event_dft.jpg",
-          "has_invited": "no",
-          "can_invite": "no",
-          "address": "北京 丰台区 北京南站",
-          "loc_name": "北京",
-          "loc_id":"108288"
+    {
+      "is_priv": "no",
+      "participant_count": 509,
+      "image": "http://img6.douban.com/view/event_poster/median/public/9a0bde6b5b45029.jpg",
+      "adapt_url": "http://www.douban.com/location/adapt/event/15069059/",
+      "begin_time": "2011-11-16 17:30:00",
+      "owner": {
+        "avatar": "http://img6.douban.com/icon/u2205775-69.jpg",
+        "alt": "http://www.douban.com/people/hoccwong/",
+        "id": "2205775",
+        "name": "[已注销]",
+        "uid": "hoccwong"
       },
-      {
-          "is_priv": "no",
-          "participant_count": 306,
-          "image": "http://img6.douban.com/view/event_poster/median/public/35739c9d6b38124.jpg",
-          "adapt_url": "http://www.douban.com/location/adapt/event/12270102/",
-          "begin_time": "2010-07-25 14:00:00",
-          "owner": {
-            "avatar": "http://img6.douban.com/view/site/small/public/f4a980e1bb9e9c1.jpg",
-              "alt": "http://site.douban.com/songshuhui/",
-              "id": "500055",
-              "name": "科学松鼠会",
-              "uid": "songshuhui"
-          },
-          "alt": "http://www.douban.com/event/12270102/",
-          "geo": "39.983803 116.494713",
-          "id": "12270102",
-          "album": "30697743",
-          "title": "【小姬看片会第十六期】关于时间旅行的常见问题 [报名已满！]",
-          "wisher_count": 1558,
-          "content": "这才睡一觉的功夫…… 报名就翻番了……！\r\n童鞋们！报名表未发布即是报名表已关闭！！！\r\n收到确认信的童鞋们如果有不去的切记转让名额啊！！\r\n\r\n\r\n【注意事项】 \r\n1.豆瓣点“我要参加”是无效的！必须通过报名链接报名方可入场。 \r\n2.每个ID、邮箱、手机号，在同一场活动中限报名一次。一人一表，家属亲友均需报名。 \r\n3.由于场地容量有限，将以报名时间的先后顺序发送确认邮件。 \r\n4.确认将在活动开始前2天发出，请同时查收垃圾邮件。",
-          "image-hlarge": "http://img6.douban.com/pics/event/hlarge_event_dft.jpg",
-          "end_time": "2010-07-25 16:30:00",
-          "image-lmobile": "http://img6.douban.com/pics/event/lmobile_event_dft.jpg",
-          "has_invited": "no",
-          "can_invite": "no",
-          "address": "北京 朝阳区 798艺术区尤伦斯当代艺术中心报告厅",
-          "loc_name": "北京",
-          "loc_id":"108288"
-      }
+      "alt": "http://www.douban.com/event/15069059/",
+      "geo": "39.865021 116.379021",
+      "id": "15069059",
+      "album": "60239683",
+      "title": "【路有冻死骨】2011年冬季救助",
+      "wisher_count": 607,
+      "content": "（活动海报上的老人刘爷爷，是我们第一年的救助对象，已于2010年10月29日在地下通道去世，享年77岁，为纪念他，我们继续用这张海报，祝福老人早登极乐。）\r\n\r\n【活动介绍】\r\n他们是我们的同胞\r\n\r\n他们深陷苦难、举步维艰\r\n\r\n他们露宿街头、无家可归\r\n\r\n他们或老或小，如我们的父母、爷爷奶奶、兄弟姐妹\r\n\r\n一年一度的“路有冻死骨，寒流不等人”冬季救助活动，旨在向北京街头无家可归的露宿者发放御寒衣物、被褥、棉鞋、手套、食物、药品等过冬物资，帮助他们度过北京严寒。受助的无家可归者从2岁到90岁不等，有嗷嗷待哺的孩子，白发苍苍的老人、残障、病患，因各种原因滞留北京，无家可归。通过对他们生存状况的调查，我们了解到他们在寒冷的冬季严重缺乏御寒物资，有些露宿街头，有些住在地下人行通道，被褥单薄，衣食简陋。一旦进入气温低于零下的寒冬，他们将面临生存危机。",
+      "image-hlarge": "http://img6.douban.com/pics/event/hlarge_event_dft.jpg",
+      "end_time": "2012-02-16 23:30:00",
+      "image-lmobile": "http://img6.douban.com/pics/event/lmobile_event_dft.jpg",
+      "has_invited": "no",
+      "can_invite": "no",
+      "address": "北京 丰台区 北京南站",
+      "loc_name": "北京",
+      "loc_id": "108288"
+    },
+    {
+      "is_priv": "no",
+      "participant_count": 306,
+      "image": "http://img6.douban.com/view/event_poster/median/public/35739c9d6b38124.jpg",
+      "adapt_url": "http://www.douban.com/location/adapt/event/12270102/",
+      "begin_time": "2010-07-25 14:00:00",
+      "owner": {
+        "avatar": "http://img6.douban.com/view/site/small/public/f4a980e1bb9e9c1.jpg",
+        "alt": "http://site.douban.com/songshuhui/",
+        "id": "500055",
+        "name": "科学松鼠会",
+        "uid": "songshuhui"
+      },
+      "alt": "http://www.douban.com/event/12270102/",
+      "geo": "39.983803 116.494713",
+      "id": "12270102",
+      "album": "30697743",
+      "title": "【小姬看片会第十六期】关于时间旅行的常见问题 [报名已满！]",
+      "wisher_count": 1558,
+      "content": "这才睡一觉的功夫…… 报名就翻番了……！\r\n童鞋们！报名表未发布即是报名表已关闭！！！\r\n收到确认信的童鞋们如果有不去的切记转让名额啊！！\r\n\r\n\r\n【注意事项】 \r\n1.豆瓣点“我要参加”是无效的！必须通过报名链接报名方可入场。 \r\n2.每个ID、邮箱、手机号，在同一场活动中限报名一次。一人一表，家属亲友均需报名。 \r\n3.由于场地容量有限，将以报名时间的先后顺序发送确认邮件。 \r\n4.确认将在活动开始前2天发出，请同时查收垃圾邮件。",
+      "image-hlarge": "http://img6.douban.com/pics/event/hlarge_event_dft.jpg",
+      "end_time": "2010-07-25 16:30:00",
+      "image-lmobile": "http://img6.douban.com/pics/event/lmobile_event_dft.jpg",
+      "has_invited": "no",
+      "can_invite": "no",
+      "address": "北京 朝阳区 798艺术区尤伦斯当代艺术中心报告厅",
+      "loc_name": "北京",
+      "loc_id": "108288"
+    }
   ]
 }
 ```
@@ -174,26 +174,26 @@ GET https://api.douban.com/v2/event/10069638/wishers
 
 返回格式
 
-```
+```json
 {
   "count": 20,
   "start": 0,
   "total": 2,
   "users": [
-      {
-          "avatar": "http://img6.douban.com/icon/u54770363-2.jpg",
-          "alt": "http://www.douban.com/people/54770363/",
-          "id": "54770363",
-          "name": "小子",
-          "uid": "54770363"
-      },
-      {
-          "avatar": "http://img6.douban.com/icon/u52050486-5.jpg",
-          "alt": "http://www.douban.com/people/52050486/",
-          "id": "52050486",
-          "name": "伊丽莎白小贱贱",
-          "uid": "52050486"
-      }
+    {
+      "avatar": "http://img6.douban.com/icon/u54770363-2.jpg",
+      "alt": "http://www.douban.com/people/54770363/",
+      "id": "54770363",
+      "name": "小子",
+      "uid": "54770363"
+    },
+    {
+      "avatar": "http://img6.douban.com/icon/u52050486-5.jpg",
+      "alt": "http://www.douban.com/people/52050486/",
+      "id": "52050486",
+      "name": "伊丽莎白小贱贱",
+      "uid": "52050486"
+    }
   ]
 }
 ```
@@ -250,7 +250,7 @@ GET https://api.douban.com/v2/loc/:id
 
 返回格式:
 
-```
+```json
 {
   "parent": "china",
   "habitable": "yes",
@@ -268,33 +268,33 @@ GET https://api.douban.com/v2/loc/list
 
 返回格式:
 
-```
+```json
 {
   "count": 3,
   "start": 0,
   "total": 882,
   "locs": [
-      {
-          "parent": "china",
-          "habitable": "yes",
-          "id": "108288",
-          "name": "北京",
-          "uid": "beijing"
-      },
-      {
-          "parent": "china",
-          "habitable": "yes",
-          "id": "108296",
-          "name": "上海",
-          "uid": "shanghai"
-      },
-     {
-          "parent": "guangdong",
-          "habitable": "yes",
-          "id": "118281",
-          "name": "广州",
-          "uid": "guangzhou"
-      }
+    {
+      "parent": "china",
+      "habitable": "yes",
+      "id": "108288",
+      "name": "北京",
+      "uid": "beijing"
+    },
+    {
+      "parent": "china",
+      "habitable": "yes",
+      "id": "108296",
+      "name": "上海",
+      "uid": "shanghai"
+    },
+    {
+      "parent": "guangdong",
+      "habitable": "yes",
+      "id": "118281",
+      "name": "广州",
+      "uid": "guangzhou"
+    }
   ]
 }
 ```

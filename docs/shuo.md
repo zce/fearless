@@ -203,11 +203,17 @@ shuo/v2/statuses/:id
 
 #### 返回结果
 
-```
 1. 该条广播数据
 
-当 pack 为真时：
-2. {"status": 广播数据, "reshare_users": 转播的用户列表, "comments": 评论列表, "like_users": 赞的用户列表}
+2. 当 pack 为真时
+
+```json
+{
+  "status": 广播数据,
+  "reshare_users": 转播的用户列表,
+  "comments": 评论列表,
+  "like_users": 赞的用户列表
+}
 ```
 
 ### 获取一条广播的回复列表 或者 添加一条评论
@@ -297,11 +303,9 @@ shuo/v2/statuses/comment/:id
 
 #### 说明
 
-```
 1. 获取一条广播的转发相关信息 GET
-2. 转播一条广播信息。请求必须用POST方式提交。
+2. 转播一条广播信息。请求必须用 POST 方式提交。
 3. 取消转播等价于删除一条广播
-```
 
 #### URL
 
@@ -392,21 +396,21 @@ shuo/v2/statuses/:id/like
 shuo/v2/users/:id/following
 ```
 
-#### 支持格式 \*
+#### 支持格式
 
 JSON
 
-#### HTTP 请求方式 \*
+#### HTTP 请求方式
 
 GET
 
-#### 请求参数 \*
+#### 请求参数
 
-|     | 必选  | 类型及范围 | 说明         |
-| --- | ----- | ---------- | ------------ |
-| tag | false | int        | 该 tag 的 id |
+| 参数 | 必选  | 类型及范围 | 说明         |
+| ---- | ----- | ---------- | ------------ |
+| tag  | false | int        | 该 tag 的 id |
 
-#### 调用示例 \*
+#### 调用示例
 
 shuo/v2/users/:id/following
 
@@ -430,15 +434,15 @@ shuo/v2/users/:id/following
 shuo/v2/users/:id/followers
 ```
 
-#### 支持格式 \*
+#### 支持格式
 
 JSON
 
-#### HTTP 请求方式 \*
+#### HTTP 请求方式
 
 GET
 
-#### 调用示例 \*
+#### 调用示例
 
 shuo/v2/users/:id/followers
 
@@ -462,15 +466,15 @@ shuo/v2/users/:id/followers
 shuo/v2/users/:id/follow_in_common
 ```
 
-#### 支持格式 \*
+#### 支持格式
 
 JSON
 
-#### HTTP 请求方式 \*
+#### HTTP 请求方式
 
 GET
 
-#### 调用示例 \*
+#### 调用示例
 
 shuo/v2/users/:id/follow_in_common
 
@@ -492,15 +496,15 @@ shuo/v2/users/:id/follow_in_common
 shuo/v2/users/:id/following_followers_of
 ```
 
-#### 支持格式 \*
+#### 支持格式
 
 JSON
 
-#### HTTP 请求方式 \*
+#### HTTP 请求方式
 
 GET
 
-#### 调用示例 \*
+#### 调用示例
 
 shuo/v2/users/:id/following_followers_of
 
@@ -524,21 +528,21 @@ shuo/v2/users/:id/following_followers_of
 shuo/v2/users/search
 ```
 
-#### 支持格式 \*
+#### 支持格式
 
 JSON
 
-#### HTTP 请求方式 \*
+#### HTTP 请求方式
 
 GET
 
-#### 请求参数 \*
+#### 请求参数
 
 | 参数 | 必选 | 类型及范围 | 说明       |
 | ---- | ---- | ---------- | ---------- |
 | q    | true | string     | 搜索字符串 |
 
-#### 调用示例 \*
+#### 调用示例
 
 shuo/v2/users/search?q=ahbei
 
@@ -562,21 +566,21 @@ shuo/v2/users/search?q=ahbei
 shuo/v2/users/:id/block
 ```
 
-#### 支持格式 \*
+#### 支持格式
 
 JSON
 
-#### HTTP 请求方式 \*
+#### HTTP 请求方式
 
 POST
 
-#### 请求参数 \*
+#### 请求参数
 
 | 参数    | 必选 | 类型及范围 | 说明    |
 | ------- | ---- | ---------- | ------- |
 | user_id | true | string     | 用户 ID |
 
-#### 调用示例 \*
+#### 调用示例
 
 shuo/v2/users/:id/block
 
@@ -601,15 +605,15 @@ follow一个用户
 shuo/v2/friendships/create
 ```
 
-#### 支持格式 \*
+#### 支持格式
 
 JSON
 
-#### HTTP 请求方式 \*
+#### HTTP 请求方式
 
 POST
 
-#### 请求参数 \*
+#### 请求参数
 
 | 参数    | 必选 | 类型及范围 | 说明    |
 | ------- | ---- | ---------- | ------- |
@@ -636,15 +640,15 @@ unfollow一个用户
 shuo/v2/friendships/destroy
 ```
 
-#### 支持格式 \*
+#### 支持格式
 
 JSON
 
-#### HTTP 请求方式 \*
+#### HTTP 请求方式
 
 POST
 
-#### 请求参数 \*
+#### 请求参数
 
 | 参数    | 必选 | 类型及范围 | 说明    |
 | ------- | ---- | ---------- | ------- |
@@ -671,40 +675,40 @@ follow一个用户
 shuo/v2/friendships/show
 ```
 
-#### 支持格式 \*
+#### 支持格式
 
 JSON
 
-#### HTTP 请求方式 \*
+#### HTTP 请求方式
 
 GET
 
-#### 请求参数 \*
+#### 请求参数
 
-| 参数        | 必选 | 类型及范围 | 说明    |
-| ----------- | ---- | ---------- | ------- |
-| source      | true | string     | appkey  |
-| source_id   | true | string     | 用户 id |
-| target_id\* | true | string     | 用户 id |
+| 参数      | 必选 | 类型及范围 | 说明    |
+| --------- | ---- | ---------- | ------- |
+| source    | true | string     | appkey  |
+| source_id | true | string     | 用户 id |
+| target_id | true | string     | 用户 id |
 
 其中 source_id 如果没有，则使用当前用户
 
 #### 返回结果
 
-```
+```json
 {
- "source": {
+  "source": {
     "id": "3407397647969193784",
     "screen_name": "Tux",
     "following": false,
     "followed_by": true
-    },
- "target": {
+  },
+  "target": {
     "id": "-7325997749471485394",
     "screen_name": "001",
     "following": true,
     "followed_by": false
-    }
+  }
 }
 ```
 
@@ -755,7 +759,7 @@ attachments 是一个 json array 格式的字符串， array 里面的元素称�
 
 ##### image
 
-```
+```json
 {"media":[
     {
         "src": "http://icanhascheezburger.files.wordpress.com/2009/03/funny-pictures-kitten-finished-his-milk-and-wants-a-cookie.jpg",
@@ -773,25 +777,31 @@ attachments 是一个 json array 格式的字符串， array 里面的元素称�
 
 ##### flash
 
-```
-{"media": [{
-    "src": "http://www.mapsofwar.com/photos/EMPIRE17.swf",
-    "imgsrc": "http://icanhascheezburger.files.wordpress.com/2009/04/funny-pictures-hairless-cat-phones-    home.jpg",
-    "type": "flash"
-}]
+```json
+{
+  "media": [
+    {
+      "src": "http://www.mapsofwar.com/photos/EMPIRE17.swf",
+      "imgsrc": "http://icanhascheezburger.files.wordpress.com/2009/04/funny-pictures-hairless-cat-phones-    home.jpg",
+      "type": "flash"
+    }
+  ]
 }
 ```
 
 ##### music
 
-```
-{"media":[{
-    "src": "http://www.looptvandfilm.com/blog/Radiohead%20-%20In%20Rainbows/01%20-      %20Radiohead%20-%2015%20Step.MP3",
-    "title": "15 Step",
-    "artist": "Radiohead",
-    "album": "In Rainbows",
-    "type": "music"
-}]
+```json
+{
+  "media": [
+    {
+      "src": "http://www.looptvandfilm.com/blog/Radiohead%20-%20In%20Rainbows/01%20-      %20Radiohead%20-%2015%20Step.MP3",
+      "title": "15 Step",
+      "artist": "Radiohead",
+      "album": "In Rainbows",
+      "type": "music"
+    }
+  ]
 }
 ```
 

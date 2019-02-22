@@ -38,7 +38,7 @@
 
 返回：
 
-```
+```json
 {
     "start" = 0,
     "count" = 10,
@@ -55,11 +55,11 @@
 
 错误格式：
 
-```
+```json
 {
- "msg":"uri_not_found",
- "code":1001,
- "request":"GET \/v2\/photo\/132"
+  "msg": "uri_not_found",
+  "code": 1001,
+  "request": "GET /v2/photo/132"
 }
 ```
 

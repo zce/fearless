@@ -617,9 +617,9 @@ GET /v2/movie/in_theaters
 
 #### Status:
 
-```
 200 OK
 
+```json
 {
     "title": "正在上映的电影-北京",
     "total": 39,
@@ -669,9 +669,9 @@ GET /v2/movie/coming_soon
 
 #### Status:
 
-```
 200 OK
 
+```json
 {
     "start": 0,
     "count": 20,

@@ -14,7 +14,7 @@ scope: douban_basic_common
 
 ## 用户完整版信息 UserInfo
 
-```
+```json
 {
     "id": "1000001",
     "uid": "ahbei",
@@ -37,13 +37,13 @@ scope: douban_basic_common
 
 用户在其他对象里面时使用简版, 在文档里记为 User
 
-```
+```json
 {
-    "id": "1000001",
-    "name": "阿北",
-    "uid": "ahbei",
-    "alt": "http://www.douban.com/people/ahbei/",
-    "avatar": "http://img6.douban.com/icon/u1000001-28.jpg",
+  "id": "1000001",
+  "name": "阿北",
+  "uid": "ahbei",
+  "alt": "http://www.douban.com/people/ahbei/",
+  "avatar": "http://img6.douban.com/icon/u1000001-28.jpg"
 }
 ```
 
@@ -79,7 +79,7 @@ GET https://api.douban.com/v2/user
 
 返回：
 
-```
+```json
 {
     "start" = 0,
     "count" = 10,

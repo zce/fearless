@@ -21,7 +21,7 @@ scope: douban_basic_common
 
 ## 音乐信息 Music
 
-```
+```json
 {
     "id":10000037,
     "title":"我只在乎你",
@@ -51,30 +51,30 @@ scope: douban_basic_common
 
 ## 评论信息 Review
 
-```
+```json
 {
-    "rating":{"max":5,"value":"5","min":1},
-    "updated":"2012-08-31 15:03:06",
-    "author":User,
-    "title":"再见,teresa",
-    "votes":0,
-    "comments":0,
-    "summary":"今年是邓丽君小姐逝世15周年,北美歌迷在各地的华人社区举行了盛大的纪念仪式,而我所在的多伦多更是规模空前.1987年邓丽君的一首<<我只在乎你>...",
-    "music":Music,
-    "useless":0,
-    "published":"2012-08-31 15:03:06",
-    "alt":"http:\/\/music.douban.com\/review\/5567544\/",
-    "id":5567544
+  "rating": { "max": 5, "value": "5", "min": 1 },
+  "updated": "2012-08-31 15:03:06",
+  "author": User,
+  "title": "再见,teresa",
+  "votes": 0,
+  "comments": 0,
+  "summary": "今年是邓丽君小姐逝世15周年,北美歌迷在各地的华人社区举行了盛大的纪念仪式,而我所在的多伦多更是规模空前.1987年邓丽君的一首<<我只在乎你>...",
+  "music": Music,
+  "useless": 0,
+  "published": "2012-08-31 15:03:06",
+  "alt": "http://music.douban.com/review/5567544/",
+  "id": 5567544
 }
 ```
 
 ## 标签信息 Tag
 
-```
+```json
 {
-    "count":20,
-    "alt":"http:\/\/api.douban.com\/tag\/经典",
-    "title":"经典"
+  "count": 20,
+  "alt": "http://api.douban.com/tag/经典",
+  "title": "经典"
 }
 ```
 
@@ -101,13 +101,13 @@ GET  https://api.douban.com/v2/music/search
 
 返回：返回 status=200，
 
-```
+```json
 {
-      "start": 0,
-      "count": 10,
-      "total": 30,
-      "musics" : [Music, ]
-    }
+  "start": 0,
+  "count": 10,
+  "total": 30,
+  "musics": [Music]
+}
 ```
 
 ## 某个音乐中标记最多的标签
@@ -118,13 +118,13 @@ GET  https://api.douban.com/v2/music/:id/tags
 
 返回：返回 status=200，
 
-```
+```json
 {
-      "start": 0,
-      "count": 10,
-      "total": 30,
-      "tags" : [Tag, ]
-    }
+  "start": 0,
+  "count": 10,
+  "total": 30,
+  "tags": [Tag]
+}
 ```
 
 ## 发表新评论
@@ -172,11 +172,11 @@ GET  https://api.douban.com/v2/music/user_tags/:id
 
 返回：返回 status=200，
 
-```
+```json
 {
-      "start": 0,
-      "count": 10,
-      "total": 30,
-      "tags" : [Tag, ]
-    }
+  "start": 0,
+  "count": 10,
+  "total": 30,
+  "tags": [Tag]
+}
 ```

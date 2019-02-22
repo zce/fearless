@@ -13,7 +13,7 @@ scope 具体见 target 的文档，target 指回复所依附的产品对象名�
 
 ## 回复 Comment
 
-```
+```json
 {
     "id": "48297785",
     "created": "2012-08-20 18":09":47",
@@ -30,12 +30,12 @@ GET https://api.douban.com/v2/target/:id/comments
 
 返回：
 
-```
+```json
 {
-    "start": 0,
-    "count": 10,
-    "total": 30,
-    "comments" : [Comment, ]
+  "start": 0,
+  "count": 10,
+  "total": 30,
+  "comments": [Comment]
 }
 ```
 

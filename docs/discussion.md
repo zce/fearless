@@ -19,7 +19,7 @@ scope 具体见 target 的文档，target 指论坛所依附的产品对象名�
 
 ## 讨论 Discussion
 
-```
+```json
 {
     "id": "48247785",
     "title": "火炬不是亮点吗？",
@@ -77,12 +77,12 @@ GET https://api.douban.com/v2/target/:id/discussions
 
 返回：
 
-```
+```json
 {
-    "start": 0,
-    "count": 10,
-    "total": 30,
-    "discussions" : [Discussion, ]
+  "start": 0,
+  "count": 10,
+  "total": 30,
+  "discussions": [Discussion]
 }
 ```
 

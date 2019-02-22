@@ -30,40 +30,40 @@ scope: community_advanced_online
 
 ## Online
 
-```
+```json
 {
-    "id":"11038343",
-    "alt":"http://www.douban.com/online/11038343/",
+  "id": "11038343",
+  "alt": "http://www.douban.com/online/11038343/",
 
-    "title":"新的截图猜电影，来！",
-    "desc":"截图猜电影\r\n猜中后描述改为：\r\n《电影名》 by （猜中者名字）\r\n请遵守规则！\r\n\r\n附注：相关网址是，听>配乐>猜电影友情活动，尽请参加！",
+  "title": "新的截图猜电影，来！",
+  "desc": "截图猜电影\r\n猜中后描述改为：\r\n《电影名》 by （猜中者名字）\r\n请遵守规则！\r\n\r\n附注：相关网址是，听>配乐>猜电影友情活动，尽请参加！",
 
-    "tags":["截图", "电影", "交友", "猜图"],
+  "tags": ["截图", "电影", "交友", "猜图"],
 
-    "created":"2012-02-24 11:49:32",
-    "begin_time":"2012-02-24 11:00:00",
-    "end_time":"2012-05-23 11:00:00",
+  "created": "2012-02-24 11:49:32",
+  "begin_time": "2012-02-24 11:00:00",
+  "end_time": "2012-05-23 11:00:00",
 
-    "related_url":"http://www.douban.com/online/10999361/",
-    "shuo_topic":"新的截图猜电影，来！", //对应广播的#主题#
-    "cascade_invite":true, //用户能不能邀请友邻加入
-    "group_id":"0", //关联小组的id
-    "album_id":"65606728", //对应相册的id
+  "related_url": "http://www.douban.com/online/10999361/",
+  "shuo_topic": "新的截图猜电影，来！", //对应广播的#主题#
+  "cascade_invite": true, //用户能不能邀请友邻加入
+  "group_id": "0", //关联小组的id
+  "album_id": "65606728", //对应相册的id
 
-    "participant_count":13881, //参加人数
-    "photo_count":63281, //照片数
-    "liked_count":2127, //喜欢数
-    "recs_count":417, //推荐数
+  "participant_count": 13881, //参加人数
+  "photo_count": 63281, //照片数
+  "liked_count": 2127, //喜欢数
+  "recs_count": 417, //推荐数
 
-    "icon":"http://img6.douban.com/bpic/o590273.jpg",
-    "thumb":"http://img6.douban.com/spic/o590273.jpg",
-    "cover":"http://img6.douban.com/tpic/o590273.jpg",
-    "image":"http://img6.douban.com/lpic/o590273.jpg",
+  "icon": "http://img6.douban.com/bpic/o590273.jpg",
+  "thumb": "http://img6.douban.com/spic/o590273.jpg",
+  "cover": "http://img6.douban.com/tpic/o590273.jpg",
+  "image": "http://img6.douban.com/lpic/o590273.jpg",
 
-    "owner": User,
-    //当前用户是否喜欢，参加
-    "liked": false,
-    "joined": false,
+  "owner": User,
+  //当前用户是否喜欢，参加
+  "liked": false,
+  "joined": false
 }
 ```
 
@@ -197,12 +197,12 @@ GET  https://api.douban.com/v2/online/user_participated/:id
 
 返回：
 
-```
+```json
 {
-    "start": 0,
-    "count": 10,
-    "total": 30,
-    "onlines" : [Online, ]
+  "start": 0,
+  "count": 10,
+  "total": 30,
+  "onlines": [Online]
 }
 ```
 
