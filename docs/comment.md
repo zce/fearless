@@ -1,6 +1,6 @@
 # 回复Api V2
 
-[回Api V2 首页](index.md)
+[回Api V2 首页](readme.md)
 
 scope具体见target的文档，target指回复所依附的产品对象名称
 
@@ -66,4 +66,4 @@ GET https://api.douban.com/v2/target/:id/comment/:id
 DELETE https://api.douban.com/v2/target/:id/comment/:id
 ```
 
-[回Api V2 首页](index.md)
+[回Api V2 首页](readme.md)

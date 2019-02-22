@@ -1,6 +1,6 @@
 # 豆瓣广播 Api V2
 
-[回Api V2 首页](index.md)
+[回Api V2 首页](readme.md)
 
 注：广播所有的API操作都需要登录。
 
@@ -794,4 +794,4 @@ music
 }
 ```
 
-[回Api V2 首页](index.md)
+[回Api V2 首页](readme.md)

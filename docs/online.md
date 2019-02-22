@@ -1,6 +1,6 @@
 # 豆瓣线上活动 API V2
 
-[回Api V2 首页](index.md)
+[回Api V2 首页](readme.md)
 
 scope: community_basic_online
 
@@ -226,4 +226,4 @@ GET  https://api.douban.com/v2/online/user_created/:id
 | 1107   | wrong_cate                    | 错误的列表类别，day，week，latest分别对应每天，每周，最新3个类别 | 400         |
 | 1108   | wrong_time_format             | 错误的时间格式，正确时间格式：yyyy-MM-dd HH:mm:ss            | 400         |
 
-[回Api V2 首页](index.md)
+[回Api V2 首页](readme.md)

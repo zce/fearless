@@ -1,6 +1,6 @@
 # 豆瓣用户API V2
 
-[回Api V2 首页](index.md)
+[回Api V2 首页](readme.md)
 
 scope: douban_basic_common
 
@@ -87,4 +87,4 @@ GET https://api.douban.com/v2/user
 }
 ```
 
-[回Api V2 首页](index.md)
+[回Api V2 首页](readme.md)

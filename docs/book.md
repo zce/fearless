@@ -1,6 +1,6 @@
 # 图书Api V2
 
-[回Api V2 首页](index.md)
+[回Api V2 首页](readme.md)
 
 注意： 1. 下文中提到的图书并不包括杂志。 2. count最大为100，大于100的count会被置为100。
 

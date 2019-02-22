@@ -1,6 +1,6 @@
 # 相册Api V2
 
-[回Api V2 首页](index.md)
+[回Api V2 首页](readme.md)
 
 ＊ 注意，相册Api V2都需要登录后才能访问
 
@@ -124,4 +124,4 @@ scope: community_basic_photo
 | ---------------- | ---- | ------------------------- |
 | 获得照片单条回复 | GET  | /v2/photo/:id/comment/:id |
 
-[回Api V2 首页](index.md)
+[回Api V2 首页](readme.md)

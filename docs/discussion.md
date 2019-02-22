@@ -1,6 +1,6 @@
 # 论坛API V2
 
-[回Api V2 首页](index.md)
+[回Api V2 首页](readme.md)
 
 scope: douban_common_basic
 
@@ -96,4 +96,4 @@ scope: douban_common_basic
 | 获取讨论单条回复 | GET    | /v2/discussion/:id/comment/:id |
 | 删除讨论回复     | DELETE | /v2/discussion/:id/comment/:id |
 
-[回Api V2 首页](index.md)
+[回Api V2 首页](readme.md)

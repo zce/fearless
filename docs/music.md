@@ -1,6 +1,6 @@
 # 音乐Api V2
 
-[回Api V2 首页](index.md)
+[回Api V2 首页](readme.md)
 
 scope: music_basic_r
 

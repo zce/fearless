@@ -1,6 +1,6 @@
 # 豆瓣同城 V2
 
-[回Api V2 首页](index.md)
+[回Api V2 首页](readme.md)
 
 ## 活动接口
 
@@ -335,4 +335,4 @@ DELETE https://api.douban.com/v2/event/:id/wishers
 
 返回 202
 
-[回Api V2 首页](index.md)
+[回Api V2 首页](readme.md)

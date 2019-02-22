@@ -1,6 +1,6 @@
 # 豆瓣日记 API V2
 
-[回Api V2 首页](index.md)
+[回Api V2 首页](readme.md)
 
 ＊ 注意，日记Api V2都需要登录后才能访问
 
@@ -214,4 +214,4 @@ DELETE https://api.douban.com/v2/note/:id
 | 1014   | wrong_method     | 错误的http 请求方式，比如一些接口需要http PUT 却用http POST请求 | 400         |
 | 1001   | uri_not_found    | 未登录 或者访问的api 没有经过授权申请通过                    | 404         |
 
-[回Api V2 首页](index.md)
+[回Api V2 首页](readme.md)

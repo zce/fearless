@@ -1,6 +1,6 @@
 # 我去Api V2
 
-[回Api V2 首页](index.md)
+[回Api V2 首页](readme.md)
 
 scope: travel_basic_r
 
