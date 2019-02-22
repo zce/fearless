@@ -1,21 +1,22 @@
 # 豆瓣日记 API V2
 
-[回Api V2 首页](readme.md)
+[回 Api V2 首页](readme.md)
 
-＊ 注意，日记Api V2都需要登录后才能访问
+＊ 注意，日记 Api V2 都需要登录后才能访问
 
 scope: community_basic_note
 
-| [增加一篇日记](#add) | POST   | /v2/notes                 |
-| ------------------------------------------------------------ | ------ | ------------------------- |
-| [删除一篇日记](#delete) | DELETE | /v2/note/:id              |
-| [更新一篇日记](#update) | PUT    | /v2/note/:id              |
-| [上传照片到日记](#upload) | POST   | /v2/note/:id              |
-| [获取一篇日记](#get) | GET    | /v2/note/:id              |
+| name                                      | Method | endpoint                  |
+| ----------------------------------------- | ------ | ------------------------- |
+| [增加一篇日记](#add)                      | POST   | /v2/notes                 |
+| [删除一篇日记](#delete)                   | DELETE | /v2/note/:id              |
+| [更新一篇日记](#update)                   | PUT    | /v2/note/:id              |
+| [上传照片到日记](#upload)                 | POST   | /v2/note/:id              |
+| [获取一篇日记](#get)                      | GET    | /v2/note/:id              |
 | [获取日记下的评论列表](#get_comment_list) | GET    | /v2/note/:id/comments     |
-| [喜欢一篇日记](#like_note) | POST   | /v2/note/:id/like         |
-| [取消喜欢一篇日记](#unlike_note) | DELETE | /v2/note/:id/like         |
-| [获取用户的日记列表](#get_list) | GET    | /v2/note/user_created/:id |
+| [喜欢一篇日记](#like_note)                | POST   | /v2/note/:id/like         |
+| [取消喜欢一篇日记](#unlike_note)          | DELETE | /v2/note/:id/like         |
+| [获取用户的日记列表](#get_list)           | GET    | /v2/note/user_created/:id |
 
 ## 日记 Note
 
@@ -47,8 +48,8 @@ scope: community_basic_note
 | publish_time  | 发布时间     | 无                                                           |
 | photos        | 日记里的图   | 日记关联的图片                                               |
 | recs_count    | 被推荐的次数 | 无                                                           |
-| id            | 日记的id     | 无                                                           |
-| can_reply     | 是否能评论   | true表示可以评论,false表示不能评论                           |
+| id            | 日记的 id    | 无                                                           |
+| can_reply     | 是否能评论   | true 表示可以评论,false 表示不能评论                         |
 | title         | 日记标题     | 无                                                           |
 | privacy       | 可见权限     | public:表示所有人可见 friend:只朋友可见 private:只有自己可见 |
 | summary       | 日记简要描述 | 无                                                           |
@@ -58,20 +59,22 @@ scope: community_basic_note
 
 日记内容格式
 
-使用格式类似BBCode，具体例子如下：
+使用格式类似 BBCode，具体例子如下：
 
-| 图片         | [img=id:layout][/img]                   |
+| 项目         | 代码                                    |
 | ------------ | --------------------------------------- |
+| 图片         | [img=id:layout][/img]                   |
 | 带标注的图片 | [img=id:layout]desc[/img]               |
 | url          | [url="http://www.douban.com"][/url]     |
-| 带标题的url  | [url="http://www.douban.com"]豆瓣[/url] |
+| 带标题的 url | [url="http://www.douban.com"]豆瓣[/url] |
 
 图片格式解释
 
-| id     | 图片顺序号，每篇日记内不能重复                   |
-| ------ | ------------------------------------------------ |
-| layout | 排版，有L，C，R，分别对应居左，居中，居右3种排版 |
-| desc   | 图注，可以为空                                   |
+| 格式   | 解释                                                |
+| ------ | --------------------------------------------------- |
+| id     | 图片顺序号，每篇日记内不能重复                      |
+| layout | 排版，有 L，C，R，分别对应居左，居中，居右 3 种排版 |
+| desc   | 图注，可以为空                                      |
 
 ## 获取用户的日记列表
 
@@ -81,9 +84,9 @@ GET https://api.douban.com/v2/note/user_created/:id
 
 请求参数：
 
-| format | 日记内容格式 | 取值为html_full, html_short, abstract, text，默认为text |
-| ------ | ------------ | ------------------------------------------------------- |
-|        |              |                                                         |
+| format | 日记内容格式 | 取值为 html_full, html_short, abstract, text，默认为 text |
+| ------ | ------------ | --------------------------------------------------------- |
+|        |              |                                                           |
 
 返回一个[Note](#note) 列表
 
@@ -95,17 +98,18 @@ GET https://api.douban.com/v2/note/:id
 
 请求参数：
 
-| format | 日记内容格式 | 取值为html_full, html_short, abstract, text，默认为text |
-| ------ | ------------ | ------------------------------------------------------- |
-|        |              |                                                         |
+| 参数   | 描述         | 可选值                                                    |
+| ------ | ------------ | --------------------------------------------------------- |
+| format | 日记内容格式 | 取值为 html_full, html_short, abstract, text，默认为 text |
 
 日记内容格式含义
 
-| text       | 默认格式，文本默认，图片和url使用类BBCode标签 |
-| ---------- | --------------------------------------------- |
-| html_full  | html格式的全部内容                            |
-| html_short | html格式的摘要内容                            |
-| abstract   | 文本格式的摘要内容                            |
+| 格式       | 描述                                              |
+| ---------- | ------------------------------------------------- |
+| text       | 默认格式，文本默认，图片和 url 使用类 BBCode 标签 |
+| html_full  | html 格式的全部内容                               |
+| html_short | html 格式的摘要内容                               |
+| abstract   | 文本格式的摘要内容                                |
 
 返回一个[Note](#note)
 
@@ -115,20 +119,20 @@ GET https://api.douban.com/v2/note/:id
 POST https://api.douban.com/v2/notes
 ```
 
-＊ 如果有图片的话采用multipart/form-data编码方式，上传图片大小限制为<3M，name 是 image_pid
+＊ 如果有图片的话采用 multipart/form-data 编码方式，上传图片大小限制为<3M，name 是 image_pid
 
 请求参数
 
-| 名称       | 含义                                                         | 备注                                                         | 示例                           |
-| ---------- | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------ |
-| title      | 日记标题                                                     | 必传，不能为空                                               |                                |
-| privacy    | 隐私控制                                                     | 为public，friend，private，分布对应公开，朋友可见，仅自己可见 |                                |
-| can_reply  | 是否允许回复                                                 | 必传, true或者false                                          |                                |
-| content    | 日记内容, 如果含图片，使用“<图片p_pid>”伪tag引用图片, 如果含链接，使用html的链接标签格式，或者直接使用网址 | 必传                                                         | 日记正文<图片p_2>正文<图片p_3> |
-| pids       | 上传的图片pid本地编号，使用前缀"p_"                          | 用逗号分隔，最多一次传3张图片                                | p_2,p_3,p_4                    |
-| layout_pid | 对应pid的排版                                                | 有L, C, R 分别对应居左，居中，居右3种排版                    |                                |
-| desc_pid   | 对应pid的图注                                                | 可以为空                                                     |                                |
-| image_pid  | 对应pid的图片内容                                            |                                                              |                                |
+| 名称       | 含义                                                                                                            | 备注                                                           | 示例                             |
+| ---------- | --------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------- | -------------------------------- |
+| title      | 日记标题                                                                                                        | 必传，不能为空                                                 |                                  |
+| privacy    | 隐私控制                                                                                                        | 为 public，friend，private，分布对应公开，朋友可见，仅自己可见 |                                  |
+| can_reply  | 是否允许回复                                                                                                    | 必传, true 或者 false                                          |                                  |
+| content    | 日记内容, 如果含图片，使用“<图片 p_pid>”伪 tag 引用图片, 如果含链接，使用 html 的链接标签格式，或者直接使用网址 | 必传                                                           | 日记正文<图片 p_2>正文<图片 p_3> |
+| pids       | 上传的图片 pid 本地编号，使用前缀"p\_"                                                                          | 用逗号分隔，最多一次传 3 张图片                                | p_2,p_3,p_4                      |
+| layout_pid | 对应 pid 的排版                                                                                                 | 有 L, C, R 分别对应居左，居中，居右 3 种排版                   |                                  |
+| desc_pid   | 对应 pid 的图注                                                                                                 | 可以为空                                                       |                                  |
+| image_pid  | 对应 pid 的图片内容                                                                                             |                                                                |                                  |
 
 ## 喜欢一条日记
 
@@ -144,14 +148,14 @@ DELETE https://api.douban.com/v2/note/:id/like
 
 请求参数
 
-| 参数      | 意义           | 备注                                                         |
-| --------- | -------------- | ------------------------------------------------------------ |
-| title     | 日记标题       | 必选参数                                                     |
-| content   | 日记内容       | 必选参数                                                     |
-| privacy   | 日记可见权限   | 可选参数,默认为public ,对所有人都可见,public:表示所有人可见 friend:只朋友可见 private:只有自己可见 |
-| can_reply | 日记是否可评论 | 可选参数,默认为true ,true表示可以评论,false表示不能评论      |
+| 参数      | 意义           | 备注                                                                                                |
+| --------- | -------------- | --------------------------------------------------------------------------------------------------- |
+| title     | 日记标题       | 必选参数                                                                                            |
+| content   | 日记内容       | 必选参数                                                                                            |
+| privacy   | 日记可见权限   | 可选参数,默认为 public ,对所有人都可见,public:表示所有人可见 friend:只朋友可见 private:只有自己可见 |
+| can_reply | 日记是否可评论 | 可选参数,默认为 true ,true 表示可以评论,false 表示不能评论                                          |
 
-返回201，新创建的[Note](#note)
+返回 201，新创建的[Note](#note)
 
 ## 更新一条日记
 
@@ -159,7 +163,7 @@ DELETE https://api.douban.com/v2/note/:id/like
 PUT https://api.douban.com/v2/note/:id
 ```
 
-参数同创建日记一样,成功返回202 ,更新后的[Note](#note)
+参数同创建日记一样,成功返回 202 ,更新后的[Note](#note)
 
 ## 上传照片到日记
 
@@ -167,17 +171,17 @@ PUT https://api.douban.com/v2/note/:id
 POST https://api.douban.com/v2/note/:id
 ```
 
-＊ 采用multipart/form-data编码方式，上传图片大小限制为<3M，name 是 image_pid
+＊ 采用 multipart/form-data 编码方式，上传图片大小限制为<3M，name 是 image_pid
 
 请求参数
 
-| 名称       | 含义                                     | 备注                                      | 示例                           |
-| ---------- | ---------------------------------------- | ----------------------------------------- | ------------------------------ |
-| pids       | 上传的图片pid本地编号，使用前缀"p_"      | 用逗号分隔，最多一次传3张图片             | p_2,p_3,p_4                    |
-| layout_pid | 对应pid的排版                            | 有L, C, R 分别对应居左，居中，居右3种排版 |                                |
-| desc_pid   | 对应pid的图注                            | 可以为空                                  |                                |
-| content    | 日记内容, 使用“<图片p_pid>”伪tag引用图片 | 可选，如果不传的话，图片会追加到日记末尾  | 日记正文<图片p_2>正文<图片p_3> |
-| image_pid  | 对应pid的图片内容                        |                                           |                                |
+| 名称       | 含义                                        | 备注                                         | 示例                             |
+| ---------- | ------------------------------------------- | -------------------------------------------- | -------------------------------- |
+| pids       | 上传的图片 pid 本地编号，使用前缀"p\_"      | 用逗号分隔，最多一次传 3 张图片              | p_2,p_3,p_4                      |
+| layout_pid | 对应 pid 的排版                             | 有 L, C, R 分别对应居左，居中，居右 3 种排版 |                                  |
+| desc_pid   | 对应 pid 的图注                             | 可以为空                                     |                                  |
+| content    | 日记内容, 使用“<图片 p_pid>”伪 tag 引用图片 | 可选，如果不传的话，图片会追加到日记末尾     | 日记正文<图片 p_2>正文<图片 p_3> |
+| image_pid  | 对应 pid 的图片内容                         |                                              |                                  |
 
 ```
 //image2.png, image3.png 为本地图片文件路径，curl调用如下，TOKEN为授权后的access_token
@@ -192,26 +196,27 @@ curl "https://api.douban.com/v2/note/:id" -H "Authorization: Bearer TOKEN"  -F "
 DELETE https://api.douban.com/v2/note/:id
 ```
 
-删除成功 返回200
+删除成功 返回 200
 
 ## 日记回复
 
 具体见[回复 Api V2](comment.md)
 
-| 获取讨论回复列表 | GET    | /v2/note/:id/comments    |
+| name             | Method | endpoint                 |
 | ---------------- | ------ | ------------------------ |
+| 获取讨论回复列表 | GET    | /v2/note/:id/comments    |
 | 回复讨论         | POST   | /v2/note/:id/comments    |
 | 获取讨论单条回复 | GET    | /v2/note/:id/comment/:id |
 | 删除讨论回复     | DELETE | /v2/note/:id/comment/:id |
 
 ## 日记相关错误码
 
-| 错误码 | 错误信息         | 含义                                                         | status_code |
-| ------ | ---------------- | ------------------------------------------------------------ | ----------- |
-| 1006   | target_not_found | 找不到某条日记                                               | 400         |
-| 1000   | need_permission  | 没权限访问用户不可见的日记，或者没登录的情况下去访问需要登录的数据 | 403         |
-| 1002   | missing_args     | 请求的时候缺少必选的参数                                     | 400         |
-| 1014   | wrong_method     | 错误的http 请求方式，比如一些接口需要http PUT 却用http POST请求 | 400         |
-| 1001   | uri_not_found    | 未登录 或者访问的api 没有经过授权申请通过                    | 404         |
+| 错误码 | 错误信息         | 含义                                                                | status_code |
+| ------ | ---------------- | ------------------------------------------------------------------- | ----------- |
+| 1006   | target_not_found | 找不到某条日记                                                      | 400         |
+| 1000   | need_permission  | 没权限访问用户不可见的日记，或者没登录的情况下去访问需要登录的数据  | 403         |
+| 1002   | missing_args     | 请求的时候缺少必选的参数                                            | 400         |
+| 1014   | wrong_method     | 错误的 http 请求方式，比如一些接口需要 http PUT 却用 http POST 请求 | 400         |
+| 1001   | uri_not_found    | 未登录 或者访问的 api 没有经过授权申请通过                          | 404         |
 
-[回Api V2 首页](readme.md)
+[回 Api V2 首页](readme.md)

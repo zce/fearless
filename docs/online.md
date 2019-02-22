@@ -1,30 +1,32 @@
 # 豆瓣线上活动 API V2
 
-[回Api V2 首页](readme.md)
+[回 Api V2 首页](readme.md)
 
 scope: community_basic_online
 
-| [获取线上活动](#get) | GET  | /v2/online/:id              |
-| ------------------------------------------------------------ | ---- | --------------------------- |
-| [获取线上活动参加成员列表](#users) | GET  | /v2/online/:id/participants |
-| [获取线上活动论坛列表](#discussions) | GET  | /v2/online/:id/discussions  |
-| [获取线上活动列表](#list) | GET  | /v2/onlines                 |
+| name                                 | Method | endpoint                    |
+| ------------------------------------ | ------ | --------------------------- |
+| [获取线上活动](#get)                 | GET    | /v2/online/:id              |
+| [获取线上活动参加成员列表](#users)   | GET    | /v2/online/:id/participants |
+| [获取线上活动论坛列表](#discussions) | GET    | /v2/online/:id/discussions  |
+| [获取线上活动列表](#list)            | GET    | /v2/onlines                 |
 
 scope: community_advanced_online
 
-| [创建线上活动](#new) | POST   | /v2/onlines                      |
-| ------------------------------------------------------------ | ------ | -------------------------------- |
-| [更新线上活动](#update) | PUT    | /v2/online/:id                   |
-| [删除线上活动](#delete) | DELETE | /v2/online/:id                   |
-| [参加线上活动](#join) | POST   | /v2/online/:id/participants      |
-| [退出线上活动](#quit) | DELETE | /v2/online/:id/participants      |
-| [喜欢线上活动](#like) | POST   | /v2/online/:id/like              |
-| [取消喜欢线上活动](#unlike) | DELETE | /v2/online/:id/like              |
-| [图片列表](#photos) | GET    | /v2/online/:id/photos            |
-| [上传图片](#upload) | POST   | /v2/online/:id/photos            |
-| [线上活动论坛发贴](#post) | POST   | /v2/online/:id/discussions       |
+| name                                     | Method | endpoint                         |
+| ---------------------------------------- | ------ | -------------------------------- |
+| [创建线上活动](#new)                     | POST   | /v2/onlines                      |
+| [更新线上活动](#update)                  | PUT    | /v2/online/:id                   |
+| [删除线上活动](#delete)                  | DELETE | /v2/online/:id                   |
+| [参加线上活动](#join)                    | POST   | /v2/online/:id/participants      |
+| [退出线上活动](#quit)                    | DELETE | /v2/online/:id/participants      |
+| [喜欢线上活动](#like)                    | POST   | /v2/online/:id/like              |
+| [取消喜欢线上活动](#unlike)              | DELETE | /v2/online/:id/like              |
+| [图片列表](#photos)                      | GET    | /v2/online/:id/photos            |
+| [上传图片](#upload)                      | POST   | /v2/online/:id/photos            |
+| [线上活动论坛发贴](#post)                | POST   | /v2/online/:id/discussions       |
 | [获取用户参加的线上活动列表](#join_list) | GET    | /v2/online/user_participated/:id |
-| [获取用户创建的线上活动列表](#owned) | GET    | /v2/online/user_created/:id      |
+| [获取用户创建的线上活动列表](#owned)     | GET    | /v2/online/user_created/:id      |
 
 ## Online
 
@@ -95,9 +97,9 @@ GET https://api.douban.com/v2/online/:id/discussions
 GET https://api.douban.com/v2/onlines
 ```
 
-| 参数 | 意义 | 备注                                      |
-| ---- | ---- | ----------------------------------------- |
-| cate | 类别 | day，week，latest分别对应每天，每周，最新 |
+| 参数 | 意义 | 备注                                       |
+| ---- | ---- | ------------------------------------------ |
+| cate | 类别 | day，week，latest 分别对应每天，每周，最新 |
 
 返回 [Online](#online) 列表
 
@@ -109,17 +111,17 @@ POST https://api.douban.com/v2/onlines
 
 请求参数
 
-| 参数           | 意义                           | 备注                                                    |
-| -------------- | ------------------------------ | ------------------------------------------------------- |
-| title          | 题目                           | 不能为空                                                |
-| desc           | 描述                           | 不能为空                                                |
-| begin_time     | 开始时间                       | 不能为空，不是是过去的时间，时间格式"%Y-%m-%d %H:%M"    |
-| end_time       | 结束时间                       | 不能为空，不能早于开始时间，活动期限不能长于3个月(90天) |
-| related_url    | 关联的url或者小组链接          | 可以为空                                                |
-| cascade_invite | 是否允许参与的成员邀请朋友参加 | 默认为false                                             |
-| tags           | 标签                           | 不超过4个，用空格分开，默认为空                         |
+| 参数           | 意义                           | 备注                                                       |
+| -------------- | ------------------------------ | ---------------------------------------------------------- |
+| title          | 题目                           | 不能为空                                                   |
+| desc           | 描述                           | 不能为空                                                   |
+| begin_time     | 开始时间                       | 不能为空，不是是过去的时间，时间格式"%Y-%m-%d %H:%M"       |
+| end_time       | 结束时间                       | 不能为空，不能早于开始时间，活动期限不能长于 3 个月(90 天) |
+| related_url    | 关联的 url 或者小组链接        | 可以为空                                                   |
+| cascade_invite | 是否允许参与的成员邀请朋友参加 | 默认为 false                                               |
+| tags           | 标签                           | 不超过 4 个，用空格分开，默认为空                          |
 
-返回200，创建好的[Online](#online)
+返回 200，创建好的[Online](#online)
 
 ## 更新线上活动
 
@@ -214,16 +216,16 @@ GET  https://api.douban.com/v2/online/user_created/:id
 
 ## 线上活动相关错误
 
-| 错误码 | 错误信息                      | 含义                                                         | status code |
-| ------ | ----------------------------- | ------------------------------------------------------------ | ----------- |
-| 1100   | begin_time_too_late           | 开始时间过晚                                                 | 400         |
-| 1101   | end_time_too_early            | 结束时间已过                                                 | 400         |
-| 1102   | end_time_less_than_begin_time | 结束时间早于开始时间                                         | 400         |
-| 1103   | period_too_long               | 活动长于90天                                                 | 400         |
-| 1104   | tags_too_much                 | tag多于4个                                                   | 400         |
-| 1105   | tags_too_long                 | tag长于18个字符                                              | 400         |
-| 1106   | edit_too_much                 | 编辑次数过多                                                 | 400         |
-| 1107   | wrong_cate                    | 错误的列表类别，day，week，latest分别对应每天，每周，最新3个类别 | 400         |
-| 1108   | wrong_time_format             | 错误的时间格式，正确时间格式：yyyy-MM-dd HH:mm:ss            | 400         |
+| 错误码 | 错误信息                      | 含义                                                                | status code |
+| ------ | ----------------------------- | ------------------------------------------------------------------- | ----------- |
+| 1100   | begin_time_too_late           | 开始时间过晚                                                        | 400         |
+| 1101   | end_time_too_early            | 结束时间已过                                                        | 400         |
+| 1102   | end_time_less_than_begin_time | 结束时间早于开始时间                                                | 400         |
+| 1103   | period_too_long               | 活动长于 90 天                                                      | 400         |
+| 1104   | tags_too_much                 | tag 多于 4 个                                                       | 400         |
+| 1105   | tags_too_long                 | tag 长于 18 个字符                                                  | 400         |
+| 1106   | edit_too_much                 | 编辑次数过多                                                        | 400         |
+| 1107   | wrong_cate                    | 错误的列表类别，day，week，latest 分别对应每天，每周，最新 3 个类别 | 400         |
+| 1108   | wrong_time_format             | 错误的时间格式，正确时间格式：yyyy-MM-dd HH:mm:ss                   | 400         |
 
-[回Api V2 首页](readme.md)
+[回 Api V2 首页](readme.md)

@@ -1,14 +1,15 @@
-# 回复Api V2
+# 回复 Api V2
 
-[回Api V2 首页](readme.md)
+[回 Api V2 首页](readme.md)
 
-scope具体见target的文档，target指回复所依附的产品对象名称
+scope 具体见 target 的文档，target 指回复所依附的产品对象名称
 
+| name                  | Method | endpoint                   |
+| --------------------- | ------ | -------------------------- |
 | [获取回复列表](#list) | GET    | /v2/target/:id/comments    |
-| ------------------------------------------------------------ | ------ | -------------------------- |
-| [新发回复](#new) | POST   | /v2/target/:id/comments    |
-| [获取单条回复](#get) | GET    | /v2/target/:id/comment/:id |
-| [删除回复](#delete) | DELETE | /v2/target/:id/comment/:id |
+| [新发回复](#new)      | POST   | /v2/target/:id/comments    |
+| [获取单条回复](#get)  | GET    | /v2/target/:id/comment/:id |
+| [删除回复](#delete)   | DELETE | /v2/target/:id/comment/:id |
 
 ## 回复 Comment
 
@@ -50,7 +51,7 @@ POST https://api.douban.com/v2/target/:id/comments
 | ------- | -------- | ---- |
 | content | 回复内容 | 必传 |
 
-返回201，新创建的Comment
+返回 201，新创建的 Comment
 
 ## 获取单条回复
 
@@ -58,7 +59,7 @@ POST https://api.douban.com/v2/target/:id/comments
 GET https://api.douban.com/v2/target/:id/comment/:id
 ```
 
-返回Comment
+返回 Comment
 
 ## 删除回复
 
@@ -66,4 +67,4 @@ GET https://api.douban.com/v2/target/:id/comment/:id
 DELETE https://api.douban.com/v2/target/:id/comment/:id
 ```
 
-[回Api V2 首页](readme.md)
+[回 Api V2 首页](readme.md)

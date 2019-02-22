@@ -1,40 +1,43 @@
-# 图书Api V2
+# 图书 Api V2
 
-[回Api V2 首页](readme.md)
+[回 Api V2 首页](readme.md)
 
-注意： 1. 下文中提到的图书并不包括杂志。 2. count最大为100，大于100的count会被置为100。
+注意： 1. 下文中提到的图书并不包括杂志。 2. count 最大为 100，大于 100 的 count 会被置为 100。
 
 scope: book_basic_r
 
-| [获取图书信息](#get_book) | GET  | /v2/book/:id                    |
-| ------------------------------------------------------------ | ---- | ------------------------------- |
-| [根据isbn获取图书信息](#get_isbn_book) | GET  | /v2/book/isbn/:name             |
-| [搜索图书](#get_book_search) | GET  | /v2/book/search                 |
-| [获取某个图书中标记最多的标签](#get_book_tags) | GET  | /v2/book/:id/tags               |
-| [获取用户对图书的所有标签](#get_user_book_tags) | GET  | /v2/book/user/:name/tags        |
-| [获取某个用户的所有图书收藏信息](#get_user_collections) | GET  | /v2/book/user/:name/collections |
-| [获取用户对某本图书的收藏信息](#get_book_collection) | GET  | /v2/book/:id/collection         |
-| [获取某个用户的所有笔记](#get_user_annotations) | GET  | /v2/book/user/:name/annotations |
-| [获取某本图书的所有笔记](#get_book_annotations) | GET  | /v2/book/:id/annotations        |
-| [获取某篇笔记的信息](#get_annotation) | GET  | /v2/book/annotation/:id         |
-| [获取丛书书目信息](#get_series) | GET  | /v2/book/series/:id/books       |
+| name                                                    | Method | endpoint                        |
+| ------------------------------------------------------- | ------ | ------------------------------- |
+| [获取图书信息](#get_book)                               | GET    | /v2/book/:id                    |
+| [根据 isbn 获取图书信息](#get_isbn_book)                | GET    | /v2/book/isbn/:name             |
+| [搜索图书](#get_book_search)                            | GET    | /v2/book/search                 |
+| [获取某个图书中标记最多的标签](#get_book_tags)          | GET    | /v2/book/:id/tags               |
+| [获取用户对图书的所有标签](#get_user_book_tags)         | GET    | /v2/book/user/:name/tags        |
+| [获取某个用户的所有图书收藏信息](#get_user_collections) | GET    | /v2/book/user/:name/collections |
+| [获取用户对某本图书的收藏信息](#get_book_collection)    | GET    | /v2/book/:id/collection         |
+| [获取某个用户的所有笔记](#get_user_annotations)         | GET    | /v2/book/user/:name/annotations |
+| [获取某本图书的所有笔记](#get_book_annotations)         | GET    | /v2/book/:id/annotations        |
+| [获取某篇笔记的信息](#get_annotation)                   | GET    | /v2/book/annotation/:id         |
+| [获取丛书书目信息](#get_series)                         | GET    | /v2/book/series/:id/books       |
 
 scope: book_basic_w
 
-| [用户收藏某本图书](#post_book_collection) | POST   | /v2/book/:id/collection  |
-| ------------------------------------------------------------ | ------ | ------------------------ |
-| [用户修改对某本图书的收藏](#put_book_collection) | PUT    | /v2/book/:id/collection  |
+| name                                                | Method | endpoint                 |
+| --------------------------------------------------- | ------ | ------------------------ |
+| [用户收藏某本图书](#post_book_collection)           | POST   | /v2/book/:id/collection  |
+| [用户修改对某本图书的收藏](#put_book_collection)    | PUT    | /v2/book/:id/collection  |
 | [用户删除对某本图书的收藏](#delete_book_collection) | DELETE | /v2/book/:id/collection  |
-| [用户给某本图书写笔记](#post_book_annotation) | POST   | /v2/book/:id/annotations |
-| [用户修改某篇笔记](#put_annotation) | PUT    | /v2/book/annotation/:id  |
-| [用户删除某篇笔记](#delete_annotation) | DELETE | /v2/book/annotation/:id  |
+| [用户给某本图书写笔记](#post_book_annotation)       | POST   | /v2/book/:id/annotations |
+| [用户修改某篇笔记](#put_annotation)                 | PUT    | /v2/book/annotation/:id  |
+| [用户删除某篇笔记](#delete_annotation)              | DELETE | /v2/book/annotation/:id  |
 
 scope: douban_basic_common
 
-| [发表新评论](#post_book_review) | POST   | /v2/book/reviews       |
-| ------------------------------------------------------------ | ------ | ---------------------- |
-| [修改评论](#put_book_review) | PUT    | /v2/book/review/:id    |
-| [删除评论](#delete_book_review) | DELETE | /v2/book/review/:id    |
+| name                                                        | Method | endpoint               |
+| ----------------------------------------------------------- | ------ | ---------------------- |
+| [发表新评论](#post_book_review)                             | POST   | /v2/book/reviews       |
+| [修改评论](#put_book_review)                                | PUT    | /v2/book/review/:id    |
+| [删除评论](#delete_book_review)                             | DELETE | /v2/book/review/:id    |
 | [获取用户对图书的所有标签(deprecated)](#get_user_book_tags) | GET    | /v2/book/user_tags/:id |
 
 ## 图书信息 Book
@@ -172,19 +175,19 @@ scope: douban_basic_common
 
 ## 图书错误码
 
-| *错误码* | *错误信息*                                             | *含义*                                          | *status code* |
-| -------- | ------------------------------------------------------ | ----------------------------------------------- | ------------- |
-| 6000     | book_not_found                                         | 图书不存在                                      | 404           |
-| 6002     | unauthorized_error                                     | 没有修改权限                                    | 403           |
-| 6004     | review_content_short(should more than 150)             | 书评内容过短（需多于150字）                     | 400           |
-| 6006     | review_not_found                                       | 书评不存在                                      | 404           |
-| 6007     | not_book_request                                       | 不是豆瓣读书相关请求                            | 403           |
-| 6008     | people_not_found                                       | 用户不存在                                      | 404           |
-| 6009     | function_error                                         | 服务器调用异常                                  | 400           |
-| 6010     | comment_too_long(should less than 350)                 | 短评字数过长（需少于350字）                     | 400           |
-| 6011     | collection_exist(try PUT if you want to update)        | 该图书已被收藏（如需更新请用PUT方法而不是POST） | 409           |
-| 6012     | invalid_page_number(should be digit less than 1000000) | 非法页码（页码需要是小于1000000的数字）         | 400           |
-| 6013     | chapter_too_long(should less than 100)                 | 章节名过长（需小于100字）                       | 400           |
+| 错误码 | 错误信息                                               | 含义                                               | status code |
+| ------ | ------------------------------------------------------ | -------------------------------------------------- | ----------- |
+| 6000   | book_not_found                                         | 图书不存在                                         | 404         |
+| 6002   | unauthorized_error                                     | 没有修改权限                                       | 403         |
+| 6004   | review_content_short(should more than 150)             | 书评内容过短（需多于 150 字）                      | 400         |
+| 6006   | review_not_found                                       | 书评不存在                                         | 404         |
+| 6007   | not_book_request                                       | 不是豆瓣读书相关请求                               | 403         |
+| 6008   | people_not_found                                       | 用户不存在                                         | 404         |
+| 6009   | function_error                                         | 服务器调用异常                                     | 400         |
+| 6010   | comment_too_long(should less than 350)                 | 短评字数过长（需少于 350 字）                      | 400         |
+| 6011   | collection_exist(try PUT if you want to update)        | 该图书已被收藏（如需更新请用 PUT 方法而不是 POST） | 409         |
+| 6012   | invalid_page_number(should be digit less than 1000000) | 非法页码（页码需要是小于 1000000 的数字）          | 400         |
+| 6013   | chapter_too_long(should less than 100)                 | 章节名过长（需小于 100 字）                        | 400         |
 
 ## fields 参数选择需要的指定字段
 
@@ -249,7 +252,7 @@ GET https://api.douban.com/v2/book/search?q=python&fields=id,title
 GET  https://api.douban.com/v2/book/:id
 ```
 
-返回图书信息，返回status=200
+返回图书信息，返回 status=200
 
 对于授权用户，返回数据中会带有该用户对该图书的收藏信息：
 
@@ -271,13 +274,13 @@ GET  https://api.douban.com/v2/book/:id
 }
 ```
 
-## 根据isbn获取图书信息
+## 根据 isbn 获取图书信息
 
 ```
 GET  https://api.douban.com/v2/book/isbn/:name
 ```
 
-同上，返回图书信息，返回status=200
+同上，返回图书信息，返回 status=200
 
 ## 搜索图书
 
@@ -285,22 +288,22 @@ GET  https://api.douban.com/v2/book/isbn/:name
 GET  https://api.douban.com/v2/book/search
 ```
 
-| *参数* | *意义*         | *备注*              |
-| ------ | -------------- | ------------------- |
-| q      | 查询关键字     | q和tag必传其一      |
-| tag    | 查询的tag      | q和tag必传其一      |
-| start  | 取结果的offset | 默认为0             |
-| count  | 取结果的条数   | 默认为20，最大为100 |
+| 参数  | 意义            | 备注                  |
+| ----- | --------------- | --------------------- |
+| q     | 查询关键字      | q 和 tag 必传其一     |
+| tag   | 查询的 tag      | q 和 tag 必传其一     |
+| start | 取结果的 offset | 默认为 0              |
+| count | 取结果的条数    | 默认为 20，最大为 100 |
 
-返回：返回status=200，
+返回：返回 status=200，
 
 ```
 {
-      "start": 0,
-      "count": 10,
-      "total": 30,
-      "books" : [Book, ]
-    }
+    "start": 0,
+    "count": 10,
+    "total": 30,
+    "books" : [Book, ]
+}
 ```
 
 注：对于登录用户，若搜索结果图书在当前用户的图书收藏中，会在对应搜索结果信息中附加当前用户对此书的收藏信息，改部分的 Book 数据结构如下：
@@ -329,15 +332,15 @@ GET  https://api.douban.com/v2/book/search
 GET  https://api.douban.com/v2/book/:id/tags
 ```
 
-返回：返回status=200，最多返回前50个tag
+返回：返回 status=200，最多返回前 50 个 tag
 
 ```
 {
-      "start": 0,
-      "count": 10,
-      "total": 30,
-      "tags" : [Tag, ]
-    }
+    "start": 0,
+    "count": 10,
+    "total": 30,
+    "tags" : [Tag, ]
+}
 ```
 
 ## 发表新评论
@@ -346,16 +349,16 @@ GET  https://api.douban.com/v2/book/:id/tags
 POST  https://api.douban.com/v2/book/reviews
 ```
 
-| *参数*  | *意义*              | *备注*                                         |
-| ------- | ------------------- | ---------------------------------------------- |
-| book    | 评论所针对的book id | 必传                                           |
-| title   | 评论头              | 必传                                           |
-| content | 评论内容            | 必传，且多于150字                              |
-| rating  | 打分                | 非必传，数字1～5为合法值，其他信息默认为不打分 |
+| 参数    | 意义                 | 备注                                               |
+| ------- | -------------------- | -------------------------------------------------- |
+| book    | 评论所针对的 book id | 必传                                               |
+| title   | 评论头               | 必传                                               |
+| content | 评论内容             | 必传，且多于 150 字                                |
+| rating  | 打分                 | 非必传，数字 1 ～ 5 为合法值，其他信息默认为不打分 |
 
-返回： 返回status=201， 图书评论Review信息
+返回： 返回 status=201， 图书评论 Review 信息
 
-注意：此处的Review肯定是当前用户的书评，所以其返回的不是summary（摘要），而是content（全文）
+注意：此处的 Review 肯定是当前用户的书评，所以其返回的不是 summary（摘要），而是 content（全文）
 
 ## 修改评论
 
@@ -363,15 +366,15 @@ POST  https://api.douban.com/v2/book/reviews
 PUT  https://api.douban.com/v2/book/review/:id
 ```
 
-| *参数*  | *意义*   | *备注*                                         |
-| ------- | -------- | ---------------------------------------------- |
-| title   | 评论头   | 必传                                           |
-| content | 评论内容 | 必传，且多于150字                              |
-| rating  | 打分     | 非必传，数字1～5为合法值，其他信息默认为不打分 |
+| 参数    | 意义     | 备注                                               |
+| ------- | -------- | -------------------------------------------------- |
+| title   | 评论头   | 必传                                               |
+| content | 评论内容 | 必传，且多于 150 字                                |
+| rating  | 打分     | 非必传，数字 1 ～ 5 为合法值，其他信息默认为不打分 |
 
-返回： status = 202， 图书评论Review信息
+返回： status = 202， 图书评论 Review 信息
 
-注意：此处的Review肯定是当前用户的书评，所以其返回的不是summary（摘要），而是content（全文）
+注意：此处的 Review 肯定是当前用户的书评，所以其返回的不是 summary（摘要），而是 content（全文）
 
 ## 删除评论
 
@@ -379,7 +382,7 @@ PUT  https://api.douban.com/v2/book/review/:id
 DELETE  https://api.douban.com/v2/book/review/:id
 ```
 
-返回：返回status=200， OK
+返回：返回 status=200， OK
 
 ## 获取用户对图书的所有标签
 
@@ -393,7 +396,7 @@ GET  https://api.douban.com/v2/book/user/:name/tags
 GET  https://api.douban.com/v2/book/user_tags/:id
 ```
 
-返回：返回status=200，
+返回：返回 status=200，
 
 ```
 {
@@ -410,13 +413,13 @@ GET  https://api.douban.com/v2/book/user_tags/:id
 GET  https://api.douban.com/v2/book/user/:name/collections
 ```
 
-| *参数* | *意义*                       | *备注*                                                       |
-| ------ | ---------------------------- | ------------------------------------------------------------ |
-| status | 收藏状态                     | 选填（想读：wish 在读：reading 读过：read）默认为所有状态    |
-| tag    | 收藏标签                     | 选填                                                         |
-| from   | 按收藏更新时间过滤的起始时间 | 选填，格式为符合rfc3339的字符串，例如"2012-10-19T17:14:11"，其他信息默认为不传此项 |
-| to     | 按收藏更新时间过滤的结束时间 | 同上                                                         |
-| rating | 星评                         | 选填，数字1～5为合法值，其他信息默认为不区分星评             |
+| 参数   | 意义                         | 备注                                                                                 |
+| ------ | ---------------------------- | ------------------------------------------------------------------------------------ |
+| status | 收藏状态                     | 选填（想读：wish 在读：reading 读过：read）默认为所有状态                            |
+| tag    | 收藏标签                     | 选填                                                                                 |
+| from   | 按收藏更新时间过滤的起始时间 | 选填，格式为符合 rfc3339 的字符串，例如"2012-10-19T17:14:11"，其他信息默认为不传此项 |
+| to     | 按收藏更新时间过滤的结束时间 | 同上                                                                                 |
+| rating | 星评                         | 选填，数字 1 ～ 5 为合法值，其他信息默认为不区分星评                                 |
 
 返回: status = 200,
 
@@ -435,13 +438,13 @@ GET  https://api.douban.com/v2/book/user/:name/collections
 GET  https://api.douban.com/v2/book/:id/collection
 ```
 
-| *参数*  | *意义*  | *备注*                       |
+| 参数    | 意义    | 备注                         |
 | ------- | ------- | ---------------------------- |
 | user_id | 用户 id | 选填（uid 或者数字 id 均可） |
 
 带有 user_id 参数时，获取的收藏信息为该用户对该图书的公开收藏信息，如为私有收藏，返回 404
 
-返回: status = 200 图书收藏Collection信息
+返回: status = 200 图书收藏 Collection 信息
 
 注意：如果该用户未收藏此图书，会认为该资源不存在，返回如下信息:
 
@@ -460,15 +463,15 @@ status code: 404
 POST  https://api.douban.com/v2/book/:id/collection
 ```
 
-| *参数*  | *意义*         | *备注*                                                       |
+| 参数    | 意义           | 备注                                                         |
 | ------- | -------------- | ------------------------------------------------------------ |
 | status  | 收藏状态       | 必填（想读：wish 在读：reading 或 doing 读过：read 或 done） |
 | tags    | 收藏标签字符串 | 选填，用空格分隔                                             |
-| comment | 短评文本       | 选填，最多350字                                              |
+| comment | 短评文本       | 选填，最多 350 字                                            |
 | privacy | 隐私设置       | 选填，值为'private'为设置成仅自己可见，其他默认为公开        |
-| rating  | 星评           | 选填，数字1～5为合法值，其他信息默认为不评星                 |
+| rating  | 星评           | 选填，数字 1 ～ 5 为合法值，其他信息默认为不评星             |
 
-返回: status = 201 图书收藏Collection信息
+返回: status = 201 图书收藏 Collection 信息
 
 ## 用户修改对某本图书的收藏
 
@@ -476,15 +479,15 @@ POST  https://api.douban.com/v2/book/:id/collection
 PUT  https://api.douban.com/v2/book/:id/collection
 ```
 
-| *参数*  | *意义*         | *备注*                                                       |
+| 参数    | 意义           | 备注                                                         |
 | ------- | -------------- | ------------------------------------------------------------ |
 | status  | 收藏状态       | 必填（想读：wish 在读：reading 或 doing 读过：read 或 done） |
 | tags    | 收藏标签字符串 | 选填，用空格分隔                                             |
-| comment | 短评文本       | 选填，最多350字                                              |
+| comment | 短评文本       | 选填，最多 350 字                                            |
 | privacy | 隐私设置       | 选填，值为'private'为设置成仅自己可见，其他默认为公开        |
-| rating  | 星评           | 选填，数字1～5为合法值，其他信息默认为不评星                 |
+| rating  | 星评           | 选填，数字 1 ～ 5 为合法值，其他信息默认为不评星             |
 
-返回: status = 202 图书收藏Collection信息
+返回: status = 202 图书收藏 Collection 信息
 
 ## 用户删除对某本图书的收藏
 
@@ -500,7 +503,7 @@ DELETE  https://api.douban.com/v2/book/:id/collection
 GET  https://api.douban.com/v2/book/user/:name/annotations
 ```
 
-默认按update_time倒序排列
+默认按 update_time 倒序排列
 
 返回: status = 200,
 
@@ -519,11 +522,11 @@ GET  https://api.douban.com/v2/book/user/:name/annotations
 GET  https://api.douban.com/v2/book/:id/annotations
 ```
 
-| *参数* | *意义*              | *备注*                                                       |
-| ------ | ------------------- | ------------------------------------------------------------ |
-| format | 返回content字段格式 | 选填（编辑伪标签格式：text, HTML格式：html），默认为text     |
-| order  | 排序                | 选填（最新笔记：collect, 按有用程度：rank, 按页码先后：page），默认为rank |
-| page   | 按页码过滤          | 选填                                                         |
+| 参数   | 意义                  | 备注                                                                       |
+| ------ | --------------------- | -------------------------------------------------------------------------- |
+| format | 返回 content 字段格式 | 选填（编辑伪标签格式：text, HTML 格式：html），默认为 text                 |
+| order  | 排序                  | 选填（最新笔记：collect, 按有用程度：rank, 按页码先后：page），默认为 rank |
+| page   | 按页码过滤            | 选填                                                                       |
 
 此数据仅显示公开笔记
 
@@ -544,11 +547,11 @@ GET  https://api.douban.com/v2/book/:id/annotations
 GET  https://api.douban.com/v2/book/annotation/:id
 ```
 
-| *参数* | *意义*              | *备注*                                                   |
-| ------ | ------------------- | -------------------------------------------------------- |
-| format | 返回content字段格式 | 选填（编辑伪标签格式：text, HTML格式：html），默认为text |
+| 参数   | 意义                  | 备注                                                       |
+| ------ | --------------------- | ---------------------------------------------------------- |
+| format | 返回 content 字段格式 | 选填（编辑伪标签格式：text, HTML 格式：html），默认为 text |
 
-返回: status = 200, 笔记Annotation信息
+返回: status = 200, 笔记 Annotation 信息
 
 ## 获取丛书书目信息
 
@@ -564,20 +567,20 @@ GET  https://api.douban.com/v2/book/series/:id/books
 POST  https://api.douban.com/v2/book/:id/annotations
 ```
 
-| *参数*  | *意义*   | *备注*                                                |
+| 参数    | 意义     | 备注                                                  |
 | ------- | -------- | ----------------------------------------------------- |
-| content | 笔记内容 | 必填，需多于15字                                      |
-| page    | 页码     | 页码或章节名选填其一，最多6位正整数                   |
-| chapter | 章节名   | 页码或章节名选填其一，最多100字                       |
+| content | 笔记内容 | 必填，需多于 15 字                                    |
+| page    | 页码     | 页码或章节名选填其一，最多 6 位正整数                 |
+| chapter | 章节名   | 页码或章节名选填其一，最多 100 字                     |
 | privacy | 隐私设置 | 选填，值为'private'为设置成仅自己可见，其他默认为公开 |
 
-笔记目前支持上传图片功能，采用multipart/form-data编码方式，上传图片大小限制为<3M，name推荐为用从1开始的图片编号（用pic1，pic2亦可），举个简单的例子如下：
+笔记目前支持上传图片功能，采用 multipart/form-data 编码方式，上传图片大小限制为<3M，name 推荐为用从 1 开始的图片编号（用 pic1，pic2 亦可），举个简单的例子如下：
 
 ```
 curl "https://api.douban.com/v2/book/:id/annotations" -H "Authorization: Bearer <access_token>" -F "content=这是测试文本<图片1>需要多于15个字，凑字数凑字数" -F "1=@Ball.png" -F "page=13"
 ```
 
-返回: status = 201 该笔记Annotation信息
+返回: status = 201 该笔记 Annotation 信息
 
 ## 用户修改某篇笔记
 
@@ -585,16 +588,16 @@ curl "https://api.douban.com/v2/book/:id/annotations" -H "Authorization: Bearer 
 PUT  https://api.douban.com/v2/book/annotation/:id
 ```
 
-| *参数*  | *意义*   | *备注*                                                |
+| 参数    | 意义     | 备注                                                  |
 | ------- | -------- | ----------------------------------------------------- |
-| content | 笔记内容 | 必填，需多于15字                                      |
-| page    | 页码     | 页码或章节名选填其一，最多6位正整数                   |
-| chapter | 章节名   | 页码或章节名选填其一，最多100字                       |
+| content | 笔记内容 | 必填，需多于 15 字                                    |
+| page    | 页码     | 页码或章节名选填其一，最多 6 位正整数                 |
+| chapter | 章节名   | 页码或章节名选填其一，最多 100 字                     |
 | privacy | 隐私设置 | 选填，值为'private'为设置成仅自己可见，其他默认为公开 |
 
-笔记中的指定编号图片不允许重新上传，如需更新可以添加新图片并替换掉<图片n>。 未被用的图片数据仍旧可以从photos字段找到，且不会显示在content里。
+笔记中的指定编号图片不允许重新上传，如需更新可以添加新图片并替换掉<图片 n>。 未被用的图片数据仍旧可以从 photos 字段找到，且不会显示在 content 里。
 
-返回: status = 202 更新后的该笔记Annotation信息
+返回: status = 202 更新后的该笔记 Annotation 信息
 
 ## 用户删除某篇笔记
 

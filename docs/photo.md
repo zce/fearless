@@ -1,15 +1,16 @@
-# 相册Api V2
+# 相册 Api V2
 
-[回Api V2 首页](readme.md)
+[回 Api V2 首页](readme.md)
 
-＊ 注意，相册Api V2都需要登录后才能访问
+＊ 注意，相册 Api V2 都需要登录后才能访问
 
 scope: community_basic_photo
 
-| [获取相册](#get_album) | GET  | /v2/album/:id        |
-| ------------------------------------------------------------ | ---- | -------------------- |
-| [获取相册照片列表](#photo_list) | GET  | /v2/album/:id/photos |
-| [获得照片](#get_photo) | GET  | /v2/photo/:id        |
+| name                            | Method | endpoint             |
+| ------------------------------- | ------ | -------------------- |
+| [获取相册](#get_album)          | GET    | /v2/album/:id        |
+| [获取相册照片列表](#photo_list) | GET    | /v2/album/:id/photos |
+| [获得照片](#get_photo)          | GET    | /v2/photo/:id        |
 
 ## 照片 Photo
 
@@ -88,12 +89,12 @@ GET https://api.douban.com/v2/album/:id/photos
 
 请求参数
 
-| 参数   | 意义     | 备注                                                   |
-| ------ | -------- | ------------------------------------------------------ |
-| start  | 起始     | 从0开始，默认为0                                       |
-| count  | 数量     |                                                        |
-| order  | 排序     | asc, desc, 默认为相册本身的排序                        |
-| sortby | 排序方式 | time 上传时间，vote 推荐数，comment 回复数，默认为time |
+| 参数   | 意义     | 备注                                                    |
+| ------ | -------- | ------------------------------------------------------- |
+| start  | 起始     | 从 0 开始，默认为 0                                     |
+| count  | 数量     |                                                         |
+| order  | 排序     | asc, desc, 默认为相册本身的排序                         |
+| sortby | 排序方式 | time 上传时间，vote 推荐数，comment 回复数，默认为 time |
 
 返回：
 
@@ -120,8 +121,9 @@ GET https://api.douban.com/v2/photo/:id
 
 scope: community_basic_photo
 
-| 照片回复列表     | GET  | /v2/photo/:id/comments    |
-| ---------------- | ---- | ------------------------- |
-| 获得照片单条回复 | GET  | /v2/photo/:id/comment/:id |
+| name             | Method | endpoint                  |
+| ---------------- | ------ | ------------------------- |
+| 照片回复列表     | GET    | /v2/photo/:id/comments    |
+| 获得照片单条回复 | GET    | /v2/photo/:id/comment/:id |
 
-[回Api V2 首页](readme.md)
+[回 Api V2 首页](readme.md)

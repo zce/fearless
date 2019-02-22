@@ -1,10 +1,10 @@
 # 豆瓣同城 V2
 
-[回Api V2 首页](readme.md)
+[回 Api V2 首页](readme.md)
 
 ## 活动接口
 
-*scope: event_basic_r*
+scope: event_basic_r
 
 - [读] GET /v2/event/:id [获取活动](#event_get)
 - [读] GET /v2/event/:id/participants [获取参加活动的用户](#event_participants)
@@ -16,7 +16,7 @@
 - [读] GET /v2/loc/:id [获取城市](#loc_get)
 - [读] GET /v2/loc/list [获取城市列表](#loc_list)
 
-*scope: event_basic_w*
+scope: event_basic_w
 
 - [写] POST /v2/event/:id/participants [参加活动](#event_participate)
 - [写] DELETE /v2/event/:id/participants [不参加活动](#event_quit)
@@ -26,7 +26,7 @@
 注：
 
 - event_basic_r 无需授权，但是有访问限制，可以使用 http 或 https
-- event_basic_w 必须先进行API认证授权，请使用 https 访问，关于API认证授权的信息请参阅 [API 授权说明](oauth2.md)
+- event_basic_w 必须先进行 API 认证授权，请使用 https 访问，关于 API 认证授权的信息请参阅 [API 授权说明](oauth2.md)
 
 ## 活动类型 [#](#type)
 
@@ -42,7 +42,7 @@
 - 公益 17/commonweal
 - 电影 18/film
 
-## Event数据格式 [#](#event)
+## Event 数据格式 [#](#event)
 
 ```
 {
@@ -76,7 +76,7 @@
 }
 ```
 
-## EventList数据格式 [#](#events_list)
+## EventList 数据格式 [#](#events_list)
 
 ```
 {
@@ -236,10 +236,10 @@ GET https://api.douban.com/v2/event/list
 
 返回格式:[Event List](#events_list)
 
-| 参数     | 含义     | 备注                                                         |
-| -------- | -------- | ------------------------------------------------------------ |
-| loc      | 城市 id  |                                                              |
-| day_type | 时间类型 | future, week, weekend, today, tomorrow                       |
+| 参数     | 含义     | 备注                                                                                 |
+| -------- | -------- | ------------------------------------------------------------------------------------ |
+| loc      | 城市 id  |                                                                                      |
+| day_type | 时间类型 | future, week, weekend, today, tomorrow                                               |
 | type     | 活动类型 | all,music, film, drama, commonweal, salon, exhibition, party, sports, travel, others |
 
 ## 获取城市 [#](#loc_get)
@@ -335,4 +335,4 @@ DELETE https://api.douban.com/v2/event/:id/wishers
 
 返回 202
 
-[回Api V2 首页](readme.md)
+[回 Api V2 首页](readme.md)

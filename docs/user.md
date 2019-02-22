@@ -1,15 +1,16 @@
-# 豆瓣用户API V2
+# 豆瓣用户 API V2
 
-[回Api V2 首页](readme.md)
+[回 Api V2 首页](readme.md)
 
 scope: douban_basic_common
 
-＊注意 :name 为用户uid或者数字id
+＊注意 :name 为用户 uid 或者数字 id
 
-| [获取用户信息](#get_user) | GET  | /v2/user/:name |
-| ------------------------------------------------------------ | ---- | -------------- |
-| [获取当前授权用户信息](#get_me) | GET  | /v2/user/~me   |
-| [搜索用户](#search) | GET  | /v2/user       |
+| name                            | Method | endpoint       |
+| ------------------------------- | ------ | -------------- |
+| [获取用户信息](#get_user)       | GET    | /v2/user/:name |
+| [获取当前授权用户信息](#get_me) | GET    | /v2/user/~me   |
+| [搜索用户](#search)             | GET    | /v2/user       |
 
 ## 用户完整版信息 UserInfo
 
@@ -34,7 +35,7 @@ scope: douban_basic_common
 
 ## 用户简版 User
 
-用户在其他对象里面时使用简版, 在文档里记为User
+用户在其他对象里面时使用简版, 在文档里记为 User
 
 ```
 {
@@ -52,7 +53,7 @@ scope: douban_basic_common
 GET https://api.douban.com/v2/user/:name
 ```
 
-返回对应的People
+返回对应的 People
 
 ## 获取当前授权用户信息
 
@@ -60,7 +61,7 @@ GET https://api.douban.com/v2/user/:name
 GET https://api.douban.com/v2/user/~me
 ```
 
-需要必须先进行API认证授权，返回当前授权的UserInfo
+需要必须先进行 API 认证授权，返回当前授权的 UserInfo
 
 ## 搜索用户
 
@@ -87,4 +88,4 @@ GET https://api.douban.com/v2/user
 }
 ```
 
-[回Api V2 首页](readme.md)
+[回 Api V2 首页](readme.md)

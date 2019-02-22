@@ -1,20 +1,22 @@
-# 音乐Api V2
+# 音乐 Api V2
 
-[回Api V2 首页](readme.md)
+[回 Api V2 首页](readme.md)
 
 scope: music_basic_r
 
-| [获取音乐信息](#get_music) | GET  | /v2/music/:id      |
-| ------------------------------------------------------------ | ---- | ------------------ |
-| [搜索音乐](#get_music_search) | GET  | /v2/music/search   |
-| [某个音乐中标记最多的标签](#get_music_tags) | GET  | /v2/music/:id/tags |
+| name                                        | Method | endpoint           |
+| ------------------------------------------- | ------ | ------------------ |
+| [获取音乐信息](#get_music)                  | GET    | /v2/music/:id      |
+| [搜索音乐](#get_music_search)               | GET    | /v2/music/search   |
+| [某个音乐中标记最多的标签](#get_music_tags) | GET    | /v2/music/:id/tags |
 
 scope: douban_basic_common
 
-| [发表新评论](#post_music_review) | POST   | /v2/music/reviews       |
-| ------------------------------------------------------------ | ------ | ----------------------- |
-| [修改评论](#put_music_review) | PUT    | /v2/music/review/:id    |
-| [删除评论](#delete_music_review) | DELETE | /v2/music/review/:id    |
+| name                                           | Method | endpoint                |
+| ---------------------------------------------- | ------ | ----------------------- |
+| [发表新评论](#post_music_review)               | POST   | /v2/music/reviews       |
+| [修改评论](#put_music_review)                  | PUT    | /v2/music/review/:id    |
+| [删除评论](#delete_music_review)               | DELETE | /v2/music/review/:id    |
 | [用户对音乐的所有标签](#get_people_music_tags) | GET    | /v2/music/user_tags/:id |
 
 ## 音乐信息 Music
@@ -82,7 +84,7 @@ scope: douban_basic_common
 GET  https://api.douban.com/v2/music/:id
 ```
 
-返回音乐信息，返回status=200
+返回音乐信息，返回 status=200
 
 ## 搜索音乐
 
@@ -90,14 +92,14 @@ GET  https://api.douban.com/v2/music/:id
 GET  https://api.douban.com/v2/music/search
 ```
 
-| 参数  | 意义           | 备注           |
-| ----- | -------------- | -------------- |
-| q     | 查询关键字     | q和tag必传其一 |
-| tag   | 查询的tag      | q和tag必传其一 |
-| start | 取结果的offset | 默认为0        |
-| count | 取结果的条数   |                |
+| 参数  | 意义            | 备注              |
+| ----- | --------------- | ----------------- |
+| q     | 查询关键字      | q 和 tag 必传其一 |
+| tag   | 查询的 tag      | q 和 tag 必传其一 |
+| start | 取结果的 offset | 默认为 0          |
+| count | 取结果的条数    |                   |
 
-返回：返回status=200，
+返回：返回 status=200，
 
 ```
 {
@@ -114,7 +116,7 @@ GET  https://api.douban.com/v2/music/search
 GET  https://api.douban.com/v2/music/:id/tags
 ```
 
-返回：返回status=200，
+返回：返回 status=200，
 
 ```
 {
@@ -131,14 +133,14 @@ GET  https://api.douban.com/v2/music/:id/tags
 POST  https://api.douban.com/v2/music/reviews
 ```
 
-| 参数    | 意义                 | 备注 |
-| ------- | -------------------- | ---- |
-| music   | 评论所针对的music id | 必传 |
-| title   | 评论头               | 必传 |
-| content | 评论内容             | 必传 |
-| rating  | 打分                 |      |
+| 参数    | 意义                  | 备注 |
+| ------- | --------------------- | ---- |
+| music   | 评论所针对的 music id | 必传 |
+| title   | 评论头                | 必传 |
+| content | 评论内容              | 必传 |
+| rating  | 打分                  |      |
 
-返回： 返回status=201， 音乐评论Review信息
+返回： 返回 status=201， 音乐评论 Review 信息
 
 ## 修改评论
 
@@ -152,7 +154,7 @@ PUT  https://api.douban.com/v2/music/review/:id
 | content | 评论内容 | 必传 |
 | rating  | 打分     |      |
 
-返回： status = 202， 音乐评论Review信息
+返回： status = 202， 音乐评论 Review 信息
 
 ## 删除评论
 
@@ -160,7 +162,7 @@ PUT  https://api.douban.com/v2/music/review/:id
 DELETE  https://api.douban.com/v2/music/review/:id
 ```
 
-返回：返回status=200， OK
+返回：返回 status=200， OK
 
 ## 用户对音乐的所有标签
 
@@ -168,7 +170,7 @@ DELETE  https://api.douban.com/v2/music/review/:id
 GET  https://api.douban.com/v2/music/user_tags/:id
 ```
 
-返回：返回status=200，
+返回：返回 status=200，
 
 ```
 {
