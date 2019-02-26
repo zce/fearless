@@ -1,6 +1,6 @@
 # douban-api-docs
 
-> 豆瓣 API 镜像
+> 豆瓣 API 文档镜像
 
 ## 豆瓣 API 代理
 
