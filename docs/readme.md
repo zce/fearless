@@ -40,10 +40,10 @@
 
 ```json
 {
-    "start" = 0,
-    "count" = 10,
-    "total" = 50,
-    "targets" = [Target, ...]
+    "start": 0,
+    "count": 10,
+    "total": 50,
+    "targets": [Target, ...]
 }
 ```
 
