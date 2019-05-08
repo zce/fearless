@@ -9,134 +9,134 @@
   dependencies:
     regenerator-runtime "^0.12.0"
 
-"@commitlint/cli@7.5.2":
-  version "7.5.2"
-  resolved "https://registry.yarnpkg.com/@commitlint/cli/-/cli-7.5.2.tgz#2475cd8f7ed3b2f9c2ab96c06bc24d61d23f8716"
-  integrity sha512-UQdW/wNb+XeANoYYLyuKEDIfWKSzdhJkPQZ8ie/IjfMNnsP+B23bkX4Ati+6U8zgz0yyngoxWl+3lfExiIL4hQ==
+"@commitlint/cli@7.6.0":
+  version "7.6.0"
+  resolved "https://registry.yarnpkg.com/@commitlint/cli/-/cli-7.6.0.tgz#4f046342149ca7c5819d6f799509f77ab824e02e"
+  integrity sha512-3n4qNS1xOIQcL2uLSo+aF8q79kt8qWFUqtVUrlsKsn4B++htJDav3Y2TPjbNXEZD2tO1kg1jfjNE8LLkrHTxqg==
   dependencies:
-    "@commitlint/format" "^7.5.0"
-    "@commitlint/lint" "^7.5.2"
-    "@commitlint/load" "^7.5.0"
-    "@commitlint/read" "^7.5.0"
+    "@commitlint/format" "^7.6.0"
+    "@commitlint/lint" "^7.6.0"
+    "@commitlint/load" "^7.6.0"
+    "@commitlint/read" "^7.6.0"
     babel-polyfill "6.26.0"
     chalk "2.3.1"
-    get-stdin "5.0.1"
+    get-stdin "7.0.0"
     lodash "4.17.11"
     meow "5.0.0"
-    resolve-from "4.0.0"
-    resolve-global "0.1.0"
+    resolve-from "5.0.0"
+    resolve-global "1.0.0"
 
-"@commitlint/config-conventional@7.5.0":
-  version "7.5.0"
-  resolved "https://registry.yarnpkg.com/@commitlint/config-conventional/-/config-conventional-7.5.0.tgz#3afd4e3e34e5c2f6ec6af03e78ae924fed883ce7"
-  integrity sha512-odLgBfQ5xntFAmMfAmDY2C4EWhW+cSTbvbsRS7seb55DCa3IaxxSHHC9eXrR+hN/BdUT5vqAxdX1PkR996sq9Q==
+"@commitlint/config-conventional@7.6.0":
+  version "7.6.0"
+  resolved "https://registry.yarnpkg.com/@commitlint/config-conventional/-/config-conventional-7.6.0.tgz#f3dc66bf39e3b627fdd6f5ac3d0510dd0dd38f94"
+  integrity sha512-1Gnv5p3tc1VsEK25oTIRBO86czLtX6s/jeLNPAQRzdCnyEmsxkbx/sfoUJ1dwv7v8W++xckVnnuvdZv2Hp8yCw==
 
-"@commitlint/ensure@^7.5.2":
-  version "7.5.2"
-  resolved "http://registry.npm.taobao.org/@commitlint/ensure/download/@commitlint/ensure-7.5.2.tgz#57bb7dcbf1e9913e27c3b294325d0d68dd14cebf"
-  integrity sha1-V7t9y/HpkT4nw7KUMl0NaN0Uzr8=
+"@commitlint/ensure@^7.6.0":
+  version "7.6.0"
+  resolved "https://registry.yarnpkg.com/@commitlint/ensure/-/ensure-7.6.0.tgz#e873ff6786a3b9504e88a4debed41df29cd8ac36"
+  integrity sha512-pSUrNud5L/8y+cLWo3LEa8Ce4bAAR33xMderFUhuNPHj7TwpNS7L4ROMnhL4ZlCYRazCRDlnPaJLPikMoWThfA==
   dependencies:
     lodash "4.17.11"
 
-"@commitlint/execute-rule@^7.5.0":
-  version "7.5.0"
-  resolved "http://registry.npm.taobao.org/@commitlint/execute-rule/download/@commitlint/execute-rule-7.5.0.tgz#c9cfbab71eb962e1c46e78d76375e32754ab1e38"
-  integrity sha1-yc+6tx65YuHEbnjXY3XjJ1SrHjg=
+"@commitlint/execute-rule@^7.6.0":
+  version "7.6.0"
+  resolved "https://registry.yarnpkg.com/@commitlint/execute-rule/-/execute-rule-7.6.0.tgz#60c1c34b5f2fca6c6cbca019a9c7d81c2fab1e4a"
+  integrity sha512-0inGOIlLefPDtiDOaZ6WoE1p+GEZZIj2VwUftUozD3C71TiwP9UfKAVVtUDFPIeL6RgSqCkCf7zsy6NKNxwkBg==
   dependencies:
     babel-runtime "6.26.0"
 
-"@commitlint/format@^7.5.0":
-  version "7.5.0"
-  resolved "http://registry.npm.taobao.org/@commitlint/format/download/@commitlint/format-7.5.0.tgz#57a2b92dc58a3409b2be67c4c8c10bd1b28e9fe8"
-  integrity sha1-V6K5LcWKNAmyvmfEyMEL0bKOn+g=
+"@commitlint/format@^7.6.0":
+  version "7.6.0"
+  resolved "https://registry.yarnpkg.com/@commitlint/format/-/format-7.6.0.tgz#f954cd9a8658d0ac3eba1bba6a131f57e3f2b570"
+  integrity sha512-Q/gFHImEfGSwp4bSX1ag6C/6GVuMf7KFh3BZIXk9dcbcQbNvyz/NgvS2p/FdZGp6dk8SghXfCiZHNlwNupgbnA==
   dependencies:
     babel-runtime "^6.23.0"
     chalk "^2.0.1"
 
-"@commitlint/is-ignored@^7.5.1":
-  version "7.5.1"
-  resolved "http://registry.npm.taobao.org/@commitlint/is-ignored/download/@commitlint/is-ignored-7.5.1.tgz#c4f7ffc1c8b4cf9dc3204d22ef8e78ff82536d67"
-  integrity sha1-xPf/wci0z53DIE0i7454/4JTbWc=
+"@commitlint/is-ignored@^7.6.0":
+  version "7.6.0"
+  resolved "https://registry.yarnpkg.com/@commitlint/is-ignored/-/is-ignored-7.6.0.tgz#d069f25741dcf859b324e5f709835af3aac9cf45"
+  integrity sha512-By/mLNhz+6Rtix9+Kyof1gdKiELchAnQHpdeKIHIOe9sjbvd3HqDoFHh/mGMMRnGIPMZOX5TO8Fqy3A/2HqlTw==
   dependencies:
-    semver "5.6.0"
+    semver "6.0.0"
 
-"@commitlint/lint@^7.5.2":
-  version "7.5.2"
-  resolved "http://registry.npm.taobao.org/@commitlint/lint/download/@commitlint/lint-7.5.2.tgz#26cb819c74f8770413c4f6ef1e7abf1b739eda77"
-  integrity sha1-JsuBnHT4dwQTxPbvHnq/G3Oe2nc=
+"@commitlint/lint@^7.6.0":
+  version "7.6.0"
+  resolved "https://registry.yarnpkg.com/@commitlint/lint/-/lint-7.6.0.tgz#a6da320026b937aa9bf971e060e471edd6b088ec"
+  integrity sha512-aUIFX0lPRZL7WmT8W8qzogJD4LmHk6JPG3XUAX+K0pOHGjC/0ALvSAytvoLXy4fvmSnGJkXmWhzSW7c0Spa14Q==
   dependencies:
-    "@commitlint/is-ignored" "^7.5.1"
-    "@commitlint/parse" "^7.5.0"
-    "@commitlint/rules" "^7.5.2"
+    "@commitlint/is-ignored" "^7.6.0"
+    "@commitlint/parse" "^7.6.0"
+    "@commitlint/rules" "^7.6.0"
     babel-runtime "^6.23.0"
     lodash "4.17.11"
 
-"@commitlint/load@^7.5.0":
-  version "7.5.0"
-  resolved "http://registry.npm.taobao.org/@commitlint/load/download/@commitlint/load-7.5.0.tgz#2b225b97d631c2235d8b2084bc2fefb4d4d66719"
-  integrity sha1-KyJbl9YxwiNdiyCEvC/vtNTWZxk=
+"@commitlint/load@^7.6.0":
+  version "7.6.0"
+  resolved "https://registry.yarnpkg.com/@commitlint/load/-/load-7.6.0.tgz#c1eccbc0b8714a0c7dc26dacbc49bbc73abc0d27"
+  integrity sha512-MNuemmf8ag7hLwypmmvTBLU9W2scTGRB1RfB59MHVG3surLZS/LB5nUgoCHIeAz2KG4W/T4HXJ3G3Yaiw7ML6Q==
   dependencies:
-    "@commitlint/execute-rule" "^7.5.0"
-    "@commitlint/resolve-extends" "^7.5.0"
+    "@commitlint/execute-rule" "^7.6.0"
+    "@commitlint/resolve-extends" "^7.6.0"
     babel-runtime "^6.23.0"
-    cosmiconfig "^4.0.0"
+    cosmiconfig "^5.2.0"
     lodash "4.17.11"
-    resolve-from "^4.0.0"
+    resolve-from "^5.0.0"
 
-"@commitlint/message@^7.5.0":
-  version "7.5.0"
-  resolved "http://registry.npm.taobao.org/@commitlint/message/download/@commitlint/message-7.5.0.tgz#2572fad648c769dd210374c8b95fb37124302bc5"
-  integrity sha1-JXL61kjHad0hA3TIuV+zcSQwK8U=
+"@commitlint/message@^7.6.0":
+  version "7.6.0"
+  resolved "https://registry.yarnpkg.com/@commitlint/message/-/message-7.6.0.tgz#899b6b411945dd091d261408b6e994043967bc06"
+  integrity sha512-PtP4jhBYGXLaQQC5jel+RQczG2tS3Cy6rRxQioUfCUaEg/LV029ao/KcL1kHEBJ8hSW/SUmnvDaD9Y6nozLQMA==
 
-"@commitlint/parse@^7.5.0":
-  version "7.5.0"
-  resolved "http://registry.npm.taobao.org/@commitlint/parse/download/@commitlint/parse-7.5.0.tgz#d9374266493e5229ec61d92316d28e02419c600f"
-  integrity sha1-2TdCZkk+UinsYdkjFtKOAkGcYA8=
+"@commitlint/parse@^7.6.0":
+  version "7.6.0"
+  resolved "https://registry.yarnpkg.com/@commitlint/parse/-/parse-7.6.0.tgz#e7b8d6dc145e78cf56940bbf405ca6fac3085196"
+  integrity sha512-1x60kTqz2VBCjYE+8MV5BhE+ShPo7MgVlrMWSlxiiJDWP5CvWa+SBbUayDJ7rtOXimjTASZ9ZNZTuFPdJE/Y7A==
   dependencies:
     conventional-changelog-angular "^1.3.3"
     conventional-commits-parser "^2.1.0"
     lodash "^4.17.11"
 
-"@commitlint/read@^7.5.0":
-  version "7.5.0"
-  resolved "http://registry.npm.taobao.org/@commitlint/read/download/@commitlint/read-7.5.0.tgz#35d563b0f3075da2ce6945978996b16fb4acb0f8"
-  integrity sha1-NdVjsPMHXaLOaUWXiZaxb7SssPg=
+"@commitlint/read@^7.6.0":
+  version "7.6.0"
+  resolved "https://registry.yarnpkg.com/@commitlint/read/-/read-7.6.0.tgz#e55863354b436683daa2081de7ec2189573bc306"
+  integrity sha512-OyligtK/e4xnQklrQqTcSMM27eNhq+LqXfoeVouuPx059oDEw9wZYNN4HGzyxs4Pb6GdMpzRHLdeMQ24M+AiYw==
   dependencies:
-    "@commitlint/top-level" "^7.5.0"
+    "@commitlint/top-level" "^7.6.0"
     "@marionebl/sander" "^0.6.0"
     babel-runtime "^6.23.0"
     git-raw-commits "^1.3.0"
 
-"@commitlint/resolve-extends@^7.5.0":
-  version "7.5.0"
-  resolved "http://registry.npm.taobao.org/@commitlint/resolve-extends/download/@commitlint/resolve-extends-7.5.0.tgz#d95a3058e83ddbaef5e3045835b9a3a1fba3422c"
-  integrity sha1-2VowWOg926714wRYNbmjofujQiw=
+"@commitlint/resolve-extends@^7.6.0":
+  version "7.6.0"
+  resolved "https://registry.yarnpkg.com/@commitlint/resolve-extends/-/resolve-extends-7.6.0.tgz#0680b76eeb0e41f728c2f38645473a0956299edb"
+  integrity sha512-fk8KvNiEbRc+p8nPFuysVP2O95+sb8vlIDTjqtGVObqrzFINRfERXwqBmTBtcu556BoDAR2hwRVXmuwhns+Duw==
   dependencies:
     babel-runtime "6.26.0"
     import-fresh "^3.0.0"
     lodash "4.17.11"
-    resolve-from "^4.0.0"
-    resolve-global "^0.1.0"
+    resolve-from "^5.0.0"
+    resolve-global "^1.0.0"
 
-"@commitlint/rules@^7.5.2":
-  version "7.5.2"
-  resolved "http://registry.npm.taobao.org/@commitlint/rules/download/@commitlint/rules-7.5.2.tgz#da03d754625b2e67c0a6b8b9ab89eae1952a4f2e"
-  integrity sha1-2gPXVGJbLmfApri5q4nq4ZUqTy4=
+"@commitlint/rules@^7.6.0":
+  version "7.6.0"
+  resolved "https://registry.yarnpkg.com/@commitlint/rules/-/rules-7.6.0.tgz#f9a833c1eab8144fd8f545a71408b39e51acb64e"
+  integrity sha512-shLJdMUwdVeE5UgOE8E+c+PFS7+0FFGfheMa3s6ZK+xX8pTUxseXZu9iCF4mwF+WWkVk518xPuNLvmYE96salQ==
   dependencies:
-    "@commitlint/ensure" "^7.5.2"
-    "@commitlint/message" "^7.5.0"
-    "@commitlint/to-lines" "^7.5.0"
+    "@commitlint/ensure" "^7.6.0"
+    "@commitlint/message" "^7.6.0"
+    "@commitlint/to-lines" "^7.6.0"
     babel-runtime "^6.23.0"
 
-"@commitlint/to-lines@^7.5.0":
-  version "7.5.0"
-  resolved "http://registry.npm.taobao.org/@commitlint/to-lines/download/@commitlint/to-lines-7.5.0.tgz#a24410d25bb85a5fff3b8d610277b3145f899766"
-  integrity sha1-okQQ0lu4Wl//O41hAnezFF+Jl2Y=
+"@commitlint/to-lines@^7.6.0":
+  version "7.6.0"
+  resolved "https://registry.yarnpkg.com/@commitlint/to-lines/-/to-lines-7.6.0.tgz#5ed4dbf39db0ceff96dbb661b9ce048ed3db7a4b"
+  integrity sha512-L/Vl5ThRuBHnSNZBtc+p2LCs2ayxWodC+I/X3NKUywSmr6kKpJJCFqHHHqPu+yXwGUPwqCMQhogIGLuv9TtWWw==
 
-"@commitlint/top-level@^7.5.0":
-  version "7.5.0"
-  resolved "http://registry.npm.taobao.org/@commitlint/top-level/download/@commitlint/top-level-7.5.0.tgz#01e740167e3d15110794192cd754f49f27d4a16d"
-  integrity sha1-AedAFn49FREHlBks11T0nyfUoW0=
+"@commitlint/top-level@^7.6.0":
+  version "7.6.0"
+  resolved "https://registry.yarnpkg.com/@commitlint/top-level/-/top-level-7.6.0.tgz#0ed88078ac585c93ee314ff3b7f8c20143c57652"
+  integrity sha512-R2RzJZDuT2TU2dZMrRd7olax5IDVcUB/O8k76d1LW13CQ9/2ArJi3TCFXSZIaGpCUnyAYA5KiCZ+c1opnyQuog==
   dependencies:
     find-up "^2.1.0"
 
@@ -561,16 +561,6 @@ core-util-is@~1.0.0:
   resolved "http://registry.npm.taobao.org/core-util-is/download/core-util-is-1.0.2.tgz#b5fd54220aa2bc5ab57aab7140c940754503c1a7"
   integrity sha1-tf1UIgqivFq1eqtxQMlAdUUDwac=
 
-cosmiconfig@^4.0.0:
-  version "4.0.0"
-  resolved "http://registry.npm.taobao.org/cosmiconfig/download/cosmiconfig-4.0.0.tgz#760391549580bbd2df1e562bc177b13c290972dc"
-  integrity sha1-dgORVJWAu9LfHlYrwXexPCkJctw=
-  dependencies:
-    is-directory "^0.3.1"
-    js-yaml "^3.9.0"
-    parse-json "^4.0.0"
-    require-from-string "^2.0.1"
-
 cosmiconfig@^5.0.2:
   version "5.1.0"
   resolved "http://registry.npm.taobao.org/cosmiconfig/download/cosmiconfig-5.1.0.tgz#6c5c35e97f37f985061cdf653f114784231185cf"
@@ -940,12 +930,7 @@ get-own-enumerable-property-symbols@^3.0.0:
   resolved "http://registry.npm.taobao.org/get-own-enumerable-property-symbols/download/get-own-enumerable-property-symbols-3.0.0.tgz#b877b49a5c16aefac3655f2ed2ea5b684df8d203"
   integrity sha1-uHe0mlwWrvrDZV8u0upbaE340gM=
 
-get-stdin@5.0.1:
-  version "5.0.1"
-  resolved "http://registry.npm.taobao.org/get-stdin/download/get-stdin-5.0.1.tgz#122e161591e21ff4c52530305693f20e6393a398"
-  integrity sha1-Ei4WFZHiH/TFJTAwVpPyDmOTo5g=
-
-get-stdin@^7.0.0:
+get-stdin@7.0.0, get-stdin@^7.0.0:
   version "7.0.0"
   resolved "https://registry.yarnpkg.com/get-stdin/-/get-stdin-7.0.0.tgz#8d5de98f15171a125c5e516643c7a6d0ea8a96f6"
   integrity sha512-zRKcywvrXlXsA0v0i9Io4KDRaAw7+a1ZpjRwl9Wox8PFlVCCHra7E9c4kqXCoCM9nR5tBkaTTZRBoCm60bFqTQ==
@@ -985,9 +970,9 @@ glob@7.1.3, glob@^7.0.0, glob@^7.0.3, glob@^7.1.3:
     once "^1.3.0"
     path-is-absolute "^1.0.0"
 
-global-dirs@^0.1.0:
+global-dirs@^0.1.1:
   version "0.1.1"
-  resolved "http://registry.npm.taobao.org/global-dirs/download/global-dirs-0.1.1.tgz#b319c0dd4607f353f3be9cca4c72fc148c49f445"
+  resolved "https://registry.yarnpkg.com/global-dirs/-/global-dirs-0.1.1.tgz#b319c0dd4607f353f3be9cca4c72fc148c49f445"
   integrity sha1-sxnA3UYH81PzvpzKTHL8FIxJ9EU=
   dependencies:
     ini "^1.3.4"
@@ -2128,11 +2113,6 @@ repeat-string@^1.6.1:
   resolved "http://registry.npm.taobao.org/repeat-string/download/repeat-string-1.6.1.tgz#8dcae470e1c88abc2d600fff4a776286da75e637"
   integrity sha1-jcrkcOHIirwtYA//Sndihtp15jc=
 
-require-from-string@^2.0.1:
-  version "2.0.2"
-  resolved "http://registry.npm.taobao.org/require-from-string/download/require-from-string-2.0.2.tgz#89a7fdd938261267318eafe14f9c32e598c36909"
-  integrity sha1-iaf92TgmEmcxjq/hT5wy5ZjDaQk=
-
 resolve-dir@^1.0.0, resolve-dir@^1.0.1:
   version "1.0.1"
   resolved "http://registry.npm.taobao.org/resolve-dir/download/resolve-dir-1.0.1.tgz#79a40644c362be82f26effe739c9bb5382046f43"
@@ -2141,22 +2121,27 @@ resolve-dir@^1.0.0, resolve-dir@^1.0.1:
     expand-tilde "^2.0.0"
     global-modules "^1.0.0"
 
-resolve-from@4.0.0, resolve-from@^4.0.0:
-  version "4.0.0"
-  resolved "http://registry.npm.taobao.org/resolve-from/download/resolve-from-4.0.0.tgz#4abcd852ad32dd7baabfe9b40e00a36db5f392e6"
-  integrity sha1-SrzYUq0y3Xuqv+m0DgCjbbXzkuY=
+resolve-from@5.0.0, resolve-from@^5.0.0:
+  version "5.0.0"
+  resolved "https://registry.yarnpkg.com/resolve-from/-/resolve-from-5.0.0.tgz#c35225843df8f776df21c57557bc087e9dfdfc69"
+  integrity sha512-qYg9KP24dD5qka9J47d0aVky0N+b4fTU89LN9iDnjB5waksiC49rvMB0PrUJQGoTmH50XPiqOvAjDfaijGxYZw==
 
 resolve-from@^3.0.0:
   version "3.0.0"
   resolved "http://registry.npm.taobao.org/resolve-from/download/resolve-from-3.0.0.tgz#b22c7af7d9d6881bc8b6e653335eebcb0a188748"
   integrity sha1-six699nWiBvItuZTM17rywoYh0g=
 
-resolve-global@0.1.0, resolve-global@^0.1.0:
-  version "0.1.0"
-  resolved "http://registry.npm.taobao.org/resolve-global/download/resolve-global-0.1.0.tgz#8fb02cfd5b7db20118e886311f15af95bd15fbd9"
-  integrity sha1-j7As/Vt9sgEY6IYxHxWvlb0V+9k=
+resolve-from@^4.0.0:
+  version "4.0.0"
+  resolved "http://registry.npm.taobao.org/resolve-from/download/resolve-from-4.0.0.tgz#4abcd852ad32dd7baabfe9b40e00a36db5f392e6"
+  integrity sha1-SrzYUq0y3Xuqv+m0DgCjbbXzkuY=
+
+resolve-global@1.0.0, resolve-global@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/resolve-global/-/resolve-global-1.0.0.tgz#a2a79df4af2ca3f49bf77ef9ddacd322dad19255"
+  integrity sha512-zFa12V4OLtT5XUX/Q4VLvTfBf+Ok0SPc1FNGM/z9ctUdiU618qwKpWnd0CHs3+RqROfyEg/DhuHbMWYqcgljEw==
   dependencies:
-    global-dirs "^0.1.0"
+    global-dirs "^0.1.1"
 
 resolve-url@^0.2.1:
   version "0.2.1"
@@ -2236,10 +2221,15 @@ semver-compare@^1.0.0:
   resolved "http://registry.npm.taobao.org/semver-compare/download/semver-compare-1.0.0.tgz#0dee216a1c941ab37e9efb1788f6afc5ff5537fc"
   integrity sha1-De4hahyUGrN+nvsXiPavxf9VN/w=
 
-"semver@2 || 3 || 4 || 5", semver@5.6.0, semver@^5.5.0:
+"semver@2 || 3 || 4 || 5", semver@^5.5.0:
   version "5.6.0"
   resolved "http://registry.npm.taobao.org/semver/download/semver-5.6.0.tgz#7e74256fbaa49c75aa7c7a205cc22799cac80004"
   integrity sha1-fnQlb7qknHWqfHogXMInmcrIAAQ=
+
+semver@6.0.0:
+  version "6.0.0"
+  resolved "https://registry.yarnpkg.com/semver/-/semver-6.0.0.tgz#05e359ee571e5ad7ed641a6eec1e547ba52dea65"
+  integrity sha512-0UewU+9rFapKFnlbirLi3byoOuhrSsli/z/ihNnvM24vgF+8sNBiI1LZPBSH9wJKUwaUbw+s3hToDLCXkrghrQ==
 
 set-value@^0.4.3:
   version "0.4.3"
