@@ -5,8 +5,10 @@
 ## 豆瓣 API 代理
 
 - https://douban.uieee.com
+- https://douban-api.uieee.com
 - https://douban-api.now.sh
 - https://douban-api.zce.now.sh
+- https://douban-api-git-master.zce.now.sh
 
 ### 使用方式及代理配置
 
