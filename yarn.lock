@@ -519,13 +519,13 @@ commander@^2.20.0:
   resolved "https://registry.yarnpkg.com/commander/-/commander-2.20.0.tgz#d58bb2b5c1ee8f87b0d340027e9e94e222c5a422"
   integrity sha512-7j2y+40w61zy6YC2iRNpUe/NwhNyoXrYpHMrSunaMG64nRnaf96zO/KMQR4OyN/UnE5KLyEBnKHd4aG3rskjpQ==
 
-commitizen@4.0.2:
-  version "4.0.2"
-  resolved "https://registry.yarnpkg.com/commitizen/-/commitizen-4.0.2.tgz#5e67473dfb216e22d7d9139769e2df92e0afceb7"
-  integrity sha512-ZWRsuGLjfB9/f3xqlQP0A/i9Vafb8djD69zF3MM9vpJsAqnGUi9OG120tGAaOahxo3ZxNfJlQBg39KoDDmzb9w==
+commitizen@4.0.3:
+  version "4.0.3"
+  resolved "https://registry.yarnpkg.com/commitizen/-/commitizen-4.0.3.tgz#c19a4213257d0525b85139e2f36db7cc3b4f6dae"
+  integrity sha512-lxu0F/Iq4dudoFeIl5pY3h3CQJzkmQuh3ygnaOvqhAD8Wu2pYBI17ofqSuPHNsBTEOh1r1AVa9kR4Hp0FAHKcQ==
   dependencies:
     cachedir "2.2.0"
-    cz-conventional-changelog "2.1.0"
+    cz-conventional-changelog "3.0.1"
     dedent "0.7.0"
     detect-indent "6.0.0"
     find-node-modules "2.0.0"
@@ -636,17 +636,6 @@ currently-unhandled@^0.4.1:
   integrity sha1-mI3zP+qxke95mmE2nddsF635V+o=
   dependencies:
     array-find-index "^1.0.1"
-
-cz-conventional-changelog@2.1.0:
-  version "2.1.0"
-  resolved "http://registry.npm.taobao.org/cz-conventional-changelog/download/cz-conventional-changelog-2.1.0.tgz#2f4bc7390e3244e4df293e6ba351e4c740a7c764"
-  integrity sha1-L0vHOQ4yROTfKT5ro1Hkx0Cnx2Q=
-  dependencies:
-    conventional-commit-types "^2.0.0"
-    lodash.map "^4.5.1"
-    longest "^1.0.1"
-    right-pad "^1.0.1"
-    word-wrap "^1.0.3"
 
 cz-conventional-changelog@3.0.1:
   version "3.0.1"
@@ -1645,11 +1634,6 @@ log-update@^2.3.0:
     ansi-escapes "^3.0.0"
     cli-cursor "^2.0.0"
     wrap-ansi "^3.0.1"
-
-longest@^1.0.1:
-  version "1.0.1"
-  resolved "http://registry.npm.taobao.org/longest/download/longest-1.0.1.tgz#30a0b2da38f73770e8294a0d22e6625ed77d0097"
-  integrity sha1-MKCy2jj3N3DoKUoNIuZiXtd9AJc=
 
 longest@^2.0.1:
   version "2.0.1"
