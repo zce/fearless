@@ -56,7 +56,7 @@
     "@commitlint/config-conventional": "8.2.0",
     "commitizen": "4.0.3",
     "cz-conventional-changelog": "3.0.2",
-    "husky": "3.0.5",
+    "husky": "3.0.7",
     "lint-staged": "9.4.0",
     "prettier": "1.18.2"
   }
