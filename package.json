@@ -58,6 +58,6 @@
     "cz-conventional-changelog": "3.0.2",
     "husky": "3.0.9",
     "lint-staged": "9.4.2",
-    "prettier": "1.18.2"
+    "prettier": "1.19.1"
   }
 }
