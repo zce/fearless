@@ -1,0 +1,36 @@
+{
+  "name": "dashboard",
+  "version": "0.1.0",
+  "private": true,
+  "description": "A dashboard scaffolding based on Vue.js 3.x & TypeScript & Vite",
+  "keywords": [
+    "dashboard",
+    "vue",
+    "vite",
+    "zce"
+  ],
+  "repository": "zce/dashboard",
+  "license": "MIT",
+  "author": "zce <w@zce.me> (https://zce.me)",
+  "main": "N/A",
+  "scripts": {
+    "dev": "vite",
+    "build": "vue-tsc --noEmit && vite build",
+    "serve": "vite preview"
+  },
+  "renovate": {
+    "extends": [
+      "zce"
+    ]
+  },
+  "dependencies": {
+    "vue": "3.1.5"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "1.2.5",
+    "@vue/compiler-sfc": "3.1.5",
+    "typescript": "4.3.5",
+    "vite": "2.4.3",
+    "vue-tsc": "0.2.2"
+  }
+}
