@@ -6,14 +6,14 @@
 [![devDependency Status][devdependency-img]][devdependency-url]
 [![Code Style][style-img]][style-url]
 
-> A dashboard scaffolding based on Vue.js 3.x & TypeScript & Vite
+> A dashboard scaffolding based on Vue.js 3.x & TypeScript & Vite.
 
 ## Getting Started
 
 ### Prerequisites
 
-- [Node.js](https://nodejs.org) (>= 10.12, 12.10 preferred)
-- [npm](https://www.npmjs.com) (>= 6.x) or [yarn](https://yarnpkg.com) (>= 1.20)
+- [Node.js](https://nodejs.org) (>= 12.10, 14.17 preferred)
+- [npm](https://www.npmjs.com) (>= 6.x) or [yarn](https://yarnpkg.com) (>= 1.22)
 - [Git](https://git-scm.com) (>= 2.20)
 
 ### Clone & Install
