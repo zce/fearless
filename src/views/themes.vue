@@ -1,7 +1,9 @@
 <template>
   <div>
     <div class="heading">
-      <h1 class="title">Themes</h1>
+      <h1 class="title">
+        Themes
+      </h1>
     </div>
     <p>Not yet!</p>
   </div>
@@ -9,6 +11,6 @@
 
 <script>
 export default {
-  name: 'themes'
+  name: 'Themes'
 }
 </script>

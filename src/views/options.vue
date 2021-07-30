@@ -1,7 +1,9 @@
 <template>
   <div>
     <div class="heading">
-      <h1 class="title">{{ title }}</h1>
+      <h1 class="title">
+        Options
+      </h1>
     </div>
     <p>Not yet!</p>
   </div>
@@ -9,19 +11,6 @@
 
 <script>
 export default {
-  name: 'options',
-  computed: {
-    title () {
-      const dict = {
-        general: 'General Settings',
-        writing: 'Writing Settings',
-        reading: 'Reading Settings',
-        discussion: 'Discussion Settings',
-        media: 'Media Settings',
-        permalink: 'Permalink Settings'
-      }
-      return dict[this.$route.params.type]
-    }
-  }
+  name: 'Options'
 }
 </script>

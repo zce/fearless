@@ -155,7 +155,7 @@ const state: State = {
     {
       id: '610159148224d543ae4e05d7',
       label: 'Comments',
-      icon: 'bubbles',
+      icon: 'bubbles'
     },
     {
       id: '610159148224d543ae4e05d8',

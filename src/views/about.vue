@@ -1,9 +1,16 @@
 <template>
   <div>
     <div class="heading">
-      <h1 class="title">About</h1>
+      <h1 class="title">
+        About
+      </h1>
     </div>
-    <img class="sign" src="https://img.zce.me/logo/sign.png" alt="Wang Lei" style="max-width: 30rem">
+    <img
+      class="sign"
+      src="https://img.zce.me/logo/sign.png"
+      alt="Wang Lei"
+      style="max-width: 30rem"
+    >
     <ul>
       <li><a href="https://zce.me">https://zce.me</a></li>
       <li><a href="https://github.com/zce">https://github.com/zce</a></li>
@@ -16,6 +23,6 @@
 
 <script>
 export default {
-  name: 'about'
+  name: 'About'
 }
 </script>

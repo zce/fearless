@@ -1,7 +1,9 @@
 <template>
   <div>
     <div class="heading">
-      <h1 class="title">Roles</h1>
+      <h1 class="title">
+        Roles
+      </h1>
     </div>
     <p>Not yet!</p>
   </div>
@@ -12,6 +14,6 @@
 // http://www.cnblogs.com/fangfan/p/4997277.html
 
 export default {
-  name: 'roles'
+  name: 'Roles'
 }
 </script>

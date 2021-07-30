@@ -9,7 +9,7 @@
  *   storage.set( ... )
  */
 
-export const get = (key: string) => {
+export const get = (key: string): unknown => {
   const json = localStorage.getItem(import.meta.env.VITE_STORAGE_PREFIX + key)
   try {
     return JSON.parse(json as string)
@@ -18,6 +18,6 @@ export const get = (key: string) => {
   }
 }
 
-export const set = (key: string, value: any) => {
+export const set = (key: string, value: unknown): void => {
   localStorage.setItem(import.meta.env.VITE_STORAGE_PREFIX + key, JSON.stringify(value))
 }

@@ -1,7 +1,9 @@
 <template>
   <div>
     <div class="heading">
-      <h1 class="title">{{ title }}</h1>
+      <h1 class="title">
+        Install
+      </h1>
     </div>
     <p>Not yet!</p>
   </div>
@@ -9,15 +11,6 @@
 
 <script>
 export default {
-  name: 'install',
-  computed: {
-    title () {
-      const dict = {
-        plugin: 'Install plugin',
-        theme: 'Install theme'
-      }
-      return dict[this.$route.params.type]
-    }
-  }
+  name: 'Install'
 }
 </script>

@@ -1,6 +1,9 @@
 <template>
   <n-layout-header bordered>
-    <n-menu mode="horizontal" :options="menuOptions" />
+    <n-menu
+      mode="horizontal"
+      :options="menuOptions"
+    />
   </n-layout-header>
 </template>
 
