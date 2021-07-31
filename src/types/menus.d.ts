@@ -8,5 +8,5 @@ interface MenuItem {
 }
 
 interface APIs {
-  ['/menus']: MenuItem[]
+  '/menus': MenuItem[]
 }
