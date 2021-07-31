@@ -1,5 +1,5 @@
-import MockAdapter from 'axios-mock-adapter'
+// import MockAdapter from 'axios-mock-adapter'
 
-export default (mock: MockAdapter): void => {
+// export default (mock: MockAdapter): void => {
 
-}
+// }

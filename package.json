@@ -17,7 +17,7 @@
   "author": "zce <w@zce.me> (https://zce.me)",
   "main": "N/A",
   "scripts": {
-    "lint": "eslint . --ext .js,.ts,.vue --fix",
+    "lint": "eslint . --ext .ts,.vue --fix",
     "dev": "vite",
     "build": "vue-tsc --noEmit && vite build",
     "serve": "vite preview",
@@ -29,30 +29,19 @@
     ]
   },
   "lint-staged": {
-    "*.{vue,ts,js}": "eslint"
+    "*.{vue,ts}": "eslint --fix"
   },
   "eslintConfig": {
     "root": true,
     "extends": [
-      "plugin:vue/vue3-essential",
-      "@vue/standard",
-      "@vue/typescript/recommended"
+      "standard-ts",
+      "plugin:vue/vue3-recommended"
     ],
     "parserOptions": {
-      "ecmaVersion": 2021
+      "parser": "@typescript-eslint/parser",
+      "extraFileExtensions": [".vue"]
     },
-    "rules": {},
-    "overrides": [
-      {
-        "files": [
-          "**/__tests__/*.{j,t}s?(x)",
-          "**/tests/unit/**/*.spec.{j,t}s?(x)"
-        ],
-        "env": {
-          "jest": true
-        }
-      }
-    ]
+    "rules": {}
   },
   "renovate": {
     "extends": [
@@ -62,21 +51,13 @@
   "devDependencies": {
     "@commitlint/cli": "13.1.0",
     "@commitlint/config-conventional": "13.1.0",
-    "@typescript-eslint/eslint-plugin": "4.28.5",
-    "@typescript-eslint/parser": "4.28.5",
-    "@vicons/carbon": "0.10.0",
     "@vicons/ionicons5": "0.10.0",
     "@vitejs/plugin-vue": "1.2.5",
     "@vue/compiler-sfc": "3.1.5",
-    "@vue/eslint-config-standard": "6.0.0",
-    "@vue/eslint-config-typescript": "7.0.0",
     "axios": "^0.21.1",
     "axios-mock-adapter": "^1.19.0",
-    "eslint": "7.31.0",
-    "eslint-plugin-import": "2.23.4",
-    "eslint-plugin-node": "11.1.0",
-    "eslint-plugin-promise": "5.1.0",
-    "eslint-plugin-standard": "5.0.0",
+    "eslint": "^7.32.0",
+    "eslint-config-standard-ts": "^20.0.0",
     "eslint-plugin-vue": "7.15.0",
     "husky": "7.0.1",
     "lint-staged": "11.1.1",

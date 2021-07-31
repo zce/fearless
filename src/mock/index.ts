@@ -6,3 +6,5 @@ const mockRequest = (axios: AxiosInstance): () => void => {
 
   return () => mock.restore()
 }
+
+export default mockRequest

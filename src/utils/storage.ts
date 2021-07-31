@@ -1,16 +1,11 @@
 /**
  * Storage
- *
- * Ref:
- * - https://github.com/marcuswestin/store.js
- *
- * @example
- *   storage.get( ... )
- *   storage.set( ... )
  */
 
+const prefix = import.meta.env.VITE_STORAGE_PREFIX as string
+
 export const get = (key: string): unknown => {
-  const json = localStorage.getItem(import.meta.env.VITE_STORAGE_PREFIX + key)
+  const json = localStorage.getItem(prefix + key)
   try {
     return JSON.parse(json as string)
   } catch {
@@ -19,5 +14,5 @@ export const get = (key: string): unknown => {
 }
 
 export const set = (key: string, value: unknown): void => {
-  localStorage.setItem(import.meta.env.VITE_STORAGE_PREFIX + key, JSON.stringify(value))
+  localStorage.setItem(prefix + key, JSON.stringify(value))
 }
