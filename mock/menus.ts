@@ -42,12 +42,12 @@ router.get('/', (req, res) => {
             { id: '610159148224d543ae4e05ba', label: 'Icons', name: 'labs-icons' },
             { id: '610159148224d543ae4e05bb', label: 'Button', name: 'labs-button' },
             { id: '610159148224d543ae4e05bc', label: 'Table', name: 'labs-table' },
-            { id: '610159148224d543ae4e05be', label: 'Data', name: 'demo-data' },
-            { id: '610159148224d543ae4e05bf', label: 'Params', name: 'demo-params', params: { name: '汪磊' } },
-            { id: '610159148224d543ae4e05c0', label: 'Vuex', name: 'demo-vuex' },
-            { id: '610159148224d543ae4e05c1', label: 'I18n', name: 'demo-i18n' },
-            { id: '610159148224d543ae4e05c2', label: 'Proxy', name: 'demo-proxy' },
-            { id: '610159148224d543ae4e05c3', label: 'CORS', name: 'demo-cors' },
+            { id: '610159148224d543ae4e05be', label: 'Data', name: 'labs-data' },
+            { id: '610159148224d543ae4e05bf', label: 'Params', name: 'labs-params', params: { name: '汪磊' } },
+            { id: '610159148224d543ae4e05c0', label: 'Vuex', name: 'labs-vuex' },
+            { id: '610159148224d543ae4e05c1', label: 'I18n', name: 'labs-i18n' },
+            { id: '610159148224d543ae4e05c2', label: 'Proxy', name: 'labs-proxy' },
+            { id: '610159148224d543ae4e05c3', label: 'CORS', name: 'labs-cors' },
             { id: '610159148224d543ae4e05c4', label: 'NotFound', name: '404' }
           ]
         }

@@ -15,6 +15,8 @@ const store = createStore({ state, getters, mutations, actions, modules, plugins
 
 export type { State } from './state'
 
+// export * from './mutation-types'
+
 export default store
 
 // // Hot module replacement

@@ -157,74 +157,68 @@ const mainRoutes: RouteRecordRaw[] = [
   }
 ]
 
-const demoRoutes: RouteRecordRaw[] = [
-  // ## demo views
+const labsRoutes: RouteRecordRaw[] = [
+  // ## labs views
   {
-    name: 'demo',
-    path: '/demo',
+    name: 'labs',
+    path: '/labs',
     meta: { requireAuth: false },
-    component: async () => await import(/* webpackChunkName: 'demo' */ '../views/demo/index.vue')
+    component: async () => await import(/* webpackChunkName: 'labs' */ '../views/labs/index.vue')
   },
   {
-    name: 'demo-data',
-    path: '/demo/data',
+    name: 'labs-data',
+    path: '/labs/data',
     meta: { requireAuth: false },
-    component: async () => await import(/* webpackChunkName: 'demo' */ '../views/demo/data.vue')
+    component: async () => await import(/* webpackChunkName: 'labs' */ '../views/labs/data.vue')
   },
   {
-    name: 'demo-vuex',
-    path: '/demo/vuex',
+    name: 'labs-vuex',
+    path: '/labs/vuex',
     meta: { requireAuth: false },
-    component: async () => await import(/* webpackChunkName: 'demo' */ '../views/demo/vuex.vue')
+    component: async () => await import(/* webpackChunkName: 'labs' */ '../views/labs/vuex.vue')
   },
   {
-    name: 'demo-i18n',
-    path: '/demo/i18n',
+    name: 'labs-i18n',
+    path: '/labs/i18n',
     meta: { requireAuth: false },
-    component: async () => await import(/* webpackChunkName: 'demo' */ '../views/demo/i18n.vue')
+    component: async () => await import(/* webpackChunkName: 'labs' */ '../views/labs/i18n.vue')
   },
   {
-    name: 'demo-proxy',
-    path: '/demo/proxy',
+    name: 'labs-proxy',
+    path: '/labs/proxy',
     meta: { requireAuth: false },
-    component: async () => await import(/* webpackChunkName: 'demo' */ '../views/demo/proxy.vue')
+    component: async () => await import(/* webpackChunkName: 'labs' */ '../views/labs/proxy.vue')
   },
   {
-    name: 'demo-cors',
-    path: '/demo/cors',
+    name: 'labs-cors',
+    path: '/labs/cors',
     meta: { requireAuth: false },
-    component: async () => await import(/* webpackChunkName: 'demo' */ '../views/demo/cors.vue')
+    component: async () => await import(/* webpackChunkName: 'labs' */ '../views/labs/cors.vue')
   },
   {
-    name: 'demo-params',
-    path: '/demo/:name',
+    name: 'labs-params',
+    path: '/labs/:name',
     meta: { requireAuth: false },
-    component: async () => await import(/* webpackChunkName: 'demo' */ '../views/demo/params.vue')
+    component: async () => await import(/* webpackChunkName: 'labs' */ '../views/labs/params.vue')
   },
   // ## component views
   {
-    name: 'components',
-    path: '/components',
+    name: 'labs-icons',
+    path: '/labs/icons',
     meta: { requireAuth: false },
-    component: async () => await import(/* webpackChunkName: 'components' */ '../views/demo/components/index.vue')
+    component: async () => await import(/* webpackChunkName: 'labs' */ '../views/labs/icons.vue')
   },
   {
-    name: 'components-icons',
-    path: '/components/icons',
+    name: 'labs-button',
+    path: '/labs/button',
     meta: { requireAuth: false },
-    component: async () => await import(/* webpackChunkName: 'components' */ '../views/demo/components/icons.vue')
+    component: async () => await import(/* webpackChunkName: 'labs' */ '../views/labs/button.vue')
   },
   {
-    name: 'components-button',
-    path: '/components/button',
+    name: 'labs-table',
+    path: '/labs/table',
     meta: { requireAuth: false },
-    component: async () => await import(/* webpackChunkName: 'components' */ '../views/demo/components/button.vue')
-  },
-  {
-    name: 'components-table',
-    path: '/components/table',
-    meta: { requireAuth: false },
-    component: async () => await import(/* webpackChunkName: 'components' */ '../views/demo/components/table.vue')
+    component: async () => await import(/* webpackChunkName: 'labs' */ '../views/labs/table.vue')
   }
 ]
 
@@ -238,7 +232,7 @@ const routes: RouteRecordRaw[] = [
     name: 'layout',
     path: '/',
     component: async () => await import('../layouts/index.vue'),
-    children: [...mainRoutes, ...demoRoutes]
+    children: [...mainRoutes, ...labsRoutes]
   },
   // ## not found page
   {

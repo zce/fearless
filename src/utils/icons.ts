@@ -1,7 +1,7 @@
 export {
   SpeedometerOutline as dashboard,
-  // CreateOutline as posts,
-  LibraryOutline as posts,
+  CreateOutline as posts,
+  // LibraryOutline as posts,
   NewspaperOutline as pages,
   ImagesOutline as media,
   PeopleOutline as users,

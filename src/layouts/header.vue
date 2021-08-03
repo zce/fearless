@@ -1,80 +1,53 @@
 <template>
-  <n-layout-header bordered>
-    <n-menu
-      mode="horizontal"
-      :options="menuOptions"
-    />
+  <n-layout-header position="static" bordered>
+    <n-breadcrumb>
+      <n-breadcrumb-item>北京总行</n-breadcrumb-item>
+      <n-breadcrumb-item>天津分行</n-breadcrumb-item>
+      <n-breadcrumb-item>平山道支行</n-breadcrumb-item>
+    </n-breadcrumb>
+    <!-- <n-menu mode="horizontal" :options="menuOptions" /> -->
+    <n-dropdown trigger="hover" placement="bottom-end" :options="options" @select="handleSelect">
+      <n-avatar size="small" round src="https://s.zceme.cn/avatar/zce.jpg" />
+    </n-dropdown>
   </n-layout-header>
 </template>
 
 <script lang="ts" setup>
-import { NLayoutHeader, NMenu } from 'naive-ui'
+import { NLayoutHeader, NBreadcrumb, NBreadcrumbItem, NDropdown, NText, NAvatar, useMessage } from 'naive-ui'
+// import { useMenuOptions } from '../composables'
 
-const menuOptions = [
+// const menuOptions = useMenuOptions('shortcut')
+
+const message = useMessage()
+
+const options = [
   {
-    label: '且听风吟',
-    key: 'hear-the-wind-sing'
+    label: '滨海湾金沙，新加坡',
+    key: 'marina bay sands'
   },
   {
-    label: '1973年的弹珠玩具',
-    key: 'pinball-1973',
-    disabled: true,
-    children: [
-      {
-        label: '鼠',
-        key: 'rat'
-      }
-    ]
+    label: '布朗酒店，伦敦',
+    key: "brown's hotel, london"
   },
   {
-    label: '寻羊冒险记',
-    key: 'a-wild-sheep-chase',
-    disabled: true
+    label: '亚特兰蒂斯巴哈马，拿骚',
+    key: 'atlantis nahamas, nassau'
   },
   {
-    label: '舞，舞，舞',
-    key: 'dance-dance-dance',
-    children: [
-      {
-        type: 'group',
-        label: '人物',
-        key: 'people',
-        children: [
-          {
-            label: '叙事者',
-            key: 'narrator'
-          },
-          {
-            label: '羊男',
-            key: 'sheep-man'
-          }
-        ]
-      },
-      {
-        label: '饮品',
-        key: 'beverage',
-        children: [
-          {
-            label: '威士忌',
-            key: 'whisky'
-          }
-        ]
-      },
-      {
-        label: '食物',
-        key: 'food',
-        children: [
-          {
-            label: '三明治',
-            key: 'sandwich'
-          }
-        ]
-      },
-      {
-        label: '过去增多，未来减少',
-        key: 'the-past-increases-the-future-recedes'
-      }
-    ]
+    label: '比佛利山庄酒店，洛杉矶',
+    key: 'the beverly hills hotel, los angeles'
   }
 ]
+
+const handleSelect = key => message.info(key)
 </script>
+
+<style scoped>
+.n-layout-header {
+  display: flex;
+  align-items: center;
+  /* grid-template-rows: calc(var(--header-height) - 1px);
+  align-items: center; */
+  padding: 0 18px;
+}
+</style>
