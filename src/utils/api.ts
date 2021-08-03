@@ -4,43 +4,47 @@ import ky from 'ky'
 const api = ky.extend({
   prefixUrl: import.meta.env.VITE_API_BASE as string,
   hooks: {
-    beforeRequest: [
-      // request => {
-      //   request.headers.set('X-Requested-With', 'ky')
-      // },
-      // request => {
-      //   if (import.meta.env.PROD) return
-      //   request.headers.set('X-Requested-With', 'ky')
-      // }
-    ]
+    // beforeRequest: [
+    //   request => {
+    //     request.headers.set('X-Requested-With', 'ky')
+    //   }
+    // ]
     // beforeRetry: [
     //   async ({ request }) => {
     //     const token = await ky('https://example.com/refresh-token')
     //     request.headers.set('Authorization', `token ${token}`)
     //   }
     // ],
-    // afterResponse: [
-    //   (request, options, response) => {
-    //     // You could do something with the response, for example, logging.
-    //     console.log(response)
+    afterResponse: [
+      // (request, options, response) => {
+      //   // You could do something with the response, for example, logging.
+      //   console.log(response)
 
-    //     // Or return a `Response` instance to overwrite the response.
-    //     return new Response('A different response', { status: 200 })
-    //   },
+      //   // Or return a `Response` instance to overwrite the response.
+      //   return new Response('A different response', { status: 200 })
+      // },
 
-    //   // Or retry with a fresh token on a 403 error
-    //   async (request, options, response) => {
-    //     if (response.status === 403) {
-    //       // Get a fresh token
-    //       const token = await ky('https://example.com/token').text()
+      // // Or retry with a fresh token on a 403 error
+      // async (request, options, response) => {
+      //   if (response.status === 403) {
+      //     // Get a fresh token
+      //     const token = await ky('https://example.com/token').text()
 
-    //       // Retry with the token
-    //       request.headers.set('Authorization', `token ${token}`)
+      //     // Retry with the token
+      //     request.headers.set('Authorization', `token ${token}`)
 
-    //       return ky(request)
-    //     }
-    //   }
-    // ]
+      //     return ky(request)
+      //   }
+      // },
+
+      // globally api error handler
+      async (request, options, response) => {
+        // You could do something with the response, for example, logging.
+        const { status, msg, error } = await response.json()
+
+        if (status !== 200) throw new Error(`API call failed: ${status} (${msg || error})`)
+      }
+    ]
   }
 })
 

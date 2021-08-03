@@ -1,26 +1,20 @@
-// import { h } from 'vue'
-// import { useStore } from 'vuex'
-// import { MenuOption, MenuGroupOption } from 'naive-ui'
-// import { State } from '../store'
-// import { icons } from '../utils'
+import { ref, h, computed, ComputedRef } from 'vue'
+import { MenuOption, NIcon } from 'naive-ui'
+import { menu } from '../services'
+import { icons } from '../utils'
 
-// type IconTypes = keyof typeof icons
+type IconTypes = keyof typeof icons
+type Menus = menu.Menu[]
 
-// type MenuItems = State['menus']
+const mappingMenuOptions = (items: Menus): MenuOption[] => items.map(item => ({
+  ...item,
+  key: item.id,
+  icon: item.icon ? () => h(NIcon, null, { default: () => h(icons[item.icon as IconTypes] || icons.fallback) }) : undefined,
+  children: item.children && mappingMenuOptions(item.children)
+}))
 
-// const mappingMenuOptions = (items: MenuItems): MenuOption[] => items.map(item => ({
-//   ...item,
-//   key: item.id,
-//   icon: item.icon ? () => h(icons[item.icon as IconTypes] || icons.fallback) : undefined,
-//   children: item.children && mappingMenuOptions(item.children)
-// }))
-
-// export const useMenuOptions = (type: 'menus' | 'shortcuts'): Array<MenuOption | MenuGroupOption> => {
-//   const store = useStore<State>()
-
-//   const { menus, shortcuts } = store.getters as { menus: MenuItems, shortcuts: MenuItems }
-
-//   const items = type === 'menus' ? menus : shortcuts
-
-//   return mappingMenuOptions(items)
-// }
+export const useMenuOptions = (type: 'main' | 'shortcut'): ComputedRef<MenuOption[]> => {
+  const menus = ref<Menus>([])
+  menu.getMenus(type).then(m => { menus.value = m })
+  return computed(() => mappingMenuOptions(menus.value))
+}

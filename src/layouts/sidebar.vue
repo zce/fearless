@@ -63,9 +63,8 @@
     </n-a>
     <n-menu
       :options="menuOptions"
-      :indent="16"
+      :root-indent="18"
       :render-label="renderMenuLabel"
-      :render-icon="renderMenuIcon"
     />
   </n-layout-sider>
 </template>
@@ -73,19 +72,14 @@
 <script lang="ts" setup>
 import { h } from 'vue'
 import { RouterLink } from 'vue-router'
-import { NLayoutSider, NA, NMenu, NIcon } from 'naive-ui'
+import { NLayoutSider, NA, NMenu } from 'naive-ui'
 import { useMenuOptions } from '../composables'
-import type { MenuOption } from 'naive-ui'
 
-const menuOptions = useMenuOptions('menus')
+const menuOptions = useMenuOptions('main')
 
-const renderMenuLabel = (option: MenuOption) => {
-  if (!option.name) return option.label
-  return h(RouterLink, { to: option }, { default: () => option.label })
-}
-
-const renderMenuIcon = (option: MenuOption) => {
-  return h(NIcon, null, { default: option.icon })
+const renderMenuLabel = ({ name, label, params }) => {
+  if (!name) return label
+  return h(RouterLink, { to: { name, params } }, { default: () => label })
 }
 </script>
 
