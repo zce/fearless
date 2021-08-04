@@ -110,7 +110,8 @@ router.get('/', (req, res) => {
       {
         id: '610159148224d543ae4e05d7',
         label: 'Comments',
-        icon: 'comments'
+        icon: 'comments',
+        name: 'comments'
       },
       {
         id: '610159148224d543ae4e05d8',

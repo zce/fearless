@@ -57,7 +57,6 @@
 </template>
 
 <script lang="ts" setup>
-import { NLayout, NImage, NCard, NTabs, NTabPane, NForm, NFormItemRow, NInput, NButton } from 'naive-ui'
 </script>
 
 <style>

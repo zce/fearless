@@ -7,8 +7,6 @@ const getters: GetterTree<State, State> = {
   description: state => state.description,
   copyright: state => state.copyright,
   session: state => state.session,
-  shortcuts: state => state.shortcuts,
-  menus: state => state.menus,
   sidebarCollapsed: state => state.sidebarCollapsed,
   count: state => state.count
 }

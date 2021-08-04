@@ -1,53 +1,103 @@
 <template>
-  <n-layout-header position="static" bordered>
+  <n-layout-header bordered>
     <n-breadcrumb>
-      <n-breadcrumb-item>北京总行</n-breadcrumb-item>
-      <n-breadcrumb-item>天津分行</n-breadcrumb-item>
-      <n-breadcrumb-item>平山道支行</n-breadcrumb-item>
+      <n-breadcrumb-item>Posts</n-breadcrumb-item>
+      <n-breadcrumb-item>New post</n-breadcrumb-item>
     </n-breadcrumb>
     <!-- <n-menu mode="horizontal" :options="menuOptions" /> -->
-    <n-dropdown trigger="hover" placement="bottom-end" :options="options" @select="handleSelect">
-      <n-avatar size="small" round src="https://s.zceme.cn/avatar/zce.jpg" />
-    </n-dropdown>
+    <n-space :size="20" align="center" style="line-height: 1">
+      <n-a href="https://github.com/zce/dashboard" target="_blank">
+        <n-icon size="20" :depth="2"><component :is="icons.help" /></n-icon>
+      </n-a>
+      <n-a href="https://github.com/zce/dashboard#readme" target="_blank">
+        <n-icon size="20" :depth="2"><component :is="icons.github" /></n-icon>
+      </n-a>
+      <n-dropdown placement="bottom-end" show-arrow :options="notifications" @select="handleNotificationsSelect">
+        <n-badge :value="5" processing>
+          <n-icon size="20" :depth="2"><component :is="icons.notifications" /></n-icon>
+        </n-badge>
+      </n-dropdown>
+      <n-dropdown placement="bottom-end" show-arrow :options="options" @select="handleOptionsSelect">
+        <n-avatar size="small" round src="https://s.zceme.cn/avatar/zce.jpg" />
+      </n-dropdown>
+    </n-space>
   </n-layout-header>
 </template>
 
 <script lang="ts" setup>
-import { NLayoutHeader, NBreadcrumb, NBreadcrumbItem, NDropdown, NText, NAvatar, useMessage } from 'naive-ui'
+import { h } from 'vue'
+import { useMessage } from 'naive-ui'
+import { RouterLink } from 'vue-router'
 // import { useMenuOptions } from '../composables'
+import { icons } from '../utils'
 
 // const menuOptions = useMenuOptions('shortcut')
 
 const message = useMessage()
 
-const options = [
+const notifications = [
   {
-    label: '滨海湾金沙，新加坡',
-    key: 'marina bay sands'
+    label: 'Notification 1',
+    key: 'notification-1'
   },
   {
-    label: '布朗酒店，伦敦',
-    key: "brown's hotel, london"
+    label: 'Notification 2',
+    key: 'notification-2'
   },
   {
-    label: '亚特兰蒂斯巴哈马，拿骚',
-    key: 'atlantis nahamas, nassau'
+    label: 'Notification 3',
+    key: 'notification-3'
   },
   {
-    label: '比佛利山庄酒店，洛杉矶',
-    key: 'the beverly hills hotel, los angeles'
+    label: 'Notification 4',
+    key: 'notification-4'
+  },
+  {
+    type: 'divider',
+    key: 'divider'
+  },
+  {
+    label: 'More Notifications',
+    key: 'more'
   }
 ]
 
-const handleSelect = key => message.info(key)
+const options = [
+  {
+    label: () => h(RouterLink, { to: '/profile' }, 'Your Profiles'),
+    key: 'profile'
+  },
+  {
+    label: () => h(RouterLink, { to: '/profile/settings' }, 'Settings'),
+    key: 'settings'
+  },
+  {
+    type: 'divider',
+    key: 'divider'
+  },
+  {
+    label: () => h(RouterLink, { to: '/signout' }, 'Sign out'),
+    key: 'signout'
+  }
+]
+
+const handleNotificationsSelect = key => {
+  message.success(`Selected notification: ${key}`)
+}
+
+const handleOptionsSelect = key => {
+  message.info(`Selected option: ${key}`)
+}
 </script>
 
 <style scoped>
 .n-layout-header {
   display: flex;
   align-items: center;
-  /* grid-template-rows: calc(var(--header-height) - 1px);
-  align-items: center; */
-  padding: 0 18px;
+  padding: 9px 18px;
+}
+
+.n-space {
+  margin-left: auto;
 }
 </style>

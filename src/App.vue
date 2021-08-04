@@ -1,5 +1,6 @@
 <template>
   <n-config-provider :theme="theme">
+    <n-global-style />
     <n-message-provider>
       <router-view />
     </n-message-provider>
@@ -8,7 +9,7 @@
 
 <script lang="ts" setup>
 import { computed } from 'vue'
-import { NConfigProvider, NMessageProvider, useOsTheme, darkTheme } from 'naive-ui'
+import { useOsTheme, darkTheme } from 'naive-ui'
 
 const osTheme = useOsTheme()
 

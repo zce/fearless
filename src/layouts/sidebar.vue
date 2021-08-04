@@ -25,7 +25,6 @@
 </template>
 
 <script lang="ts" setup>
-import { NLayoutSider, NA, NMenu } from 'naive-ui'
 import { useMenuOptions, useSidebarCollapsed } from '../composables'
 
 const menuOptions = useMenuOptions('main')
@@ -36,7 +35,8 @@ const { collapsed, toggle } = useSidebarCollapsed()
 .logo {
   display: flex;
   align-items: center;
-  padding: 10px 20px;
+  padding: 12px 20px;
+  border-bottom: 1px solid var(--border-color);
   font-size: 1.8em;
   line-height: 1;
   text-decoration: none;
@@ -44,8 +44,7 @@ const { collapsed, toggle } = useSidebarCollapsed()
 }
 
 .n-layout-sider--collapsed .logo {
-  padding-left: 8px;
-  padding-right: 8px;
+  padding: 8px;
   font-size: 0;
 }
 

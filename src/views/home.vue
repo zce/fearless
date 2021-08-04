@@ -1,3 +1,3 @@
 <template>
-  <h1>HOME</h1>
+  <h1 v-for="i in 100">HOME</h1>
 </template>

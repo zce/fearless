@@ -12,5 +12,8 @@ export {
   SettingsOutline as settings,
   FlaskOutline as flask,
   AddOutline as add,
+  HelpCircleOutline as help,
+  NotificationsOutline as notifications,
+  LogoGithub as github,
   AlertCircleOutline as fallback
 } from '@vicons/ionicons5'
