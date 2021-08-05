@@ -1,17 +1,9 @@
 <template>
-  <n-config-provider :theme="theme">
-    <n-global-style />
-    <n-message-provider>
-      <router-view />
-    </n-message-provider>
-  </n-config-provider>
+  <provider>
+    <viewer />
+  </provider>
 </template>
 
 <script lang="ts" setup>
-import { computed } from 'vue'
-import { useOsTheme, darkTheme } from 'naive-ui'
-
-const osTheme = useOsTheme()
-
-const theme = computed(() => osTheme.value === 'dark' ? darkTheme : null)
+import { Provider, Viewer } from './components'
 </script>

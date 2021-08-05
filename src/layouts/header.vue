@@ -6,17 +6,45 @@
     </n-breadcrumb>
     <!-- <n-menu mode="horizontal" :options="menuOptions" /> -->
     <n-space :size="20" align="center" style="line-height: 1">
-      <n-a href="https://github.com/zce/dashboard" target="_blank">
-        <n-icon size="20" :depth="2"><component :is="icons.help" /></n-icon>
-      </n-a>
-      <n-a href="https://github.com/zce/dashboard#readme" target="_blank">
-        <n-icon size="20" :depth="2"><component :is="icons.github" /></n-icon>
-      </n-a>
-      <n-dropdown placement="bottom-end" show-arrow :options="notifications" @select="handleNotificationsSelect">
-        <n-badge :value="5" processing>
-          <n-icon size="20" :depth="2"><component :is="icons.notifications" /></n-icon>
-        </n-badge>
-      </n-dropdown>
+      <n-tooltip>
+        <template #trigger>
+          <n-a href="https://github.com/zce/dashboard#readme" target="_blank">
+            <n-icon size="22" :depth="2"><component :is="icons.help" /></n-icon>
+          </n-a>
+        </template>
+        Dashboard help
+      </n-tooltip>
+      <n-tooltip>
+        <template #trigger>
+          <n-a href="https://github.com/zce/dashboard" target="_blank">
+            <n-icon size="22" :depth="2"><component :is="icons.github" /></n-icon>
+          </n-a>
+        </template>
+        View on GitHub
+      </n-tooltip>
+      <n-popover trigger="click" placement="bottom-end" :width="300">
+        <template #trigger>
+          <n-badge dot processing>
+            <n-icon size="22" :depth="2"><component :is="icons.notifications" /></n-icon>
+          </n-badge>
+        </template>
+        <n-tabs type="line" justify-content="space-evenly" style="--pane-padding: 0">
+          <n-tab-pane name="notifications" tab="Notifications (5)">
+            <n-list style="margin: 0">
+              <n-list-item v-for="i in 5">
+                Notification {{ i }}
+              </n-list-item>
+            </n-list>
+          </n-tab-pane>
+          <n-tab-pane name="messages" tab="Messages (6)">
+            <n-list style="margin: 0">
+              <n-list-item v-for="i in 6">
+                Message {{ i }}
+              </n-list-item>
+            </n-list>
+          </n-tab-pane>
+        </n-tabs>
+      </n-popover>
       <n-dropdown placement="bottom-end" show-arrow :options="options" @select="handleOptionsSelect">
         <n-avatar size="small" round src="https://s.zceme.cn/avatar/zce.jpg" />
       </n-dropdown>
@@ -34,33 +62,6 @@ import { icons } from '../utils'
 // const menuOptions = useMenuOptions('shortcut')
 
 const message = useMessage()
-
-const notifications = [
-  {
-    label: 'Notification 1',
-    key: 'notification-1'
-  },
-  {
-    label: 'Notification 2',
-    key: 'notification-2'
-  },
-  {
-    label: 'Notification 3',
-    key: 'notification-3'
-  },
-  {
-    label: 'Notification 4',
-    key: 'notification-4'
-  },
-  {
-    type: 'divider',
-    key: 'divider'
-  },
-  {
-    label: 'More Notifications',
-    key: 'more'
-  }
-]
 
 const options = [
   {
@@ -81,11 +82,7 @@ const options = [
   }
 ]
 
-const handleNotificationsSelect = key => {
-  message.success(`Selected notification: ${key}`)
-}
-
-const handleOptionsSelect = key => {
+const handleOptionsSelect = <T> (key: T) => {
   message.info(`Selected option: ${key}`)
 }
 </script>
