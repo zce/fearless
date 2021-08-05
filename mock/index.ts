@@ -5,6 +5,7 @@ export default () => {
 
   app.use('/users', require('./users').default)
   app.use('/menus', require('./menus').default)
+  app.use('/auth', require('./auth').default)
 
   return app
 }

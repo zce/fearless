@@ -15,11 +15,11 @@
             </filter>
           </defs>
           <g mask="url(#mask)">
-            <path class="background" d="M0 0h472v449H0z" />
-            <path class="foreground" d="M0 335.74l64.9 113.74L472 114.26 407.1.52z" filter="url(#shadow)" />
+            <path fill="currentColor" d="M0 0h472v449H0z" />
+            <path d="M0 335.74l64.9 113.74L472 114.26 407.1.52z" filter="url(#shadow)" />
           </g>
         </svg>
-        <span>Fearless</span>
+        <span>{{ name }}</span>
       </n-a>
     </router-link>
     <n-menu :options="menuOptions" :root-indent="18"/>
@@ -31,6 +31,7 @@ import { useMenuOptions, useSidebarCollapsed } from '../composables'
 
 const menuOptions = useMenuOptions('main')
 const { collapsed, toggle } = useSidebarCollapsed()
+const name = import.meta.env.VITE_NAME
 </script>
 
 <style scoped>
@@ -40,6 +41,7 @@ const { collapsed, toggle } = useSidebarCollapsed()
   padding: 12px 20px;
   /* border-bottom: 1px solid var(--border-color); */
   font-size: 1.8em;
+  font-weight: 600;
   line-height: 1;
   text-decoration: none;
   transition: padding 0.3s var(--bezier), font-size 0.3s var(--bezier);
@@ -59,10 +61,5 @@ const { collapsed, toggle } = useSidebarCollapsed()
 
 .n-layout-sider--collapsed .logo svg {
   margin-right: 0;
-}
-
-.logo svg .background {
-  fill: var(--text-color);
-  transition: fill 0.3s var(--bezier);
 }
 </style>

@@ -5,155 +5,155 @@ const mainRoutes: RouteRecordRaw[] = [
   {
     name: 'home',
     path: '/',
-    meta: { requireAuth: true },
-    component: async () => await import(/* webpackChunkName: 'home' */ '../views/home.vue')
+    component: () => import('../views/home.vue'),
+    meta: { requireAuth: true }
   },
   {
     name: 'update',
     path: '/update',
-    meta: { requireAuth: true },
-    component: async () => await import(/* webpackChunkName: 'update' */ '../views/update.vue')
+    component: () => import('../views/update.vue'),
+    meta: { requireAuth: true }
   },
   {
     name: 'about',
     path: '/about',
-    meta: { requireAuth: true },
-    component: async () => await import(/* webpackChunkName: 'about' */ '../views/about.vue')
+    component: () => import('../views/about.vue'),
+    meta: { requireAuth: true }
   },
   {
     name: 'profile',
     path: '/profile',
-    meta: { requireAuth: true },
-    component: async () => await import(/* webpackChunkName: 'users' */ '../views/profile.vue')
+    component: () => import('../views/profile.vue'),
+    meta: { requireAuth: true }
   },
   // - Posts
   {
     name: 'posts',
     path: '/posts/:type',
-    meta: { requireAuth: true },
-    component: async () => await import(/* webpackChunkName: 'posts' */ '../views/posts.vue')
+    component: () => import('../views/posts.vue'),
+    meta: { requireAuth: true }
   },
   {
     name: 'new',
     path: '/new/:type',
-    meta: { requireAuth: true },
-    component: async () => await import(/* webpackChunkName: 'posts' */ '../views/new.vue')
+    component: () => import('../views/new.vue'),
+    meta: { requireAuth: true }
   },
   {
     name: 'edit',
     path: '/edit/:type/:slug?',
-    meta: { requireAuth: true },
-    component: async () => await import(/* webpackChunkName: 'posts' */ '../views/edit.vue')
+    component: () => import('../views/edit.vue'),
+    meta: { requireAuth: true }
   },
   // - Media
   {
     name: 'media',
     path: '/media',
-    meta: { requireAuth: true },
-    component: async () => await import(/* webpackChunkName: 'media' */ '../views/media.vue')
+    component: () => import('../views/media.vue'),
+    meta: { requireAuth: true }
   },
   {
     name: 'upload',
     path: '/upload',
-    meta: { requireAuth: true },
-    component: async () => await import(/* webpackChunkName: 'upload' */ '../views/upload.vue')
+    component: () => import('../views/upload.vue'),
+    meta: { requireAuth: true }
   },
   // - Terms
   {
     name: 'terms',
     path: '/terms/:type',
-    meta: { requireAuth: true },
-    component: async () => await import(/* webpackChunkName: 'terms' */ '../views/terms.vue')
+    component: () => import('../views/terms.vue'),
+    meta: { requireAuth: true }
   },
   // - Users
   {
     name: 'users',
     path: '/users/:page?',
-    meta: { requireAuth: true },
-    component: async () => await import(/* webpackChunkName: 'users' */ '../views/users.vue')
+    component: () => import('../views/users.vue'),
+    meta: { requireAuth: true }
   },
   {
     name: 'roles',
     path: '/roles',
-    meta: { requireAuth: true },
-    component: async () => await import(/* webpackChunkName: 'users' */ '../views/roles.vue')
+    component: () => import('../views/roles.vue'),
+    meta: { requireAuth: true }
   },
   {
     name: 'permissions',
     path: '/permissions',
-    meta: { requireAuth: true },
-    component: async () => await import(/* webpackChunkName: 'users' */ '../views/permissions.vue')
+    component: () => import('../views/permissions.vue'),
+    meta: { requireAuth: true }
   },
   // - Comments
   {
     name: 'comments',
     path: '/comments',
-    meta: { requireAuth: true },
-    component: async () => await import(/* webpackChunkName: 'comments' */ '../views/comments.vue')
+    component: () => import('../views/comments.vue'),
+    meta: { requireAuth: true }
   },
   // - Appearances
   {
     name: 'themes',
     path: '/themes',
-    meta: { requireAuth: true },
-    component: async () => await import(/* webpackChunkName: 'appearances' */ '../views/themes.vue')
+    component: () => import('../views/themes.vue'),
+    meta: { requireAuth: true }
   },
   {
     name: 'customize',
     path: '/customize',
-    meta: { requireAuth: true },
-    component: async () => await import(/* webpackChunkName: 'appearances' */ '../views/customize.vue')
+    component: () => import('../views/customize.vue'),
+    meta: { requireAuth: true }
   },
   {
     name: 'widgets',
     path: '/widgets',
-    meta: { requireAuth: true },
-    component: async () => await import(/* webpackChunkName: 'appearances' */ '../views/widgets.vue')
+    component: () => import('../views/widgets.vue'),
+    meta: { requireAuth: true }
   },
   {
     name: 'navigation',
     path: '/navigation',
-    meta: { requireAuth: true },
-    component: async () => await import(/* webpackChunkName: 'appearances' */ '../views/navigation.vue')
+    component: () => import('../views/navigation.vue'),
+    meta: { requireAuth: true }
   },
   // - Plugins
   {
     name: 'plugins',
     path: '/plugins',
-    meta: { requireAuth: true },
-    component: async () => await import(/* webpackChunkName: 'plugins' */ '../views/plugins.vue')
+    component: () => import('../views/plugins.vue'),
+    meta: { requireAuth: true }
   },
   // - Tools
   {
     name: 'install',
     path: '/install/:type',
-    meta: { requireAuth: true },
-    component: async () => await import(/* webpackChunkName: 'plugins' */ '../views/install.vue')
+    component: () => import('../views/install.vue'),
+    meta: { requireAuth: true }
   },
   {
     name: 'tools',
     path: '/tools',
-    meta: { requireAuth: true },
-    component: async () => await import(/* webpackChunkName: 'tools' */ '../views/tools.vue')
+    component: () => import('../views/tools.vue'),
+    meta: { requireAuth: true }
   },
   {
     name: 'import',
     path: '/import',
-    meta: { requireAuth: true },
-    component: async () => await import(/* webpackChunkName: 'tools' */ '../views/import.vue')
+    component: () => import('../views/import.vue'),
+    meta: { requireAuth: true }
   },
   {
     name: 'export',
     path: '/export',
-    meta: { requireAuth: true },
-    component: async () => await import(/* webpackChunkName: 'tools' */ '../views/export.vue')
+    component: () => import('../views/export.vue'),
+    meta: { requireAuth: true }
   },
   // - Options
   {
     name: 'options',
     path: '/options/:type',
-    meta: { requireAuth: true },
-    component: async () => await import(/* webpackChunkName: 'options' */ '../views/options.vue')
+    component: () => import('../views/options.vue'),
+    meta: { requireAuth: true }
   }
 ]
 
@@ -162,63 +162,63 @@ const labsRoutes: RouteRecordRaw[] = [
   {
     name: 'labs',
     path: '/labs',
-    meta: { requireAuth: false },
-    component: async () => await import(/* webpackChunkName: 'labs' */ '../views/labs/index.vue')
+    component: () => import('../views/labs/index.vue'),
+    meta: { requireAuth: false }
   },
   {
     name: 'labs-data',
     path: '/labs/data',
-    meta: { requireAuth: false },
-    component: async () => await import(/* webpackChunkName: 'labs' */ '../views/labs/data.vue')
+    component: () => import('../views/labs/data.vue'),
+    meta: { requireAuth: false }
   },
   {
     name: 'labs-vuex',
     path: '/labs/vuex',
-    meta: { requireAuth: false },
-    component: async () => await import(/* webpackChunkName: 'labs' */ '../views/labs/vuex.vue')
+    component: () => import('../views/labs/vuex.vue'),
+    meta: { requireAuth: false }
   },
   {
     name: 'labs-i18n',
     path: '/labs/i18n',
-    meta: { requireAuth: false },
-    component: async () => await import(/* webpackChunkName: 'labs' */ '../views/labs/i18n.vue')
+    component: () => import('../views/labs/i18n.vue'),
+    meta: { requireAuth: false }
   },
   {
     name: 'labs-proxy',
     path: '/labs/proxy',
-    meta: { requireAuth: false },
-    component: async () => await import(/* webpackChunkName: 'labs' */ '../views/labs/proxy.vue')
+    component: () => import('../views/labs/proxy.vue'),
+    meta: { requireAuth: false }
   },
   {
     name: 'labs-cors',
     path: '/labs/cors',
-    meta: { requireAuth: false },
-    component: async () => await import(/* webpackChunkName: 'labs' */ '../views/labs/cors.vue')
+    component: () => import('../views/labs/cors.vue'),
+    meta: { requireAuth: false }
   },
   {
     name: 'labs-params',
     path: '/labs/:name',
-    meta: { requireAuth: false },
-    component: async () => await import(/* webpackChunkName: 'labs' */ '../views/labs/params.vue')
+    component: () => import('../views/labs/params.vue'),
+    meta: { requireAuth: false }
   },
   // ## component views
   {
     name: 'labs-icons',
     path: '/labs/icons',
-    meta: { requireAuth: false },
-    component: async () => await import(/* webpackChunkName: 'labs' */ '../views/labs/icons.vue')
+    component: () => import('../views/labs/icons.vue'),
+    meta: { requireAuth: false }
   },
   {
     name: 'labs-button',
     path: '/labs/button',
-    meta: { requireAuth: false },
-    component: async () => await import(/* webpackChunkName: 'labs' */ '../views/labs/button.vue')
+    component: () => import('../views/labs/button.vue'),
+    meta: { requireAuth: false }
   },
   {
     name: 'labs-table',
     path: '/labs/table',
-    meta: { requireAuth: false },
-    component: async () => await import(/* webpackChunkName: 'labs' */ '../views/labs/table.vue')
+    component: () => import('../views/labs/table.vue'),
+    meta: { requireAuth: false }
   }
 ]
 
@@ -226,20 +226,20 @@ const routes: RouteRecordRaw[] = [
   {
     name: 'login',
     path: '/login',
-    component: async () => await import('../views/login.vue')
+    component: () => import('../views/login.vue')
   },
   {
     name: 'layout',
     path: '/',
-    component: async () => await import('../layouts/index.vue'),
+    component: () => import('../layouts/index.vue'),
     children: [...mainRoutes, ...labsRoutes]
   },
   // ## not found page
   {
     name: 'not-found',
     path: '/*',
-    meta: { requireAuth: false },
-    component: async () => await import('../views/error.vue')
+    component: () => import('../views/error.vue'),
+    meta: { requireAuth: false }
   }
 ]
 

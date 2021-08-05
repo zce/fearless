@@ -15,6 +15,17 @@ const mock = (): Plugin => ({
   }
 })
 
+const sfcCustomBlocks = (): Plugin => ({
+  name: 'sfcCustomBlocks',
+  transform: (code, id) => {
+    if (!/vue&type=title/.test(id)) return
+    // title black
+    return `export default Component => {
+      Component.title = '${code}'
+    }`
+  }
+})
+
 export default defineConfig({
-  plugins: [vue(), mock()]
+  plugins: [vue(), sfcCustomBlocks(), mock()]
 })
