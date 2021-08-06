@@ -1,6 +1,7 @@
+// https://github.com/14gasher/oauth-example
+
 import { Router } from 'express'
 import OAuth2Server, { Request, Response, UnauthorizedRequestError } from 'oauth2-server'
-import ObjectId from 'bson-objectid'
 import db from './db'
 
 const parseScope = (s: string | string[]) => (Array.isArray(s) ? s : s.split(/[,\s]/))
@@ -8,10 +9,12 @@ const parseScope = (s: string | string[]) => (Array.isArray(s) ? s : s.split(/[,
 const oauth = new OAuth2Server({
   model: {
     getAccessToken: async accessToken => {
-      const token = db.data.accessTokens.find(i => i.token === accessToken)
+      const token = db.accessTokens.find(i => i.token === accessToken)
       if (!token) return null
-      const client = db.data.clients.find(i => i.id === token.clientId)
-      const user = db.data.users.find(i => i.id === token.userId)
+      const client = db.clients.find(i => i.id === token.clientId)
+      if (!client) return null
+      const user = db.users.find(i => i.id === token.userId)
+      if (!user) return null
       return {
         accessToken: token.token,
         accessTokenExpiresAt: token.expires,
@@ -21,10 +24,12 @@ const oauth = new OAuth2Server({
       }
     },
     getRefreshToken: async refreshToken => {
-      const token = db.data.accessTokens.find(i => i.token === refreshToken)
+      const token = db.accessTokens.find(i => i.token === refreshToken)
       if (!token) return null
-      const client = db.data.clients.find(i => i.id === token.clientId)
-      const user = db.data.users.find(i => i.id === token.userId)
+      const client = db.clients.find(i => i.id === token.clientId)
+      if (!client) return null
+      const user = db.users.find(i => i.id === token.userId)
+      if (!user) return null
       return {
         refreshToken: token.token,
         refreshTokenExpiresAt: token.expires,
@@ -34,10 +39,12 @@ const oauth = new OAuth2Server({
       }
     },
     getAuthorizationCode: async authorizationCode => {
-      const code = db.data.authorizationCodes.find(i => i.code === authorizationCode)
+      const code = db.authorizationCodes.find(i => i.code === authorizationCode)
       if (!code) return null
-      const client = db.data.clients.find(i => i.id === code.clientId)
-      const user = db.data.users.find(i => i.id === code.userId)
+      const client = db.clients.find(i => i.id === code.clientId)
+      if (!client) return null
+      const user = db.users.find(i => i.id === code.userId)
+      if (!user) return null
       return {
         authorizationCode: code.code,
         expiresAt: code.expires,
@@ -48,8 +55,10 @@ const oauth = new OAuth2Server({
       }
     },
     getClient: async (clientId, clientSecret) => {
-      const client = db.data.clients.find(i => i.key === clientId && (!clientSecret || i.secret === clientSecret))
-      const user = db.data.users.find(i => i.id === client.userId)
+      const client = db.clients.find(i => i.key === clientId && (!clientSecret || i.secret === clientSecret))
+      if (!client) return null
+      const user = db.users.find(i => i.id === client.userId)
+      if (!user) return null
       return {
         id: client.id,
         name: client.name,
@@ -59,8 +68,9 @@ const oauth = new OAuth2Server({
         user: user
       }
     },
+
     getUser: async (username, password) => {
-      return db.data.users.find(i => i.username === username && i.password === password)
+      return db.users.find(i => i.username === username && i.password === password)
     },
 
     getUserFromClient: async client => {
@@ -68,8 +78,8 @@ const oauth = new OAuth2Server({
     },
 
     saveToken: async (token, client, user) => {
-      db.data.accessTokens.push({
-        id: ObjectId.generate(),
+      db.accessTokens.push({
+        id: db.genId(),
         token: token.accessToken,
         expires: token.accessTokenExpiresAt,
         scope: token.scope.toString(),
@@ -78,8 +88,8 @@ const oauth = new OAuth2Server({
       })
 
       if (token.refreshToken) {
-        db.data.refreshTokens.push({
-          id: ObjectId.generate(),
+        db.refreshTokens.push({
+          id: db.genId(),
           token: token.refreshToken,
           expires: token.refreshTokenExpiresAt,
           scope: token.scope.toString(),
@@ -88,14 +98,12 @@ const oauth = new OAuth2Server({
         })
       }
 
-      await db.write()
-
       return { ...token, client, user }
     },
 
     saveAuthorizationCode: async (code, client, user) => {
-      db.data.authorizationCodes.push({
-        id: ObjectId.generate(),
+      db.authorizationCodes.push({
+        id: db.genId(),
         code: code.authorizationCode,
         expires: code.expiresAt,
         redirect: code.redirectUri,
@@ -104,27 +112,21 @@ const oauth = new OAuth2Server({
         clientId: client.id
       })
 
-      await db.write()
-
       return { ...code, client, user }
     },
 
     revokeToken: async token => {
-      const index = db.data.refreshTokens.findIndex(i => i.token === token.refreshToken)
+      const index = db.refreshTokens.findIndex(i => i.token === token.refreshToken)
 
-      db.data.refreshTokens.splice(index, 1)
-
-      await db.write()
+      db.refreshTokens.splice(index, 1)
 
       return true
     },
 
     revokeAuthorizationCode: async code => {
-      const index = db.data.authorizationCodes.findIndex(i => i.code === code.authorizationCode)
+      const index = db.authorizationCodes.findIndex(i => i.code === code.authorizationCode)
 
-      db.data.refreshTokens.splice(index, 1)
-
-      await db.write()
+      db.refreshTokens.splice(index, 1)
 
       return true
     },
@@ -166,41 +168,37 @@ router.get('/authorize', (req, res) => {
   res.send('authorize')
 })
 
-router.post('/token', (req, res) => {
+router.post('/token', async (req, res) => {
   const request = new Request(req)
   const response = new Response(res)
 
-  return oauth
-    .token(request, response, {})
-    .then(token => {
-      res.locals.oauth = { token: token }
-    })
-    .then(() => {
-      if (response.status === 302) {
-        const location = response.headers.location
-        delete response.headers.location
-        res.set(response.headers)
-        res.redirect(location)
-      } else {
-        res.set(response.headers)
-        res.status(response.status).send(response.body)
-      }
-    })
-    .catch(e => {
-      if (response) {
-        res.set(response.headers)
-      }
+  try {
+    const token = await oauth.token(request, response, { requireClientAuthentication: false })
+    res.locals.oauth = { token: token }
+    if (response.status === 302) {
+      const location = response.headers.location
+      delete response.headers.location
+      res.set(response.headers)
+      res.redirect(location)
+    } else {
+      res.set(response.headers)
+      res.status(response.status).send(response.body)
+    }
+  } catch (e) {
+    if (response) {
+      res.set(response.headers)
+    }
 
-      res.status(e.code)
+    res.status(e.code)
 
-      if (e instanceof UnauthorizedRequestError) {
-        return res.send({ status: 400, msg: 'Unauthorized' })
-      }
+    if (e instanceof UnauthorizedRequestError) {
+      return res.send({ status: 400, msg: 'Unauthorized' })
+    }
 
-      console.error(e)
+    console.error(e)
 
-      res.send({ status: 500, msg: e.message })
-    })
+    res.send({ status: 500, msg: e.message })
+  }
 })
 
 export default router
