@@ -1,7 +1,7 @@
-# /auth
+## /auth
 @api_base = http://localhost:3000/api
 
-## /auth/token
+### /auth/token
 # POST {{api_base}}/auth/token HTTP/1.1
 # content-type: application/json
 
@@ -15,3 +15,13 @@ POST {{api_base}}/auth/token HTTP/1.1
 content-type: application/x-www-form-urlencoded
 
 client_id=oauth2-example-client&client_secret=f657d916-0ad9-4b65-9976-3fe796bbdea0&grant_type=password&username=admin&password=wanglei
+
+### /auth/token
+POST {{api_base}}/auth/token HTTP/1.1
+content-type: application/x-www-form-urlencoded
+
+client_id=oauth2-example-client&client_secret=f657d916-0ad9-4b65-9976-3fe796bbdea0&grant_type=refresh_token&refresh_token=19e1e32d2d17aba89fbe56e30122be1b3466b998
+
+
+### /auth/authorize
+GET {{api_base}}/auth/authorize HTTP/1.1

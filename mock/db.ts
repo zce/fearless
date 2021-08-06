@@ -2,6 +2,7 @@ const genId = (): string => Math.floor((1 + Math.random()) * 0x10000).toString(1
 
 const database = {
   genId,
+
   clients: [
     {
       id: '5ce63c0a5a25992818e5347d',
@@ -48,29 +49,6 @@ const database = {
       scope: 'posts:read',
       userId: '5ce63c0a5a25992818e5347e',
       clientId: '5ce63c0a5a25992818e5347d'
-    }
-  ],
-
-  scopes: [
-    {
-      id: genId(),
-      scope: 'posts:read',
-      default: true
-    },
-    {
-      id: genId(),
-      scope: 'posts:create',
-      default: false
-    },
-    {
-      id: genId(),
-      scope: 'posts:delete',
-      default: false
-    },
-    {
-      id: genId(),
-      scope: 'posts:update',
-      default: false
     }
   ],
 
