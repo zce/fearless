@@ -1,27 +1,67 @@
 ## /auth
 @api_base = http://localhost:3000/api
 
-### /auth/token
-# POST {{api_base}}/auth/token HTTP/1.1
-# content-type: application/json
-
-# {
-#   "grant_type": "password",
-#   "username": "test",
-#   "password": "test"
-# }
-
+### password grant success
 POST {{api_base}}/auth/token HTTP/1.1
-content-type: application/x-www-form-urlencoded
+content-type: application/json
 
-client_id=oauth2-example-client&client_secret=f657d916-0ad9-4b65-9976-3fe796bbdea0&grant_type=password&username=admin&password=wanglei
+{
+  "grant_type": "password",
+  "username": "zce",
+  "password": "wanglei"
+}
 
-### /auth/token
+### password grant failed
 POST {{api_base}}/auth/token HTTP/1.1
-content-type: application/x-www-form-urlencoded
+content-type: application/json
 
-client_id=oauth2-example-client&client_secret=f657d916-0ad9-4b65-9976-3fe796bbdea0&grant_type=refresh_token&refresh_token=19e1e32d2d17aba89fbe56e30122be1b3466b998
+{
+  "grant_type": "password",
+  "username": "zce",
+  "password": "wanglei1"
+}
 
+### refresh token success
+POST {{api_base}}/auth/token HTTP/1.1
+content-type: application/json
+
+{
+  "grant_type": "refresh_token",
+  "refresh_token": "17b1abe2a53187d717b1abe2a5312f3d"
+}
+
+### refresh token failed
+POST {{api_base}}/auth/token HTTP/1.1
+content-type: application/json
+
+{
+  "grant_type": "refresh_token",
+  "refresh_token": "invalid token"
+}
+
+### invalid grant type
+POST {{api_base}}/auth/token HTTP/1.1
+content-type: application/json
+
+{
+  "grant_type": "foo"
+}
+
+### revoke refresh token success
+DELETE {{api_base}}/auth/token HTTP/1.1
+content-type: application/json
+
+{
+  "token": "17b1ac3005b18f3f17b1ac3005b1cb22"
+}
+
+### revoke refresh token failed
+DELETE {{api_base}}/auth/token HTTP/1.1
+content-type: application/json
+
+{
+  "token": "foo"
+}
 
 ### /auth/authorize
 GET {{api_base}}/auth/authorize HTTP/1.1

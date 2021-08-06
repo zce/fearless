@@ -1,5 +1,6 @@
 <template>
   <n-config-provider :theme="theme">
+    <n-global-style />
     <n-loading-bar-provider>
       <n-message-provider>
         <n-dialog-provider>

@@ -1,204 +1,57 @@
-// https://github.com/14gasher/oauth-example
-
 import { Router } from 'express'
-import OAuth2Server, { Request, Response, UnauthorizedRequestError } from 'oauth2-server'
-import db from './db'
-
-const parseScope = (s: string | string[]) => (Array.isArray(s) ? s : s.split(/[,\s]/))
-
-const oauth = new OAuth2Server({
-  model: {
-    getAccessToken: async accessToken => {
-      const token = db.accessTokens.find(i => i.token === accessToken)
-      if (!token) return null
-      const client = db.clients.find(i => i.id === token.clientId)
-      if (!client) return null
-      const user = db.users.find(i => i.id === token.userId)
-      if (!user) return null
-      return {
-        accessToken: token.token,
-        accessTokenExpiresAt: token.expires,
-        scope: token.scope,
-        client: client,
-        user: user
-      }
-    },
-    getRefreshToken: async refreshToken => {
-      const token = db.accessTokens.find(i => i.token === refreshToken)
-      if (!token) return null
-      const client = db.clients.find(i => i.id === token.clientId)
-      if (!client) return null
-      const user = db.users.find(i => i.id === token.userId)
-      if (!user) return null
-      return {
-        refreshToken: token.token,
-        refreshTokenExpiresAt: token.expires,
-        scope: token.scope,
-        client: client,
-        user: user
-      }
-    },
-    getAuthorizationCode: async authorizationCode => {
-      const code = db.authorizationCodes.find(i => i.code === authorizationCode)
-      if (!code) return null
-      const client = db.clients.find(i => i.id === code.clientId)
-      if (!client) return null
-      const user = db.users.find(i => i.id === code.userId)
-      if (!user) return null
-      return {
-        authorizationCode: code.code,
-        expiresAt: code.expires,
-        redirectUri: code.redirect,
-        scope: code.scope,
-        client: client,
-        user: user
-      }
-    },
-    getClient: async (clientId, clientSecret) => {
-      const client = db.clients.find(i => i.key === clientId && (!clientSecret || i.secret === clientSecret))
-      if (!client) return null
-      const user = db.users.find(i => i.id === client.userId)
-      if (!user) return null
-      return {
-        id: client.id,
-        name: client.name,
-        redirectUris: client.redirects,
-        grants: client.grants,
-        scope: client.scope,
-        user: user
-      }
-    },
-
-    getUser: async (username, password) => {
-      return db.users.find(i => i.username === username && i.password === password)
-    },
-
-    getUserFromClient: async client => {
-      return client.user
-    },
-
-    saveToken: async (token, client, user) => {
-      db.accessTokens.push({
-        id: db.genId(),
-        token: token.accessToken,
-        expires: token.accessTokenExpiresAt,
-        scope: token.scope.toString(),
-        userId: user.id,
-        clientId: client.id
-      })
-
-      if (token.refreshToken) {
-        db.refreshTokens.push({
-          id: db.genId(),
-          token: token.refreshToken,
-          expires: token.refreshTokenExpiresAt,
-          scope: token.scope.toString(),
-          userId: user.id,
-          clientId: client.id
-        })
-      }
-
-      return { ...token, client, user }
-    },
-
-    saveAuthorizationCode: async (code, client, user) => {
-      db.authorizationCodes.push({
-        id: db.genId(),
-        code: code.authorizationCode,
-        expires: code.expiresAt,
-        redirect: code.redirectUri,
-        scope: code.scope.toString(),
-        userId: user.id,
-        clientId: client.id
-      })
-
-      return { ...code, client, user }
-    },
-
-    revokeToken: async token => {
-      const index = db.refreshTokens.findIndex(i => i.token === token.refreshToken)
-
-      db.refreshTokens.splice(index, 1)
-
-      return true
-    },
-
-    revokeAuthorizationCode: async code => {
-      const index = db.authorizationCodes.findIndex(i => i.code === code.authorizationCode)
-
-      db.refreshTokens.splice(index, 1)
-
-      return true
-    },
-
-    validateScope: async (user, client, scope) => {
-      // TODO: default scope
-      scope = scope || 'info'
-
-      // TODO: all scopes
-      const requested = parseScope(scope)
-
-      // client scope validate
-      if (client && client.scope !== '*') {
-        const clientScopes = parseScope(client.scope)
-        if (!requested.every(s => clientScopes.includes(s))) return false
-      }
-
-      // user scope validate
-      if (user && user.scope !== '*') {
-        const userScopes = parseScope(user.scope)
-        if (!requested.every(s => userScopes.includes(s))) return false
-      }
-
-      return requested.join(',')
-    },
-
-    verifyScope: async (accessToken, scope) => {
-      if (!accessToken.scope) return false
-      const requested = parseScope(scope)
-      const authorized = parseScope(accessToken.scope)
-      return requested.every(s => authorized.includes(s))
-    }
-  }
-})
+import { users, tokens, uuid } from './db'
 
 const router = Router()
 
-router.get('/authorize', (req, res) => {
-  res.send('authorize')
+const genToken = () => uuid() + uuid()
+
+router.post('/token', (req, res) => {
+  const { grant_type, username, password, refresh_token } = req.body
+
+  if (grant_type === 'password') {
+    const user = users.find(u => u.username === username && u.password === password)
+    if (user == null) return res.status(401).send({ status: 401, msg: 'invalid username or password' })
+
+    const token = {
+      id: uuid(),
+      accessToken: genToken(),
+      refreshToken: genToken(),
+      expires: Date.now() + 3600000,
+      userId: user.id
+    }
+
+    tokens.push(token)
+
+    res.send({
+      token_type: 'Bearer',
+      expires_in: (token.expires - Date.now()) / 1000,
+      access_token: token.accessToken,
+      refresh_token: token.refreshToken
+    })
+  } else if (grant_type === 'refresh_token') {
+    const token = tokens.find(t => t.refreshToken === refresh_token)
+    if (token == null) return res.status(401).send({ status: 401, msg: 'invalid refresh_token' })
+
+    token.accessToken = genToken()
+    token.expires = Date.now() + 3600000
+
+    res.send({
+      token_type: 'Bearer',
+      expires_in: (token.expires - Date.now()) / 1000,
+      access_token: token.accessToken,
+      refresh_token: token.refreshToken
+    })
+  } else {
+    res.status(400).send({ status: 400, msg: 'invalid grant_type' })
+  }
 })
 
-router.post('/token', async (req, res) => {
-  const request = new Request(req)
-  const response = new Response(res)
-
-  try {
-    const token = await oauth.token(request, response, { requireClientAuthentication: false })
-    res.locals.oauth = { token: token }
-    if (response.status === 302) {
-      const location = response.headers.location
-      delete response.headers.location
-      res.set(response.headers)
-      res.redirect(location)
-    } else {
-      res.set(response.headers)
-      res.status(response.status).send(response.body)
-    }
-  } catch (e) {
-    if (response) {
-      res.set(response.headers)
-    }
-
-    res.status(e.code)
-
-    if (e instanceof UnauthorizedRequestError) {
-      return res.send({ status: 400, msg: 'Unauthorized' })
-    }
-
-    console.error(e)
-
-    res.send({ status: 500, msg: e.message })
-  }
+router.delete('/token', async (req, res) => {
+  const { token } = req.body
+  const tokenIndex = tokens.findIndex(t => t.refreshToken === token)
+  if (tokenIndex === -1) return res.status(401).send({ status: 401, msg: 'invalid refresh_token' })
+  tokens.splice(tokenIndex, 1)
+  res.send({ status: 200, msg: 'revoked' })
 })
 
 export default router

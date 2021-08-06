@@ -19,7 +19,7 @@
             <path d="M0 335.74l64.9 113.74L472 114.26 407.1.52z" filter="url(#shadow)" />
           </g>
         </svg>
-        <span>{{ name }}</span>
+        <span>{{ store.getters.name }}</span>
       </n-a>
     </router-link>
     <n-menu :options="menuOptions" :root-indent="18"/>
@@ -27,11 +27,12 @@
 </template>
 
 <script lang="ts" setup>
+import { useStore } from 'vuex'
 import { useMenuOptions, useSidebarCollapsed } from '../composables'
 
+const store = useStore()
 const menuOptions = useMenuOptions('main')
 const { collapsed, toggle } = useSidebarCollapsed()
-const name = import.meta.env.VITE_NAME
 </script>
 
 <style scoped>
