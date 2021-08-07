@@ -18,7 +18,7 @@ const mock = (): Plugin => ({
 const sfcCustomBlocks = (): Plugin => ({
   name: 'sfcCustomBlocks',
   transform: (code, id) => {
-    if (!/vue&type=title/.test(id)) return
+    if (!id.includes('vue&type=title')) return
     // title black
     return `export default Component => {
       Component.title = '${code}'

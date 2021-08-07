@@ -1,5 +1,12 @@
 <template>
-  <n-layout-sider :collapsed="collapsed" collapse-mode="width" :width="220" show-trigger bordered @update:collapsed="toggle">
+  <n-layout-sider
+    :collapsed="collapsed"
+    collapse-mode="width"
+    :width="220"
+    show-trigger
+    bordered
+    @update:collapsed="toggle"
+  >
     <router-link to="/" #="{ navigate, href }" custom>
       <n-a class="logo" :href="href" @click="navigate">
         <svg viewBox="0 0 472 450">
@@ -19,10 +26,10 @@
             <path d="M0 335.74l64.9 113.74L472 114.26 407.1.52z" filter="url(#shadow)" />
           </g>
         </svg>
-        <span>{{ store.getters.name }}</span>
+        <span>{{ store.state.name }}</span>
       </n-a>
     </router-link>
-    <n-menu :options="menuOptions" :root-indent="18"/>
+    <n-menu :options="menuOptions" :root-indent="18" />
   </n-layout-sider>
 </template>
 

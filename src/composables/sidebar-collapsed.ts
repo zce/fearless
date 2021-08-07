@@ -5,8 +5,8 @@ import { State } from '../store'
 export const useSidebarCollapsed = () => {
   const store = useStore<State>()
   return {
-    collapsed: computed(() => store.getters.sidebarCollapsed),
-    toggle: () => store.dispatch('toggleSidebarCollapse')
+    collapsed: computed(() => store.state.sidebarCollapsed),
+    toggle: async () => await store.dispatch('toggleSidebarCollapse')
   }
 }
 

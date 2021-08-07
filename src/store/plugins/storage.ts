@@ -1,6 +1,6 @@
 import { Plugin } from 'vuex'
 import { State } from '../state'
-import { CHANGE_SESSION, TOGGLE_SIDEBAR_COLLAPSE, INCREMENT, DECREMENT } from '../mutation-types'
+import { UPDATE_SESSION, TOGGLE_SIDEBAR_COLLAPSE, INCREMENT, DECREMENT } from '../mutation-types'
 import { storage } from '../../utils'
 
 const storagePlugin: Plugin<State> = store => {
@@ -9,7 +9,7 @@ const storagePlugin: Plugin<State> = store => {
     // called after every mutation.
     // The mutation comes in the format of `{ type, payload }`.
     switch (mutation.type) {
-      case CHANGE_SESSION:
+      case UPDATE_SESSION:
         // save session
         storage.set('session', state.session)
         break

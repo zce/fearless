@@ -1,5 +1,15 @@
-## /auth
+// ## /auth
 @api_base = http://localhost:3000/api
+@access_token = 17b200bbb121df0417b200bbb12124f4
+@refresh_token = 17b200b3194196f917b200b319419a88
+
+# ==============================================================================
+
+### menus request
+GET {{api_base}}/menus HTTP/1.1
+authorization: Bearer {{access_token}}
+
+# ==============================================================================
 
 ### password grant success
 POST {{api_base}}/auth/token HTTP/1.1
@@ -27,7 +37,7 @@ content-type: application/json
 
 {
   "grant_type": "refresh_token",
-  "refresh_token": "17b1abe2a53187d717b1abe2a5312f3d"
+  "refresh_token": "{{refresh_token}}"
 }
 
 ### refresh token failed
@@ -63,5 +73,8 @@ content-type: application/json
   "token": "foo"
 }
 
-### /auth/authorize
-GET {{api_base}}/auth/authorize HTTP/1.1
+# ==============================================================================
+
+### Playground
+GET https://api.github.com/gists/starred HTTP/1.1
+Authorization: Bearer sssss

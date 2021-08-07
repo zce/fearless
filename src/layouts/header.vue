@@ -9,7 +9,9 @@
       <n-tooltip>
         <template #trigger>
           <n-a href="https://github.com/zce/dashboard#readme" target="_blank">
-            <n-icon size="22" :depth="2"><component :is="icons.help" /></n-icon>
+            <n-icon size="22" :depth="2">
+              <component :is="icons.help" />
+            </n-icon>
           </n-a>
         </template>
         Dashboard help
@@ -17,7 +19,9 @@
       <n-tooltip>
         <template #trigger>
           <n-a href="https://github.com/zce/dashboard" target="_blank">
-            <n-icon size="22" :depth="2"><component :is="icons.github" /></n-icon>
+            <n-icon size="22" :depth="2">
+              <component :is="icons.github" />
+            </n-icon>
           </n-a>
         </template>
         View on GitHub
@@ -25,20 +29,22 @@
       <n-popover trigger="click" placement="bottom-end" :width="300">
         <template #trigger>
           <n-badge dot processing>
-            <n-icon size="22" :depth="2"><component :is="icons.notifications" /></n-icon>
+            <n-icon size="22" :depth="2">
+              <component :is="icons.notifications" />
+            </n-icon>
           </n-badge>
         </template>
         <n-tabs type="line" justify-content="space-evenly" style="--pane-padding: 0">
           <n-tab-pane name="notifications" tab="Notifications (5)">
             <n-list style="margin: 0">
-              <n-list-item v-for="i in 5">
+              <n-list-item v-for="i in 5" :key="i">
                 Notification {{ i }}
               </n-list-item>
             </n-list>
           </n-tab-pane>
           <n-tab-pane name="messages" tab="Messages (6)">
             <n-list style="margin: 0">
-              <n-list-item v-for="i in 6">
+              <n-list-item v-for="i in 6" :key="i">
                 Message {{ i }}
               </n-list-item>
             </n-list>
@@ -82,7 +88,7 @@ const options = [
   }
 ]
 
-const handleOptionsSelect = <T> (key: T) => {
+const handleOptionsSelect = <T>(key: T) => {
   message.info(`Selected option: ${key}`)
 }
 </script>

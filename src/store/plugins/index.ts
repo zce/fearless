@@ -1,4 +1,4 @@
+import token from './token'
 import storage from './storage'
-import dom from './dom'
 
-export default [storage, dom]
+export default [storage, token]

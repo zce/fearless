@@ -5,13 +5,12 @@ const router = Router()
 router.get('/', (req, res) => {
   // return res.send({
   //   status: 400,
-  //   msg: 'errror'
+  //   message: 'errror'
   // })
 
   if (req.query.type === 'shortcut') {
     return res.send({
       status: 200,
-      msg: 'success',
       data: [
         {
           id: '610159148224d543ae4e05b3',
@@ -57,7 +56,6 @@ router.get('/', (req, res) => {
 
   res.send({
     status: 200,
-    msg: 'success',
     data: [
       {
         id: '610159148224d543ae4e05c5',

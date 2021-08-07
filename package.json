@@ -17,7 +17,7 @@
   "author": "zce <w@zce.me> (https://zce.me)",
   "main": "N/A",
   "scripts": {
-    "lint": "eslint . --ext .ts,.vue --fix",
+    "lint": "eslint . --ext .ts,.vue",
     "dev": "vite",
     "build": "vue-tsc --noEmit && vite build",
     "serve": "vite preview",
@@ -29,7 +29,7 @@
     ]
   },
   "lint-staged": {
-    "*.{vue,ts}": "eslint --fix"
+    "*.{ts,vue}": "eslint --fix"
   },
   "eslintConfig": {
     "root": true,
@@ -43,7 +43,18 @@
         ".vue"
       ]
     },
-    "rules": {}
+    "rules": {
+      "@typescript-eslint/strict-boolean-expressions": "off",
+      "@typescript-eslint/prefer-nullish-coalescing": "off",
+      "@typescript-eslint/explicit-function-return-type": "off",
+      "vue/max-attributes-per-line": [
+        "error",
+        {
+          "singleline": 6,
+          "multiline": 6
+        }
+      ]
+    }
   },
   "renovate": {
     "extends": [
