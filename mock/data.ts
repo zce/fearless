@@ -19,9 +19,9 @@ export const users: User[] = [
 ]
 
 interface Token {
-  id: string
-  accessToken: string
-  refreshToken: string
+  // id: string
+  access: string
+  refresh: string
   expires: number
   userId: string
 }

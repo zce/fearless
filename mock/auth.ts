@@ -18,9 +18,9 @@ router.post('/token', (req, res) => {
     }
 
     const token = {
-      id: uuid(),
-      accessToken: genToken(),
-      refreshToken: genToken(),
+      // id: uuid(),
+      access: genToken(),
+      refresh: genToken(),
       expires: Date.now() + accessTokenLifetime,
       userId: user.id
     }
@@ -30,23 +30,23 @@ router.post('/token', (req, res) => {
     res.send({
       token_type: 'Bearer',
       expires_in: (token.expires - Date.now()) / 1000,
-      access_token: token.accessToken,
-      refresh_token: token.refreshToken
+      access_token: token.access,
+      refresh_token: token.refresh
     })
   } else if (grant_type === 'refresh_token') {
-    const token = tokens.find(t => t.refreshToken === refresh_token)
+    const token = tokens.find(t => t.refresh === refresh_token)
     if (token == null) {
       return res.status(403).send({ message: 'Bad credentials: invalid refresh_token' })
     }
 
-    token.accessToken = genToken()
+    token.access = genToken()
     token.expires = Date.now() + accessTokenLifetime
 
     res.send({
       token_type: 'Bearer',
       expires_in: (token.expires - Date.now()) / 1000,
-      access_token: token.accessToken,
-      refresh_token: token.refreshToken
+      access_token: token.access,
+      refresh_token: token.refresh
     })
   } else {
     res.status(400).send({ message: 'Bad Request: invalid grant_type' })
@@ -55,7 +55,7 @@ router.post('/token', (req, res) => {
 
 router.delete('/token', (req, res) => {
   const { token } = req.body
-  const tokenIndex = tokens.findIndex(t => t.refreshToken === token)
+  const tokenIndex = tokens.findIndex(t => t.refresh === token)
   if (tokenIndex !== -1) {
     tokens.splice(tokenIndex, 1)
   }
