@@ -86,12 +86,12 @@ const disabled = computed<boolean>(() => model.value.username === '' || model.va
 const handleLogin = async (e: Event) => {
   e.preventDefault()
   loading.value = true
-  const result = await auth.login(model.value.username, model.value.password)
-  if (result === true) {
+  try {
+    await auth.login(model.value.username, model.value.password)
     const redirect = router.currentRoute.value.query.redirect?.toString()
     router.replace(redirect ?? '/')
-  } else {
-    message.error(result)
+  } catch (e) {
+    message.error(e.message)
   }
   loading.value = false
 }

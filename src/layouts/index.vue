@@ -1,8 +1,5 @@
 <template>
-  <n-layout
-    position="absolute"
-    has-sider
-  >
+  <n-layout position="absolute" has-sider>
     <sidebar />
     <n-layout>
       <Header />

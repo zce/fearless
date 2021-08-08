@@ -1,4 +1,4 @@
-import { api } from './api'
+import { api } from '../utils'
 
 export interface User {
   id: string

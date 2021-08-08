@@ -5,7 +5,7 @@ const router = Router()
 
 const genToken = () => uuid() + uuid()
 
-const accessTokenLifetime = 0.2 * 60 * 1000 // 1 hour
+const accessTokenLifetime = 0.5 * 60 * 1000 // 1 hour
 
 router.post('/token', (req, res) => {
   // eslint-disable-next-line @typescript-eslint/naming-convention
@@ -59,7 +59,7 @@ router.delete('/token', (req, res) => {
   if (tokenIndex !== -1) {
     tokens.splice(tokenIndex, 1)
   }
-  res.send({ message: 'revoked' })
+  res.send({ message: 'refresh_token revoked' })
   // TODO: res.status(401).send({ message: 'Bad credentials: invalid refresh_token' })
 })
 

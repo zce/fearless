@@ -5,6 +5,7 @@
     :width="220"
     show-trigger
     bordered
+    :native-scrollbar="false"
     @update:collapsed="toggle"
   >
     <router-link to="/" #="{ navigate, href }" custom>

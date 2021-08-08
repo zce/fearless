@@ -5,6 +5,10 @@ interface Session {
   username?: string
   name?: string
   avatar?: string
+  type?: string
+  access?: string
+  refresh?: string
+  expires?: number
 }
 
 export interface State {

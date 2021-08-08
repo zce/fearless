@@ -15,7 +15,7 @@ export default () => {
     if (accessToken == null) {
       return res.status(401).send({ message: 'Requires authentication' })
     }
-    const token = tokens.find(t => t.accessToken === accessToken)
+    const token = tokens.find(t => t.access === accessToken)
     if (token == null) {
       return res.status(401).send({ message: 'Bad credentials: invalid access_token' })
     }

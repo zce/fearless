@@ -1,4 +1,4 @@
-import { api } from './api'
+import { api } from '../utils'
 
 export interface Menu {
   id: string
@@ -10,6 +10,5 @@ export interface Menu {
 }
 
 export const getMenus = async (type: 'main' | 'shortcut' = 'main'): Promise<Menu[]> => {
-  const { data } = await api.get('menus', { searchParams: { type } }).json()
-  return data
+  return await api.get('menus', { searchParams: { type } }).json()
 }
