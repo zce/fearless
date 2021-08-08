@@ -1,5 +1,4 @@
 import ky from 'ky'
-// TODO: Cyclic reference
 import { storage } from '../utils'
 
 interface Token {
