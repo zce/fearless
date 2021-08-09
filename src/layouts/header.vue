@@ -8,11 +8,11 @@
     <n-space :size="20" align="center" style="line-height: 1">
       <n-tooltip>
         <template #trigger>
-          <n-a href="https://github.com/zce/dashboard#readme" target="_blank">
+          <router-link :to="{ name: 'about' }">
             <n-icon size="22" :depth="2">
               <component :is="icons.help" />
             </n-icon>
-          </n-a>
+          </router-link>
         </template>
         Dashboard help
       </n-tooltip>

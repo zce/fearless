@@ -1,16 +1,6 @@
-<template>
-  <div>
-    <div class="heading">
-      <h1 class="title">
-        Edit {{ $route.params.type }}
-      </h1>
-    </div>
-    <p>Not yet!</p>
-  </div>
-</template>
+<title>Edit</title>
 
-<script>
-export default {
-  name: 'Edit'
-}
-</script>
+<template>
+  <n-h1>Edit {{ $route.params.type }}</n-h1>
+  <n-p>Not yet!</n-p>
+</template>

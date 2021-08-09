@@ -159,67 +159,12 @@ const mainRoutes: RouteRecordRaw[] = [
 
 const labsRoutes: RouteRecordRaw[] = [
   // ## labs views
-  {
-    name: 'labs',
-    path: '/labs',
-    component: async () => await import('../views/labs/index.vue'),
-    meta: { requireAuth: false }
-  },
-  {
-    name: 'labs-data',
-    path: '/labs/data',
-    component: async () => await import('../views/labs/data.vue'),
-    meta: { requireAuth: false }
-  },
-  {
-    name: 'labs-vuex',
-    path: '/labs/vuex',
-    component: async () => await import('../views/labs/vuex.vue'),
-    meta: { requireAuth: false }
-  },
-  {
-    name: 'labs-i18n',
-    path: '/labs/i18n',
-    component: async () => await import('../views/labs/i18n.vue'),
-    meta: { requireAuth: false }
-  },
-  {
-    name: 'labs-proxy',
-    path: '/labs/proxy',
-    component: async () => await import('../views/labs/proxy.vue'),
-    meta: { requireAuth: false }
-  },
-  {
-    name: 'labs-cors',
-    path: '/labs/cors',
-    component: async () => await import('../views/labs/cors.vue'),
-    meta: { requireAuth: false }
-  },
-  {
-    name: 'labs-params',
-    path: '/labs/:name',
-    component: async () => await import('../views/labs/params.vue'),
-    meta: { requireAuth: false }
-  },
-  // ## component views
-  {
-    name: 'labs-icons',
-    path: '/labs/icons',
-    component: async () => await import('../views/labs/icons.vue'),
-    meta: { requireAuth: false }
-  },
-  {
-    name: 'labs-button',
-    path: '/labs/button',
-    component: async () => await import('../views/labs/button.vue'),
-    meta: { requireAuth: false }
-  },
-  {
-    name: 'labs-table',
-    path: '/labs/table',
-    component: async () => await import('../views/labs/table.vue'),
-    meta: { requireAuth: false }
-  }
+  // {
+  //   name: 'labs',
+  //   path: '/labs',
+  //   component: async () => await import('../views/labs/index.vue'),
+  //   meta: { requireAuth: false }
+  // }
 ]
 
 const routes: RouteRecordRaw[] = [
@@ -237,7 +182,7 @@ const routes: RouteRecordRaw[] = [
   // ## not found page
   {
     name: 'not-found',
-    path: '/*',
+    path: '/:path*',
     component: async () => await import('../views/error.vue'),
     meta: { requireAuth: false }
   }

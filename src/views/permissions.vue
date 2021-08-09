@@ -1,16 +1,6 @@
-<template>
-  <div>
-    <div class="heading">
-      <h1 class="title">
-        Permissions
-      </h1>
-    </div>
-    <p>Not yet!</p>
-  </div>
-</template>
+<title>Permissions</title>
 
-<script>
-export default {
-  name: 'Permissions'
-}
-</script>
+<template>
+  <n-h1>Permissions</n-h1>
+  <n-p>Not yet!</n-p>
+</template>

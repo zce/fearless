@@ -1,16 +1,6 @@
-<template>
-  <div>
-    <div class="heading">
-      <h1 class="title">
-        Update
-      </h1>
-    </div>
-    <p>You are so perfectionism, when can you have a summary version?<br>So where is the update?</p>
-  </div>
-</template>
+<title>Update</title>
 
-<script>
-export default {
-  name: 'Update'
-}
-</script>
+<template>
+  <n-h1>Update</n-h1>
+  <n-p>You are so perfectionism, when can you have a summary version?<br>So where is the update?</n-p>
+</template>

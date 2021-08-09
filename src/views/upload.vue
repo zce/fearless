@@ -1,16 +1,6 @@
-<template>
-  <div>
-    <div class="heading">
-      <h1 class="title">
-        Upload media
-      </h1>
-    </div>
-    <p>Not yet!</p>
-  </div>
-</template>
+<title>Upload media</title>
 
-<script>
-export default {
-  name: 'Upload'
-}
-</script>
+<template>
+  <n-h1>Upload media</n-h1>
+  <n-p>Not yet!</n-p>
+</template>

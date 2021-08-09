@@ -1,16 +1,6 @@
-<template>
-  <div>
-    <div class="heading">
-      <h1 class="title">
-        Install
-      </h1>
-    </div>
-    <p>Not yet!</p>
-  </div>
-</template>
+<title>Install</title>
 
-<script>
-export default {
-  name: 'Install'
-}
-</script>
+<template>
+  <n-h1>Install</n-h1>
+  <n-p>Not yet!</n-p>
+</template>

@@ -1,16 +1,6 @@
-<template>
-  <div>
-    <div class="heading">
-      <h1 class="title">
-        Options
-      </h1>
-    </div>
-    <p>Not yet!</p>
-  </div>
-</template>
+<title>Options</title>
 
-<script>
-export default {
-  name: 'Options'
-}
-</script>
+<template>
+  <n-h1>Options</n-h1>
+  <n-p>Not yet!</n-p>
+</template>

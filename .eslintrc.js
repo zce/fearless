@@ -3,7 +3,7 @@ const base = require('eslint-config-standard-ts')
 
 base.rules = {
   ...base.overrides[0].rules,
-  '@typescript-eslint/strict-boolean-expressions': 'off'
+  '@typescript-eslint/strict-boolean-expressions': 'warn'
 }
 
 delete base.overrides[0].rules

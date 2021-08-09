@@ -1,11 +1,11 @@
 <template>
   <n-layout-sider
+    :width="220"
+    :native-scrollbar="false"
     :collapsed="collapsed"
     collapse-mode="width"
-    :width="220"
     show-trigger
     bordered
-    :native-scrollbar="false"
     @update:collapsed="toggle"
   >
     <router-link to="/" #="{ navigate, href }" custom>
@@ -41,6 +41,44 @@ import { useMenuOptions, useSidebarCollapsed } from '../composables'
 const store = useStore()
 const menuOptions = useMenuOptions('main')
 const { collapsed, toggle } = useSidebarCollapsed()
+
+// import { ref, watchEffect } from 'vue'
+// import { useRoute } from 'vue-router'
+// const route = useRoute()
+// const current = ref<string | null>(null)
+// const expanded = ref<string[]>([])
+
+// watchEffect(() => {
+//   for (const item of menuOptions.value) {
+//     if (item.name == route.name && item.params == route.params) {
+//       current.value = item.key.toString()
+//     }
+//     if (item.children) {
+//       for (const child of item.children) {
+//         if (child.name == route.name && child.params == route.params) {
+//           current.value = child.key.toString()
+//           expanded.value = [item.key.toString()]
+//         }
+//       }
+//     }
+//   }
+// })
+
+// const expandedKeys = ref([menuOptions.value[0]?.key])
+// for (const item of menuOptions.value) {
+//     if (item.name == route.name) {
+//       current.value = item.key?.toString()
+//       return [item.key]
+//     }
+//     if (item.children) {
+//       for (const sub of item.children) {
+//         if (sub.name == route.name) {
+//           current.value = item.key?.toString()
+//           return [item.key, sub.key]
+//         }
+//       }
+//     }
+//   }
 </script>
 
 <style scoped>

@@ -1,24 +1,6 @@
-<template>
-  <div>
-    <div class="heading">
-      <h1 class="title">
-        New {{ $route.params.type }}
-      </h1>
-    </div>
-  </div>
-</template>
+<title>New</title>
 
-<script>
-export default {
-  name: 'New'
-  // computed: {
-  //   title () {
-  //     const dict = {
-  //       blog: 'Blog',
-  //       page: 'Page'
-  //     }
-  //     return dict[this.$route.params.type]
-  //   }
-  // }
-}
-</script>
+<template>
+  <n-h1>New</n-h1>
+  <n-p>Not yet!</n-p>
+</template>

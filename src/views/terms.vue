@@ -1,16 +1,6 @@
-<template>
-  <div>
-    <div class="heading">
-      <h1 class="title">
-        {{ $route.params.type }}
-      </h1>
-    </div>
-    <p>Not yet!</p>
-  </div>
-</template>
+<title>Terms</title>
 
-<script>
-export default {
-  name: 'Terms'
-}
-</script>
+<template>
+  <n-h1>Terms</n-h1>
+  <n-p>Not yet!</n-p>
+</template>
