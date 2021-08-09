@@ -6,5 +6,5 @@
     "strict": true,
     "esModuleInterop": true
   },
-  "include": ["src", "mock", "vite.config.ts"]
+  "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.vue", "mock"]
 }

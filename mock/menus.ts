@@ -28,7 +28,7 @@ router.get('/', (req, res) => {
           { id: '610159148224d543ae4e05b7', label: 'Page', name: 'new', params: { type: 'page' } },
           { id: '610159148224d543ae4e05b8', label: 'User', name: 'users' }
         ]
-      },
+      }
       // // Labs Pages
       // {
       //   id: '610159148224d543ae4e05b9',
