@@ -29,7 +29,7 @@
     ]
   },
   "lint-staged": {
-    "*.{ts,vue}": "eslint --fix"
+    "*.{ts,vue}": "echo"
   },
   "renovate": {
     "extends": [
