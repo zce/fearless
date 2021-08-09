@@ -10,7 +10,7 @@ const router = createRouter({ history, routes })
 router.beforeEach(async to => {
   const token = storage.get('token')
   if (to.name === 'login' && token != null) {
-    return to.query.redirect?.toString() || '/'
+    return to.query.redirect?.toString() ?? '/'
   }
   // don't need authorize or token is valid
   if (!to.meta.requireAuth || token != null) {

@@ -62,9 +62,9 @@
 import { h } from 'vue'
 import { useMessage } from 'naive-ui'
 import { RouterLink } from 'vue-router'
-// import { useMenuOptions } from '../composables'
 import { icons } from '../utils'
 
+// import { useMenuOptions } from '../composables'
 // const menuOptions = useMenuOptions('shortcut')
 
 const message = useMessage()
@@ -88,8 +88,8 @@ const options = [
   }
 ]
 
-const handleOptionsSelect = <T>(key: T) => {
-  message.info(`Selected option: ${key}`)
+const handleOptionsSelect = (key: unknown): void => {
+  message.info(`Selected option: ${key as string}`)
 }
 </script>
 

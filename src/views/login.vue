@@ -4,48 +4,17 @@
   <n-h1 style="--font-size: 60px; --font-weight: 100">
     {{ store.state.name }}
   </n-h1>
-  <n-card
-    size="large"
-    style="--padding-bottom: 30px"
-  >
-    <n-h2 style="--font-weight: 400">
-      Sign-in
-    </n-h2>
-    <n-form
-      size="large"
-      :rules="rules"
-      :model="model"
-    >
-      <n-form-item-row
-        label="Username"
-        path="username"
-      >
-        <n-input
-          v-model:value="model.username"
-          placeholder="Input your username"
-        />
+  <n-card size="large" style="--padding-bottom: 30px">
+    <n-h2 style="--font-weight: 400">Sign-in</n-h2>
+    <n-form size="large" :rules="rules" :model="model">
+      <n-form-item-row label="Username" path="username">
+        <n-input v-model:value="model.username" placeholder="Input your username" />
       </n-form-item-row>
-      <n-form-item-row
-        label="Password"
-        path="password"
-      >
-        <n-input
-          v-model:value="model.password"
-          type="password"
-          placeholder="Input your password"
-        />
+      <n-form-item-row label="Password" path="password">
+        <n-input v-model:value="model.password" type="password" placeholder="Input your password" />
       </n-form-item-row>
     </n-form>
-    <n-button
-      type="primary"
-      size="large"
-      block
-      :loading="loading"
-      :disabled="disabled"
-      @click="handleLogin"
-    >
-      Sign in
-    </n-button>
+    <n-button type="primary" size="large" block :loading="loading" :disabled="disabled" @click="handleLogin">Sign in</n-button>
     <br>
   </n-card>
 </template>
@@ -83,13 +52,13 @@ const loading = ref(false)
 
 const disabled = computed<boolean>(() => model.value.username === '' || model.value.password === '')
 
-const handleLogin = async (e: Event) => {
+const handleLogin = async (e: Event): Promise<void> => {
   e.preventDefault()
   loading.value = true
   try {
     await auth.login(model.value.username, model.value.password)
     const redirect = router.currentRoute.value.query.redirect?.toString()
-    router.replace(redirect ?? '/')
+    await router.replace(redirect ?? '/')
   } catch (e) {
     message.error(e.message)
   }

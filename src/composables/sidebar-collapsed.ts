@@ -1,8 +1,13 @@
-import { computed } from 'vue'
+import { computed, ComputedRef } from 'vue'
 import { useStore } from 'vuex'
 import { State } from '../store'
 
-export const useSidebarCollapsed = () => {
+interface SidebarCollapsed {
+  collapsed: ComputedRef<boolean>
+  toggle: () => Promise<void>
+}
+
+export const useSidebarCollapsed = (): SidebarCollapsed => {
   const store = useStore<State>()
   return {
     collapsed: computed(() => store.state.sidebarCollapsed),

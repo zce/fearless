@@ -17,7 +17,7 @@
   "author": "zce <w@zce.me> (https://zce.me)",
   "main": "N/A",
   "scripts": {
-    "lint": "eslint . --ext .ts,.vue",
+    "lint": "eslint {src,mock} --fix",
     "dev": "vite",
     "build": "vue-tsc --noEmit && vite build",
     "serve": "vite preview",
@@ -30,31 +30,6 @@
   },
   "lint-staged": {
     "*.{ts,vue}": "eslint --fix"
-  },
-  "eslintConfig": {
-    "root": true,
-    "extends": [
-      "standard-ts",
-      "plugin:vue/vue3-recommended"
-    ],
-    "parserOptions": {
-      "parser": "@typescript-eslint/parser",
-      "extraFileExtensions": [
-        ".vue"
-      ]
-    },
-    "rules": {
-      "@typescript-eslint/strict-boolean-expressions": "off",
-      "@typescript-eslint/prefer-nullish-coalescing": "off",
-      "@typescript-eslint/explicit-function-return-type": "off",
-      "vue/max-attributes-per-line": [
-        "error",
-        {
-          "singleline": 6,
-          "multiline": 6
-        }
-      ]
-    }
   },
   "renovate": {
     "extends": [
@@ -70,7 +45,7 @@
     "@vitejs/plugin-vue": "1.3.0",
     "@vue/compiler-sfc": "3.1.5",
     "eslint": "7.32.0",
-    "eslint-config-standard-ts": "20.0.0",
+    "eslint-config-standard-ts": "20.0.1",
     "eslint-plugin-vue": "7.15.1",
     "express": "4.17.1",
     "husky": "7.0.1",

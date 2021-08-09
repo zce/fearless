@@ -3,7 +3,7 @@ import { users, tokens, uuid } from './data'
 
 const router = Router()
 
-const genToken = () => uuid() + uuid()
+const genToken = (): string => uuid() + uuid()
 
 const accessTokenLifetime = 0.5 * 60 * 1000 // 1 hour
 

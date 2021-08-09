@@ -46,7 +46,7 @@ const getAuth = async (): Promise<string | undefined> => {
 export class APIError extends Error {
   status: number
   constructor (status: number, message?: string) {
-    super(message || 'API call failed with an unknown error')
+    super(message ?? 'API call failed with an unknown error')
     this.name = 'APIError'
     this.status = status
   }

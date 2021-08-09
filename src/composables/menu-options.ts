@@ -7,17 +7,11 @@ import { icons } from '../utils'
 type IconTypes = keyof typeof icons
 type Menus = menu.Menu[]
 
-const renderLabel = (item: menu.Menu) =>
-  item.name ? () => h(RouterLink, { to: item }, { default: () => item.label }) : item.label
-
-const renderIcon = (item: menu.Menu) =>
-  item.icon ? () => h(NIcon, null, { default: () => h(icons[item.icon as IconTypes] || icons.fallback) }) : undefined
-
 const mappingMenuOptions = (items: Menus): MenuOption[] => items.map(item => ({
   ...item,
   key: item.id,
-  label: renderLabel(item),
-  icon: renderIcon(item),
+  label: item.name ? () => h(RouterLink, { to: item }, { default: () => item.label }) : item.label,
+  icon: item.icon ? () => h(NIcon, null, { default: () => h(icons[item.icon as IconTypes] || icons.fallback) }) : undefined,
   children: item.children && mappingMenuOptions(item.children)
 }))
 
