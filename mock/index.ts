@@ -1,11 +1,15 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 import express from 'express'
-import { tokens, users } from './data'
+import { tokens, users, Role } from './data'
 
 const app = express()
 
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
+
+app.request.can = function (role: Role) {
+  return this.user != null && this.user.role >= role
+}
 
 // authenticate
 app.use((req, res, next) => {

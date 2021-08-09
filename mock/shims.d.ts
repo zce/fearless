@@ -1,11 +1,10 @@
-declare namespace Express {
-  export interface Request {
-    user?: {
-      id: string
-      username: string
-      password: string
-      name: string
-      avatar: string
+import { Role, User } from './data'
+
+declare global {
+  namespace Express {
+    export interface Request {
+      user?: User
+      can: (role: Role) => boolean
     }
   }
 }

@@ -61,12 +61,14 @@
 <script lang="ts" setup>
 import { h } from 'vue'
 import { useMessage } from 'naive-ui'
-import { RouterLink } from 'vue-router'
+import { useRouter, RouterLink } from 'vue-router'
 import { icons } from '../utils'
+import { auth } from '../services'
 
 // import { useMenuOptions } from '../composables'
 // const menuOptions = useMenuOptions('shortcut')
 
+const router = useRouter()
 const message = useMessage()
 
 const options = [
@@ -83,13 +85,19 @@ const options = [
     key: 'divider'
   },
   {
-    label: () => h(RouterLink, { to: '/signout' }, 'Sign out'),
-    key: 'signout'
+    label: 'Sign out',
+    key: 'logout'
   }
 ]
 
-const handleOptionsSelect = (key: unknown): void => {
-  message.info(`Selected option: ${key as string}`)
+const handleOptionsSelect = async (key: unknown): Promise<void> => {
+  const action = key as string
+  if (action === 'logout') {
+    await auth.logout()
+    await router.push({ name: 'login' })
+    return
+  }
+  message.info(`Selected action: ${action}`)
 }
 </script>
 

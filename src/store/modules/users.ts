@@ -1,33 +1,18 @@
-// /**
-//  * Initial state
-//  */
-// const state = {
+import { Module } from 'vuex'
+import { State } from '../state'
 
-// }
+interface UserState {
+  count: number
+}
 
-// /**
-//  * Getters
-//  * @type {import('vuex/types').GetterTree<typeof state>}
-//  */
-// const getters = {
+const mod: Module<UserState, State> = {
+  namespaced: true,
+  state: {
+    count: 0
+  },
+  getters: {},
+  mutations: {},
+  actions: {}
+}
 
-// }
-
-// /**
-//  * Mutations
-//  * @type {import('vuex/types').MutationTree<typeof state>}
-//  */
-// const mutations = {
-
-// }
-
-// /**
-//  * Actions
-//  * @type {import('vuex/types').ActionTree<typeof state>}
-//  */
-// const actions = {
-
-// }
-
-// // Export module
-// export default { state, getters, mutations, actions }
+export default mod

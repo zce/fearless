@@ -30,6 +30,9 @@ const refreshAuth = async (): Promise<string | undefined> => {
     return `${newToken.type} ${newToken.access}`
   } catch {
     remove('token')
+    // TODO: re-authenticate if refresh fails
+    // await router.push({ name: 'login', query: { redirect: router.currentRoute.value.fullPath } })
+    window.location.reload()
   }
 }
 
@@ -63,18 +66,18 @@ export const api = ky.extend({
     ],
     beforeRetry: [
       async options => {
-        // TODO: refresh token if 401
-        const auth = await refreshAuth()
-        if (auth == null) return ky.stop
-        options.request.headers.set('Authorization', auth)
+        // refresh token if 401
+        if (options.response.status === 401) {
+          const auth = await refreshAuth()
+          if (auth == null) return ky.stop
+          options.request.headers.set('Authorization', auth)
+        }
       }
     ],
     afterResponse: [
       async (request, options, response) => {
         if (response.ok) return
-        // if (response.status === 401) {
-        //   router.push({ name: 'login', query: { redirect: router.currentRoute.value.fullPath } })
-        // }
+        // TODO: refresh token if 401
         const { message } = await response.json()
         throw new APIError(response.status, message || response.statusText)
       }

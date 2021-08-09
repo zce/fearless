@@ -1,7 +1,3 @@
-// import options from './options'
-// import users from './users'
-// import terms from './terms'
-// import posts from './posts'
-// import comments from './comments'
+import users from './users'
 
-export default {}
+export default { users }

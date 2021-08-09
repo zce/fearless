@@ -1,6 +1,6 @@
 import { ref, h, computed, ComputedRef } from 'vue'
 import { RouterLink } from 'vue-router'
-import { MenuOption, NIcon } from 'naive-ui'
+import { NIcon, MenuOption } from 'naive-ui'
 import { menu } from '../services'
 import { icons } from '../utils'
 

@@ -13,7 +13,8 @@ export const login = async (username: string, password: string): Promise<void> =
   storage.set('token', token)
 }
 
-export const logout = async (token: string): Promise<void> => {
-  await api.delete('auth/token', { json: { token } })
+export const logout = async (): Promise<void> => {
+  const { refresh } = storage.get('token')
+  await api.delete('auth/token', { json: { token: refresh } })
   storage.remove('token')
 }
