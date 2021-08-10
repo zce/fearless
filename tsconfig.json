@@ -6,6 +6,5 @@
     "strict": true,
     "esModuleInterop": true
   },
-  "include": ["src", "mock"],
-  "exclude": ["node_modules"]
+  "include": ["**/*.ts", "**/*.vue"]
 }
