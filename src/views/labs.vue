@@ -2,13 +2,18 @@
 
 <template>
   <n-h1>Labs</n-h1>
-  <n-p>Not yet!</n-p>
+  <n-button @click="handleClick">button</n-button>
+  <n-h1>{{ currentUser?.username }}</n-h1>
+  <n-h1 v-for="i in 100" :key="i">List item {{ i }}</n-h1>
 </template>
 
 <script lang="ts" setup>
-import { getCurrentInstance } from '@vue/runtime-core'
+import { ref } from 'vue'
+import { user } from '../services'
 
-const $this = getCurrentInstance()
+const currentUser = ref<user.User | null>(null)
 
-console.log($this)
+const handleClick = async (): Promise<void> => {
+  currentUser.value = await user.getCurrentUser()
+}
 </script>

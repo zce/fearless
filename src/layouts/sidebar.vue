@@ -35,59 +35,49 @@
 </template>
 
 <script lang="ts" setup>
+import { h, computed } from 'vue'
 import { useStore } from 'vuex'
-import { useMenuOptions, useSidebarCollapsed } from '../composables'
+import { RouterLink } from 'vue-router'
+import { NIcon } from 'naive-ui'
+import { useRequest } from '../composables'
+import { menu } from '../services'
+import { icons } from '../utils'
+import type { MenuOption } from 'naive-ui'
 
 const store = useStore()
-const menuOptions = useMenuOptions('main')
-const { collapsed, toggle } = useSidebarCollapsed()
 
-// TODO: keep menu value & loading state
-// import { ref, watchEffect } from 'vue'
-// import { useRoute } from 'vue-router'
-// const route = useRoute()
-// const current = ref<string | null>(null)
-// const expanded = ref<string[]>([])
+const collapsed = computed(() => store.state.sidebarCollapsed)
 
-// watchEffect(() => {
-//   for (const item of menuOptions.value) {
-//     if (item.name == route.name && item.params == route.params) {
-//       current.value = item.key.toString()
-//     }
-//     if (item.children) {
-//       for (const child of item.children) {
-//         if (child.name == route.name && child.params == route.params) {
-//           current.value = child.key.toString()
-//           expanded.value = [item.key.toString()]
-//         }
-//       }
-//     }
-//   }
-// })
+const toggle = async (): Promise<void> => await store.dispatch('toggleSidebarCollapse')
 
-// const expandedKeys = ref([menuOptions.value[0]?.key])
-// for (const item of menuOptions.value) {
-//     if (item.name == route.name) {
-//       current.value = item.key?.toString()
-//       return [item.key]
-//     }
-//     if (item.children) {
-//       for (const sub of item.children) {
-//         if (sub.name == route.name) {
-//           current.value = item.key?.toString()
-//           return [item.key, sub.key]
-//         }
-//       }
-//     }
-//   }
+// TODO: loading state
+const { result } = useRequest(menu.getMenus(), null)
+
+const mapping = (items: menu.Menu[]): MenuOption[] => items.map(item => ({
+  ...item,
+  key: item.id,
+  label: item.name != null ? () => h(RouterLink, { to: item }, { default: () => item.label }) : item.label,
+  icon: item.icon == null
+    ? undefined
+    : () => h(NIcon, null, { default: () => h(icons[item.icon as keyof typeof icons] ?? icons.fallback) }),
+  children: item.children && mapping(item.children)
+}))
+
+const menuOptions = computed(() => (result.value ? mapping(result.value) : []))
+
+// TODO: keep menu expanded state
 </script>
 
 <style scoped>
 .logo {
+  position: sticky;
+  top: 0;
+  z-index: 1;
   display: flex;
   align-items: center;
   padding: 12px 20px;
   /* border-bottom: 1px solid var(--border-color); */
+  background: var(--color);
   font-size: 1.8em;
   font-weight: 600;
   line-height: 1;

@@ -1,17 +1,20 @@
 <!-- Home -->
+
 <template>
-  <n-button @click="handleClick">button</n-button>
-  <n-h1>{{ currentUser?.username }}</n-h1>
-  <n-h1 v-for="i in 100" :key="i">HOME {{ i }}</n-h1>
+  <n-result
+    status="success"
+    title="Dashboard"
+    description="A dashboard scaffolding based on Vue.js 3.x created by Vite."
+    size="huge"
+  >
+    <template #footer>
+      <n-button>Just So So</n-button>
+    </template>
+  </n-result>
 </template>
 
-<script lang="ts" setup>
-import { ref } from 'vue'
-import { user } from '../services'
-
-const currentUser = ref<user.User | null>(null)
-
-const handleClick = async (): Promise<void> => {
-  currentUser.value = await user.getCurrentUser()
+<style scoped>
+.n-result {
+  margin: 10vh 0;
 }
-</script>
+</style>

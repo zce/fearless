@@ -1,23 +1,34 @@
-// import { computed, onMounted, ref, UnwrapRef } from 'vue'
-// import VkLoader from '@/components/VkLoader.vue'
+import { ref, UnwrapRef, Ref } from 'vue'
 
-// export const useRequest = <T>(promise: Promise<T>) => {
-//   const data = ref<T | null>(null)
-//   const isErrored = ref<boolean>(false)
-//   const isLoading = computed(() => data.value === null)
+interface Request<T> {
+  result: Ref<UnwrapRef<T>>
+  isLoading: Ref<boolean>
+  error: Ref<Error | null>
+}
 
-//   onMounted(async () => {
-//     try {
-//       data.value = (await promise) as UnwrapRef<T>
-//     } catch {
-//       isErrored.value = true
-//     }
-//   })
+export const useRequest = <T>(promise: Promise<T>, defaults: T): Request<T> => {
+  const result = ref<T>(defaults)
+  const isLoading = ref<boolean>(true)
+  const error = ref<Error | null>(null)
 
-//   return {
-//     data,
-//     isLoading,
-//     isErrored,
-//     VkLoader
-//   }
-// }
+  promise.then(
+    val => {
+      result.value = val as UnwrapRef<T>
+      isLoading.value = false
+    },
+    e => {
+      error.value = e
+      isLoading.value = false
+    }
+  )
+
+  // onMounted(async () => {
+  //   try {
+  //     result.value = (await promise) as UnwrapRef<T>
+  //   } catch {
+  //     isErrored.value = true
+  //   }
+  // })
+
+  return { result, isLoading, error }
+}

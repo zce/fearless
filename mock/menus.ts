@@ -67,8 +67,8 @@ router.get('/', (req, res) => {
       children: [
         { id: '610159148224d543ae4e05c9', label: 'All posts', name: 'posts', params: { type: 'blog' } },
         { id: '610159148224d543ae4e05ca', label: 'New post', name: 'new', params: { type: 'blog' } },
-        { id: '610159148224d543ae4e05cb', label: 'Categories', name: 'terms', params: { type: 'blog-category' } },
-        { id: '610159148224d543ae4e05cc', label: 'Tags', name: 'terms', params: { type: 'blog-tag' } }
+        { id: '610159148224d543ae4e05cb', label: 'Categories', name: 'terms', params: { type: 'category' } },
+        { id: '610159148224d543ae4e05cc', label: 'Tags', name: 'terms', params: { type: 'tag' } }
       ].filter(Boolean)
     },
     req.can(Role.staff) && {

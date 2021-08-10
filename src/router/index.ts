@@ -24,7 +24,7 @@ router.afterEach(to => {
   // const current = to.matched[to.matched.length - 1].components.default
   // const title = current.title ?? current.name
   const items = [import.meta.env.VITE_TITLE]
-  to.meta.title && items.unshift(to.meta.title)
+  to.meta.title != null && items.unshift(to.meta.title)
   document.title = items.join(' · ')
 })
 

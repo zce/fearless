@@ -61,7 +61,7 @@ export const api = ky.extend({
     beforeRequest: [
       async (request, options) => {
         const auth = await getAuth()
-        auth && request.headers.set('Authorization', auth)
+        auth != null && request.headers.set('Authorization', auth)
       }
     ],
     beforeRetry: [
@@ -79,7 +79,7 @@ export const api = ky.extend({
         if (response.ok) return
         // TODO: refresh token if 401
         const { message } = await response.json()
-        throw new APIError(response.status, message || response.statusText)
+        throw new APIError(response.status, message ?? response.statusText)
       }
     ]
   }

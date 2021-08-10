@@ -1,4 +1,4 @@
-# dashboard
+# fearless
 
 [![Build Status][actions-img]][actions-url]
 [![License][license-img]][license-url]
@@ -6,7 +6,7 @@
 [![devDependency Status][devdependency-img]][devdependency-url]
 [![Code Style][style-img]][style-url]
 
-> A dashboard scaffolding based on Vue.js 3.x & TypeScript & Vite.
+> A fearless dashboard scaffolding based on Vue.js 3.x & TypeScript created by Vite.
 
 ## Getting Started
 
@@ -20,8 +20,8 @@
 
 ```shell
 # clone repo
-$ git clone https://github.com/zce/dashboard.git
-$ cd dashboard
+$ git clone https://github.com/zce/fearless.git
+$ cd fearless
 
 # install dependencies
 $ npm install # or yarn
@@ -43,13 +43,13 @@ $ npm run build # or yarn build
 
 
 
-[actions-img]: https://github.com/zce/dashboard/workflows/CI/badge
-[actions-url]: https://github.com/zce/dashboard/actions
-[license-img]: https://img.shields.io/github/license/zce/dashboard
-[license-url]: https://github.com/zce/dashboard/blob/master/LICENSE
-[dependency-img]: https://img.shields.io/david/zce/dashboard
-[dependency-url]: https://david-dm.org/zce/dashboard
-[devdependency-img]: https://img.shields.io/david/dev/zce/dashboard
-[devdependency-url]: https://david-dm.org/zce/dashboard?type=dev
+[actions-img]: https://github.com/zce/fearless/workflows/CI/badge
+[actions-url]: https://github.com/zce/fearless/actions
+[license-img]: https://img.shields.io/github/license/zce/fearless
+[license-url]: https://github.com/zce/fearless/blob/master/LICENSE
+[dependency-img]: https://img.shields.io/david/zce/fearless
+[dependency-url]: https://david-dm.org/zce/fearless
+[devdependency-img]: https://img.shields.io/david/dev/zce/fearless
+[devdependency-url]: https://david-dm.org/zce/fearless?type=dev
 [style-img]: https://img.shields.io/badge/code%20style-standard-brightgreen
 [style-url]: https://standardjs.com

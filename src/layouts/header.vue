@@ -1,10 +1,9 @@
 <template>
   <n-layout-header bordered>
     <n-breadcrumb>
-      <n-breadcrumb-item>Posts</n-breadcrumb-item>
-      <n-breadcrumb-item>New post</n-breadcrumb-item>
+      <n-breadcrumb-item>Dashboard</n-breadcrumb-item>
+      <n-breadcrumb-item>Home</n-breadcrumb-item>
     </n-breadcrumb>
-    <!-- <n-menu mode="horizontal" :options="menuOptions" /> -->
     <n-space :size="20" align="center" style="line-height: 1">
       <n-tooltip>
         <template #trigger>
@@ -65,9 +64,6 @@ import { useRouter, RouterLink } from 'vue-router'
 import { icons } from '../utils'
 import { auth } from '../services'
 
-// import { useMenuOptions } from '../composables'
-// const menuOptions = useMenuOptions('shortcut')
-
 const router = useRouter()
 const message = useMessage()
 
@@ -103,6 +99,9 @@ const handleOptionsSelect = async (key: unknown): Promise<void> => {
 
 <style scoped>
 .n-layout-header {
+  position: sticky;
+  top: 0;
+  z-index: 1;
   display: flex;
   align-items: center;
   padding: 9px 18px;

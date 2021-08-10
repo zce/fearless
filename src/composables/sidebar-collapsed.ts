@@ -14,5 +14,3 @@ export const useSidebarCollapsed = (): SidebarCollapsed => {
     toggle: async () => await store.dispatch('toggleSidebarCollapse')
   }
 }
-
-export default useSidebarCollapsed
