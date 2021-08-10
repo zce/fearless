@@ -57,8 +57,9 @@ const handleLogin = async (e: Event): Promise<void> => {
   loading.value = true
   try {
     await auth.login(model.value.username, model.value.password)
-    const redirect = router.currentRoute.value.query.redirect?.toString()
-    await router.replace(redirect ?? '/')
+    const route = router.currentRoute.value
+    const redirect = route.query.redirect?.toString()
+    await router.replace(redirect ?? route.redirectedFrom?.fullPath ?? '/')
   } catch (e) {
     message.error(e.message)
   }
