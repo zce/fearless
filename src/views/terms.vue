@@ -1,4 +1,4 @@
-<title>Terms</title>
+<!-- Terms -->
 
 <template>
   <n-h1>Terms</n-h1>

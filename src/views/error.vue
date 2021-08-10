@@ -1,4 +1,4 @@
-<title>Oh no!</title>
+<!-- Oh no! -->
 
 <template>
   <n-result status="500" title="Server Error" description="Server error may prove that you need hiring more developers.">

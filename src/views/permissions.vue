@@ -1,4 +1,4 @@
-<title>Permissions</title>
+<!-- Permissions -->
 
 <template>
   <n-h1>Permissions</n-h1>

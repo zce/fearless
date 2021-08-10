@@ -1,4 +1,4 @@
-<title>Install</title>
+<!-- Install -->
 
 <template>
   <n-h1>Install</n-h1>

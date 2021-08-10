@@ -1,4 +1,4 @@
-<title>Navigation</title>
+<!-- Navigation -->
 
 <template>
   <n-h1>Navigation</n-h1>

@@ -1,31 +1,30 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import routes from './routes'
 import { storage } from '../utils'
+import routes from './routes'
 
 const history = createWebHistory()
 
 const router = createRouter({ history, routes })
 
 // Authorize (Make sure that is the first hook.)
-router.beforeEach(async to => {
+router.beforeEach(to => {
   const token = storage.get('token')
+  // allreay authorized
   if (to.name === 'login' && token != null) {
     return to.query.redirect?.toString() ?? '/'
   }
-  // don't need authorize or token is valid
-  if (!to.meta.requireAuth || token != null) {
-    return
+  // need authorize & token is invalid
+  if (to.meta.requiresAuth === true && token == null) {
+    return { name: 'login', query: { redirect: to.fullPath } }
   }
-  // redirect to login page
-  return { name: 'login', query: { redirect: to.fullPath } }
 })
 
 router.afterEach(to => {
-  const current = to.matched[to.matched.length - 1].components.default as { title?: string, name: string }
-  // title from sfc custom block
-  const title = current.title ?? current.name ?? to.name
+  // TODO: title from sfc custom block?
+  // const current = to.matched[to.matched.length - 1].components.default
+  // const title = current.title ?? current.name
   const items = [import.meta.env.VITE_TITLE]
-  title && items.unshift(title)
+  to.meta.title && items.unshift(to.meta.title)
   document.title = items.join(' · ')
 })
 

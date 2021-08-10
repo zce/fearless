@@ -1,4 +1,4 @@
-<title>Customize</title>
+<!-- Customize -->
 
 <template>
   <n-h1>Customize</n-h1>

@@ -1,4 +1,4 @@
-<title>Users</title>
+<!-- Users -->
 
 <template>
   <n-h1>Users</n-h1>

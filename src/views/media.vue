@@ -1,4 +1,4 @@
-<title>Media</title>
+<!-- Media -->
 
 <template>
   <n-h1>Media</n-h1>

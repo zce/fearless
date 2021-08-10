@@ -1,4 +1,4 @@
-<title>Available tools</title>
+<!-- Available tools -->
 
 <template>
   <n-h1>Available tools</n-h1>

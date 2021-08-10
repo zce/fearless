@@ -1,4 +1,4 @@
-<title>New</title>
+<!-- New -->
 
 <template>
   <n-h1>New</n-h1>

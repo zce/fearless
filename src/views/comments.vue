@@ -1,4 +1,4 @@
-<title>Comments</title>
+<!-- Comments -->
 
 <template>
   <n-h1>Comments</n-h1>

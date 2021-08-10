@@ -11,6 +11,11 @@ app.request.can = function (role: Role) {
   return this.user != null && this.user.role >= role
 }
 
+app.use((req, res, next) => {
+  // delay response
+  setTimeout(next, 1000)
+})
+
 // authenticate
 app.use((req, res, next) => {
   if (req.path.startsWith('/auth')) return next()

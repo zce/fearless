@@ -1,4 +1,4 @@
-<title>About</title>
+<!-- About -->
 
 <template>
   <n-image src="https://img.zce.me/logo/sign.png" alt="Wang Lei" width="300" />

@@ -1,4 +1,4 @@
-<title>Plugins</title>
+<!-- Plugins -->
 
 <template>
   <n-h1>Plugins</n-h1>

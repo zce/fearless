@@ -1,4 +1,4 @@
-<title>Upload media</title>
+<!-- Upload media -->
 
 <template>
   <n-h1>Upload media</n-h1>

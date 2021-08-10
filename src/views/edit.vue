@@ -1,4 +1,4 @@
-<title>Edit</title>
+<!-- Edit -->
 
 <template>
   <n-h1>Edit {{ $route.params.type }}</n-h1>

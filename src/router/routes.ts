@@ -2,177 +2,243 @@
 import { RouteRecordRaw } from 'vue-router'
 
 const mainRoutes: RouteRecordRaw[] = [
-  // - Dashboard
   {
     name: 'home',
     path: '/',
     component: () => import('../views/home.vue'),
-    meta: { requireAuth: true }
+    meta: {
+      title: 'Home',
+      requiresAuth: true
+    }
   },
   {
     name: 'update',
     path: '/update',
     component: () => import('../views/update.vue'),
-    meta: { requireAuth: true }
+    meta: {
+      title: 'Update',
+      requiresAuth: true
+    }
   },
   {
     name: 'about',
     path: '/about',
     component: () => import('../views/about.vue'),
-    meta: { requireAuth: true }
+    meta: {
+      title: 'About',
+      requiresAuth: true
+    }
   },
   {
     name: 'profile',
     path: '/profile',
     component: () => import('../views/profile.vue'),
-    meta: { requireAuth: true }
+    meta: {
+      title: 'Profile',
+      requiresAuth: true
+    }
   },
-  // - Posts
   {
     name: 'posts',
     path: '/posts/:type',
     component: () => import('../views/posts.vue'),
-    meta: { requireAuth: true }
+    meta: {
+      title: 'Posts',
+      requiresAuth: true
+    }
   },
   {
     name: 'new',
     path: '/new/:type',
     component: () => import('../views/new.vue'),
-    meta: { requireAuth: true }
+    meta: {
+      title: 'New',
+      requiresAuth: true
+    }
   },
   {
     name: 'edit',
     path: '/edit/:type/:slug?',
     component: () => import('../views/edit.vue'),
-    meta: { requireAuth: true }
+    meta: {
+      title: 'Edit',
+      requiresAuth: true
+    }
   },
-  // - Media
   {
     name: 'media',
     path: '/media',
     component: () => import('../views/media.vue'),
-    meta: { requireAuth: true }
+    meta: {
+      title: 'Media',
+      requiresAuth: true
+    }
   },
   {
     name: 'upload',
     path: '/upload',
     component: () => import('../views/upload.vue'),
-    meta: { requireAuth: true }
+    meta: {
+      title: 'Upload',
+      requiresAuth: true
+    }
   },
-  // - Terms
   {
     name: 'terms',
     path: '/terms/:type',
     component: () => import('../views/terms.vue'),
-    meta: { requireAuth: true }
+    meta: {
+      title: 'Terms',
+      requiresAuth: true
+    }
   },
-  // - Users
   {
     name: 'users',
     path: '/users/:page?',
     component: () => import('../views/users.vue'),
-    meta: { requireAuth: true }
+    meta: {
+      title: 'Users',
+      requiresAuth: true
+    }
   },
   {
     name: 'roles',
     path: '/roles',
     component: () => import('../views/roles.vue'),
-    meta: { requireAuth: true }
+    meta: {
+      title: 'Roles',
+      requiresAuth: true
+    }
   },
   {
     name: 'permissions',
     path: '/permissions',
     component: () => import('../views/permissions.vue'),
-    meta: { requireAuth: true }
+    meta: {
+      title: 'Permissions',
+      requiresAuth: true
+    }
   },
-  // - Comments
   {
     name: 'comments',
     path: '/comments',
     component: () => import('../views/comments.vue'),
-    meta: { requireAuth: true }
+    meta: {
+      title: 'Comments',
+      requiresAuth: true
+    }
   },
-  // - Appearances
   {
     name: 'themes',
     path: '/themes',
     component: () => import('../views/themes.vue'),
-    meta: { requireAuth: true }
+    meta: {
+      title: 'Themes',
+      requiresAuth: true
+    }
   },
   {
     name: 'customize',
     path: '/customize',
     component: () => import('../views/customize.vue'),
-    meta: { requireAuth: true }
+    meta: {
+      title: 'Customize',
+      requiresAuth: true
+    }
   },
   {
     name: 'widgets',
     path: '/widgets',
     component: () => import('../views/widgets.vue'),
-    meta: { requireAuth: true }
+    meta: {
+      title: 'Widgets',
+      requiresAuth: true
+    }
   },
   {
     name: 'navigation',
     path: '/navigation',
     component: () => import('../views/navigation.vue'),
-    meta: { requireAuth: true }
+    meta: {
+      title: 'Navigation',
+      requiresAuth: true
+    }
   },
-  // - Plugins
   {
     name: 'plugins',
     path: '/plugins',
     component: () => import('../views/plugins.vue'),
-    meta: { requireAuth: true }
+    meta: {
+      title: 'Plugins',
+      requiresAuth: true
+    }
   },
-  // - Tools
   {
     name: 'install',
     path: '/install/:type',
     component: () => import('../views/install.vue'),
-    meta: { requireAuth: true }
+    meta: {
+      title: 'Install',
+      requiresAuth: true
+    }
   },
   {
     name: 'tools',
     path: '/tools',
     component: () => import('../views/tools.vue'),
-    meta: { requireAuth: true }
+    meta: {
+      title: 'Tools',
+      requiresAuth: true
+    }
   },
   {
     name: 'import',
     path: '/import',
     component: () => import('../views/import.vue'),
-    meta: { requireAuth: true }
+    meta: {
+      title: 'Import',
+      requiresAuth: true
+    }
   },
   {
     name: 'export',
     path: '/export',
     component: () => import('../views/export.vue'),
-    meta: { requireAuth: true }
+    meta: {
+      title: 'Export',
+      requiresAuth: true
+    }
   },
-  // - Options
   {
     name: 'options',
     path: '/options/:type',
     component: () => import('../views/options.vue'),
-    meta: { requireAuth: true }
+    meta: {
+      title: 'Options',
+      requiresAuth: true
+    }
   }
 ]
 
 const labsRoutes: RouteRecordRaw[] = [
-  // ## labs views
-  // {
-  //   name: 'labs',
-  //   path: '/labs',
-  //   component: () => import('../views/labs/index.vue'),
-  //   meta: { requireAuth: false }
-  // }
+  {
+    name: 'labs',
+    path: '/labs',
+    component: () => import('../views/labs.vue'),
+    meta: {
+      title: 'Labs'
+    }
+  }
 ]
 
 const routes: RouteRecordRaw[] = [
   {
     name: 'login',
     path: '/login',
-    component: () => import('../views/login.vue')
+    component: () => import('../views/login.vue'),
+    meta: {
+      title: 'Sign In'
+    }
   },
   {
     name: 'layout',
@@ -185,7 +251,9 @@ const routes: RouteRecordRaw[] = [
     name: 'not-found',
     path: '/:path*',
     component: () => import('../views/error.vue'),
-    meta: { requireAuth: false }
+    meta: {
+      title: 'Oh no!'
+    }
   }
 ]
 

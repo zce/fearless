@@ -1,4 +1,4 @@
-<title>Widgets</title>
+<!-- Widgets -->
 
 <template>
   <n-h1>Widgets</n-h1>

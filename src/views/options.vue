@@ -1,4 +1,4 @@
-<title>Options</title>
+<!-- Options -->
 
 <template>
   <n-h1>Options</n-h1>

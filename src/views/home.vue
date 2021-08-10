@@ -1,4 +1,4 @@
-<title>Home</title>
+<!-- Home -->
 <template>
   <n-button @click="handleClick">button</n-button>
   <n-h1>{{ currentUser?.username }}</n-h1>

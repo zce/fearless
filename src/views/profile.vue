@@ -1,4 +1,4 @@
-<title>Profiles</title>
+<!-- Profiles -->
 
 <template>
   <n-h1>Profiles</n-h1>

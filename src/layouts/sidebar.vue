@@ -42,6 +42,7 @@ const store = useStore()
 const menuOptions = useMenuOptions('main')
 const { collapsed, toggle } = useSidebarCollapsed()
 
+// TODO: keep menu value & loading state
 // import { ref, watchEffect } from 'vue'
 // import { useRoute } from 'vue-router'
 // const route = useRoute()

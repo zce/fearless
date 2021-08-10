@@ -1,4 +1,4 @@
-<title>Themes</title>
+<!-- Themes -->
 
 <template>
   <n-h1>Themes</n-h1>
