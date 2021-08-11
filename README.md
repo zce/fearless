@@ -8,6 +8,25 @@
 
 > A fearless dashboard scaffolding based on Vue.js 3.x & TypeScript created by Vite.
 
+## Online Preview
+
+- https://fearless.zce.me
+
+### Accounts
+
+- Owner
+  - Username: zce
+  - Password: wanglei
+- Owner
+  - Username: jack
+  - Password: 123
+- Owner
+  - Username: pony
+  - Password: 123
+- Owner
+  - Username: tom
+  - Password: 123
+
 ## Getting Started
 
 ### Prerequisites
@@ -15,6 +34,17 @@
 - [Node.js](https://nodejs.org) (>= 12.10, 14.17 preferred)
 - [npm](https://www.npmjs.com) (>= 6.x) or [yarn](https://yarnpkg.com) (>= 1.22)
 - [Git](https://git-scm.com) (>= 2.20)
+
+### Features
+
+- TypeScript
+- Vue.js 3.x
+- Vuex
+- Vue Router
+- Naive UI
+- Vite
+- Token Authorization
+- Mock Server
 
 ### Clone & Install
 
@@ -37,13 +67,15 @@ $ npm run dev # or yarn dev
 $ npm run build # or yarn build
 ```
 
+
+
 ## License
 
 [MIT](LICENSE) &copy; [zce](https://zce.me)
 
 
 
-[actions-img]: https://github.com/zce/fearless/workflows/CI/badge
+[actions-img]: https://img.shields.io/github/workflow/status/zce/fearless/CI
 [actions-url]: https://github.com/zce/fearless/actions
 [license-img]: https://img.shields.io/github/license/zce/fearless
 [license-url]: https://github.com/zce/fearless/blob/master/LICENSE
