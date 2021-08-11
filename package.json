@@ -18,7 +18,7 @@
   "author": "zce <w@zce.me> (https://zce.me)",
   "scripts": {
     "lint": "eslint . --ext .ts,.vue --fix",
-    "dev1": "vite",
+    "dev": "vite",
     "build": "vue-tsc --noEmit && vite build",
     "serve": "vite preview",
     "prepare": "husky install .github/husky"

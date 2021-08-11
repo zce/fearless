@@ -1,8 +1,5 @@
 {
-  "builds": [
-    { "src": "mock/vercel.ts", "use": "@vercel/node" }
-  ],
   "rewrites": [
-    { "source": "/api/:endpoint*", "destination": "mock/vercel.ts" }
+    { "source": "/api/:endpoint*", "destination": "api/index" }
   ]
 }
