@@ -6,26 +6,45 @@
 [![devDependency Status][devdependency-img]][devdependency-url]
 [![Code Style][style-img]][style-url]
 
-> A fearless dashboard scaffolding based on Vue.js 3.x & TypeScript created by Vite.
+> A dashboard scaffolding based on Vue.js 3.x & TypeScript created by Vite.
+
+## Features
+
+- Modern Vue.js Ecosystem
+  - vue 3.x
+  - vuex 4.x
+  - vue-router 4.x
+- Fully strongly typed
+  - typescript 4.x
+- Next generation frontend tooling
+  - vite 2.x
+- HTTP request based on Fetch API
+  - ky 0.x (not axios)
+- Customizable UI Library
+  - naive-ui 2.x
+- Complete engineering workflow
+  - eslint 7.x
+  - husky 7.x
+  - lint-staged 11.x
+  - commitlint 13.x
+- Locally mocked API server
+  - express 4.x
+- Authorization
+  - Access token
+  - Refresh token
+  - Auth refresh token
+  - Role based authorization
+- Modern application deployment
+  - GitHub Actions
+  - Vercel (with Serverless functions)
 
 ## Online Preview
 
 - https://fearless.zce.me
-
-### Accounts
-
-- Owner
-  - Username: zce
-  - Password: wanglei
-- Owner
-  - Username: jack
-  - Password: 123
-- Owner
-  - Username: pony
-  - Password: 123
-- Owner
-  - Username: tom
-  - Password: 123
+  - owner - username: zce; password: wanglei
+  - admin - username: jack; password: 123
+  - staff - username: pony; password: 123
+  - owner - username: tom; password: 123
 
 ## Getting Started
 
@@ -35,16 +54,16 @@
 - [npm](https://www.npmjs.com) (>= 6.x) or [yarn](https://yarnpkg.com) (>= 1.22)
 - [Git](https://git-scm.com) (>= 2.20)
 
-### Features
+### Scaffolding tools
 
-- TypeScript
-- Vue.js 3.x
-- Vuex
-- Vue Router
-- Naive UI
-- Vite
-- Token Authorization
-- Mock Server
+Create an application by [zce/caz](https://github.com/zce/caz)
+
+```shell
+# create apps through this
+$ npx caz vue#next my-app
+# enter generated directory
+$ cd my-app
+```
 
 ### Clone & Install
 
@@ -67,7 +86,9 @@ $ npm run dev # or yarn dev
 $ npm run build # or yarn build
 ```
 
+### Mock API Server
 
+The built-in mock server starts as a vite plugin. that means you don't need to start it alone.
 
 ## License
 

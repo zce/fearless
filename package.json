@@ -2,7 +2,7 @@
   "name": "fearless",
   "version": "0.1.0",
   "private": true,
-  "description": "A fearless dashboard scaffolding based on Vue.js 3.x & TypeScript created by Vite.",
+  "description": "A dashboard scaffolding based on Vue.js 3.x & TypeScript created by Vite.",
   "keywords": [
     "fearless",
     "dashboard",
@@ -54,7 +54,6 @@
     "typescript": "4.3.5",
     "vite": "2.4.4",
     "vue": "3.2.1",
-    "vue-i18n": "9.1.7",
     "vue-router": "4.0.11",
     "vue-tsc": "0.2.2",
     "vuex": "4.0.2"
