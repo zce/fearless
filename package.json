@@ -16,10 +16,9 @@
   "repository": "zce/fearless",
   "license": "MIT",
   "author": "zce <w@zce.me> (https://zce.me)",
-  "main": "N/A",
   "scripts": {
     "lint": "eslint . --ext .ts,.vue --fix",
-    "dev": "vite",
+    "dev1": "vite",
     "build": "vue-tsc --noEmit && vite build",
     "serve": "vite preview",
     "prepare": "husky install .github/husky"
@@ -61,6 +60,6 @@
     "vuex": "4.0.2"
   },
   "engines": {
-    "node": ">=12.10"
+    "node": ">=14"
   }
 }

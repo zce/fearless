@@ -17,7 +17,7 @@
       </n-tooltip>
       <n-tooltip>
         <template #trigger>
-          <n-a href="https://github.com/zce/dashboard" target="_blank">
+          <n-a href="https://github.com/zce/fearless" target="_blank">
             <n-icon size="22" :depth="2">
               <component :is="icons.github" />
             </n-icon>

@@ -16,7 +16,6 @@ app.request.can = function (role: Role) {
 
 // authenticate
 app.use((req, res, next) => {
-  console.log(req.path)
   if (req.path.startsWith('/auth')) return next()
   const [, accessToken] = req.headers.authorization?.split(' ') ?? []
   if (accessToken == null) {
