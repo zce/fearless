@@ -40,5 +40,6 @@ app.use((req, res, next) => {
 app.use('/auth', require('./auth').default)
 app.use('/menus', require('./menus').default)
 app.use('/users', require('./users').default)
+app.use('/labs', require('./labs').default)
 
 export default app

@@ -8,13 +8,13 @@ const router = createRouter({ history, routes })
 
 // Authorize (Make sure that is the first hook.)
 router.beforeEach(to => {
-  const token = storage.get('token')
+  const { expires = 0 } = storage.get<Token>('token') ?? {}
   // allreay authorized
-  if (to.name === 'login' && token != null) {
+  if (to.name === 'login' && expires > Date.now()) {
     return to.query.redirect?.toString() ?? '/'
   }
   // need authorize & token is invalid
-  if (to.meta.requiresAuth === true && token == null) {
+  if (to.meta.requiresAuth === true && expires <= Date.now()) {
     return { name: 'login', query: { redirect: to.fullPath } }
   }
 })

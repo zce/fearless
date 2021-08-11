@@ -51,7 +51,7 @@
         </n-tabs>
       </n-popover>
       <n-dropdown placement="bottom-end" show-arrow :options="options" @select="handleOptionsSelect">
-        <n-avatar size="small" round src="https://s.zceme.cn/avatar/zce.jpg" />
+        <n-avatar size="small" round :src="currentUser?.avatar" />
       </n-dropdown>
     </n-space>
   </n-layout-header>
@@ -61,11 +61,13 @@
 import { h } from 'vue'
 import { useMessage } from 'naive-ui'
 import { useRouter, RouterLink } from 'vue-router'
+import { useRequest } from '../composables'
+import { auth, user } from '../services'
 import { icons } from '../utils'
-import { auth } from '../services'
 
 const router = useRouter()
 const message = useMessage()
+const { result: currentUser } = useRequest(user.getCurrentUser(), null)
 
 const options = [
   {
