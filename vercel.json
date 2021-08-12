@@ -1,6 +1,6 @@
 {
   "rewrites": [
     { "source": "/api/:endpoint*", "destination": "api/index" },
-    { "source": "/:pathinfo*", "destination": "dist/index.html" }
+    { "source": "/:pathinfo*", "destination": "index.html" }
   ]
 }
