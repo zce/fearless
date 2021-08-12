@@ -51,7 +51,7 @@
         </n-tabs>
       </n-popover>
       <n-dropdown placement="bottom-end" show-arrow :options="options" @select="handleOptionsSelect">
-        <n-avatar size="small" round :src="currentUser?.avatar" />
+        <n-avatar size="small" round :src="me?.avatar" />
       </n-dropdown>
     </n-space>
   </n-layout-header>
@@ -61,13 +61,12 @@
 import { h } from 'vue'
 import { useMessage } from 'naive-ui'
 import { useRouter, RouterLink } from 'vue-router'
-import { useRequest } from '../composables'
-import { auth, user } from '../services'
-import { icons } from '../utils'
+import { useCurrentUser } from '../composables'
+import { token, icons } from '../utils'
 
 const router = useRouter()
 const message = useMessage()
-const { result: currentUser } = useRequest(user.getCurrentUser(), null)
+const { data: me } = useCurrentUser()
 
 const options = [
   {
@@ -91,7 +90,7 @@ const options = [
 const handleOptionsSelect = async (key: unknown): Promise<void> => {
   const action = key as string
   if (action === 'logout') {
-    await auth.logout()
+    await token.revoke()
     await router.push({ name: 'login' })
     return
   }

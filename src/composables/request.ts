@@ -1,34 +1,33 @@
-import { ref, UnwrapRef, Ref } from 'vue'
+import { ref, Ref, UnwrapRef } from 'vue'
 
-interface Request<T> {
-  result: Ref<UnwrapRef<T>>
-  isLoading: Ref<boolean>
+export interface Result<T> {
+  data: Ref<UnwrapRef<T | null>>
   error: Ref<Error | null>
+  loading: Ref<boolean>
 }
 
-export const useRequest = <T>(promise: Promise<T>, defaults: T): Request<T> => {
-  const result = ref<T>(defaults)
-  const isLoading = ref<boolean>(true)
+export const useRequest = <T>(promise: Promise<T>, initialData: T | null = null): Result<T> => {
+  const data = ref<T | null>(initialData)
   const error = ref<Error | null>(null)
+  const loading = ref<boolean>(true)
 
+  // TODO: maybe request after mounting?
   promise.then(
     val => {
-      result.value = val as UnwrapRef<T>
-      isLoading.value = false
+      data.value = val as UnwrapRef<T>
+      loading.value = false
     },
-    e => {
-      error.value = e
-      isLoading.value = false
+    err => {
+      error.value = err
+      loading.value = false
     }
   )
 
-  // onMounted(async () => {
-  //   try {
-  //     result.value = (await promise) as UnwrapRef<T>
-  //   } catch {
-  //     isErrored.value = true
-  //   }
-  // })
-
-  return { result, isLoading, error }
+  return { data, error, loading }
 }
+
+// References:
+// https://github.com/vercel/swr
+// https://zhuanlan.zhihu.com/p/93824106
+// https://github.com/onlymisaky/vue3-antd-admin/blob/master/src/hooks/base/useRequest.ts
+// https://www.vuemastery.com/blog/data-fetching-and-caching-with-swr-and-vuejs/

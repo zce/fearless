@@ -8,6 +8,14 @@
 
 > A dashboard scaffolding based on Vue.js 3.x & TypeScript created by Vite.
 
+## Todo
+
+- [ ] SWR composable
+- [ ] Global store
+- [ ] CRUD demos
+- [ ] Data virtualization
+- [ ] More demos
+
 ## Features
 
 - Modern Vue.js Ecosystem

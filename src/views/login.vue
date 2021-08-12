@@ -24,7 +24,7 @@ import { computed, ref } from 'vue'
 import { useStore } from 'vuex'
 import { useRouter } from 'vue-router'
 import { useMessage } from 'naive-ui'
-import { auth } from '../services'
+import { token } from '../utils'
 
 const store = useStore()
 const router = useRouter()
@@ -56,7 +56,7 @@ const handleLogin = async (e: Event): Promise<void> => {
   e.preventDefault()
   loading.value = true
   try {
-    await auth.login(model.value.username, model.value.password)
+    await token.authenticate(model.value.username, model.value.password)
     const route = router.currentRoute.value
     const redirect = route.query.redirect?.toString()
     await router.replace(redirect ?? route.redirectedFrom?.fullPath ?? '/')

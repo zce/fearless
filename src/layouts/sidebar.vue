@@ -39,8 +39,7 @@ import { h, computed } from 'vue'
 import { useStore } from 'vuex'
 import { RouterLink } from 'vue-router'
 import { NIcon } from 'naive-ui'
-import { useRequest } from '../composables'
-import { menu } from '../services'
+import { useMenus, Menu } from '../composables'
 import { icons } from '../utils'
 import type { MenuOption } from 'naive-ui'
 
@@ -51,9 +50,9 @@ const collapsed = computed(() => store.state.sidebarCollapsed)
 const toggle = async (): Promise<void> => await store.dispatch('toggleSidebarCollapse')
 
 // TODO: loading state
-const { result } = useRequest(menu.getMenus(), null)
+const { data: menus } = useMenus()
 
-const mapping = (items: menu.Menu[]): MenuOption[] => items.map(item => ({
+const mapping = (items: Menu[]): MenuOption[] => items.map(item => ({
   ...item,
   key: item.id,
   label: item.name != null ? () => h(RouterLink, { to: item }, { default: () => item.label }) : item.label,
@@ -63,7 +62,7 @@ const mapping = (items: menu.Menu[]): MenuOption[] => items.map(item => ({
   children: item.children && mapping(item.children)
 }))
 
-const menuOptions = computed(() => (result.value ? mapping(result.value) : []))
+const menuOptions = computed(() => (menus.value ? mapping(menus.value) : []))
 
 // TODO: keep menu expanded state
 </script>

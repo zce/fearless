@@ -43,3 +43,25 @@ export const getAuth = async (): Promise<string | undefined> => {
   if (token.expires > Date.now()) return `${token.type} ${token.access}`
   return await refreshAuth()
 }
+
+// authorize
+export const authenticate = async (username: string, password: string): Promise<Token> => {
+  const options = { prefixUrl, method: 'post', json: { grant_type: 'password', username, password } }
+  // eslint-disable-next-line @typescript-eslint/naming-convention
+  const { token_type, access_token, refresh_token, expires_in } = await ky('auth/token', options).json()
+  const token = {
+    type: token_type,
+    access: access_token,
+    refresh: refresh_token,
+    expires: Date.now() + expires_in * 1000
+  }
+  set('token', token)
+  return token
+}
+
+export const revoke = async (): Promise<void> => {
+  const token = get<Token>('token')
+  if (token?.refresh == null) return
+  await ky('auth/token', { prefixUrl, method: 'delete', json: { token: token.refresh } })
+  remove('token')
+}
