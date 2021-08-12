@@ -8,7 +8,7 @@ const router = createRouter({ history, routes })
 
 // Authorize (Make sure that is the first hook.)
 router.beforeEach(to => {
-  const { expires = 0 } = storage.get<Token>('token') ?? {}
+  const { expires = 0 } = storage.get('token') ?? {}
   // allreay authorized
   if (to.name === 'login' && expires > Date.now()) {
     return to.query.redirect?.toString() ?? '/'

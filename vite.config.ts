@@ -5,17 +5,18 @@
 
 import { defineConfig, Plugin } from 'vite'
 import vue from '@vitejs/plugin-vue'
-import mockServer from './mock'
+import mockApp from './mock'
 
 const mock = (): Plugin => ({
   name: 'mock',
   configureServer: async server => {
     // Add mock server, `/api` is the base url
-    server.middlewares.use('/api', mockServer)
+    server.middlewares.use('/api', mockApp)
   }
 })
 
 // for parse sfc custom blocks
+// https://github.com/vitejs/vite/tree/main/packages/plugin-vue#example-for-transforming-custom-blocks
 // const sfcCustomBlocks = (): Plugin => ({
 //   name: 'sfcCustomBlocks',
 //   transform: (code, id) => {
