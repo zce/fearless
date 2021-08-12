@@ -36,16 +36,12 @@
         <n-tabs type="line" justify-content="space-evenly" style="--pane-padding: 0">
           <n-tab-pane name="notifications" tab="Notifications (5)">
             <n-list style="margin: 0">
-              <n-list-item v-for="i in 5" :key="i">
-                Notification {{ i }}
-              </n-list-item>
+              <n-list-item v-for="i in 5" :key="i"> Notification {{ i }} </n-list-item>
             </n-list>
           </n-tab-pane>
           <n-tab-pane name="messages" tab="Messages (6)">
             <n-list style="margin: 0">
-              <n-list-item v-for="i in 6" :key="i">
-                Message {{ i }}
-              </n-list-item>
+              <n-list-item v-for="i in 6" :key="i"> Message {{ i }} </n-list-item>
             </n-list>
           </n-tab-pane>
         </n-tabs>
@@ -58,7 +54,7 @@
 </template>
 
 <script lang="ts" setup>
-import { h } from 'vue'
+import { h, computed } from 'vue'
 import { useMessage } from 'naive-ui'
 import { useRouter, RouterLink } from 'vue-router'
 import { useCurrentUser } from '../composables'
@@ -68,33 +64,22 @@ const router = useRouter()
 const message = useMessage()
 const { data: me } = useCurrentUser()
 
-const options = [
-  {
-    label: () => h(RouterLink, { to: '/profile' }, 'Your Profiles'),
-    key: 'profile'
-  },
-  {
-    label: () => h(RouterLink, { to: '/profile/settings' }, 'Settings'),
-    key: 'settings'
-  },
-  {
-    type: 'divider',
-    key: 'divider'
-  },
-  {
-    label: 'Sign out',
-    key: 'logout'
-  }
-]
+const options = computed(() => [
+  { key: 'me', label: `Hey, ${me.value?.name as string}!` },
+  { key: 'divider', type: 'divider' },
+  { key: 'profile', label: () => h(RouterLink, { to: '/profile' }, 'Your Profiles') },
+  { key: 'settings', label: () => h(RouterLink, { to: '/profile/settings' }, 'Settings') },
+  { key: 'divider', type: 'divider' },
+  { key: 'logout', label: 'Sign out' }
+])
 
 const handleOptionsSelect = async (key: unknown): Promise<void> => {
-  const action = key as string
-  if (action === 'logout') {
+  if (key as string === 'logout') {
     await token.revoke()
     await router.push({ name: 'login' })
-    return
+  } else if (key as string === 'me') {
+    message.success(`Welcome back, ${me.value?.name as string}!`)
   }
-  message.info(`Selected action: ${action}`)
 }
 </script>
 
