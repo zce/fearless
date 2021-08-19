@@ -52,7 +52,7 @@
     "lint-staged": "11.1.2",
     "naive-ui": "2.16.2",
     "typescript": "4.3.5",
-    "vite": "2.4.4",
+    "vite": "2.5.0",
     "vue": "3.2.2",
     "vue-router": "4.0.11",
     "vue-tsc": "0.2.2",
