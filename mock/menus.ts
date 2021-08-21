@@ -52,7 +52,7 @@ router.get('/', (req, res) => {
       id: '610159148224d543ae4e05c5',
       label: 'Dashboard',
       icon: 'dashboard',
-      name: 'home',
+      // name: 'home',
       children: [
         { id: '610159148224d543ae4e05c6', label: 'Home', name: 'home' },
         req.can(Role.owner) && { id: '610159148224d543ae4e05c7', label: 'Update', name: 'update' }
@@ -62,8 +62,8 @@ router.get('/', (req, res) => {
       id: '610159148224d543ae4e05c8',
       label: 'Posts',
       icon: 'posts',
-      name: 'posts',
-      params: { type: 'blog' },
+      // name: 'posts',
+      // params: { type: 'blog' },
       children: [
         { id: '610159148224d543ae4e05c9', label: 'All posts', name: 'posts', params: { type: 'blog' } },
         { id: '610159148224d543ae4e05ca', label: 'New post', name: 'new', params: { type: 'blog' } },
@@ -75,8 +75,8 @@ router.get('/', (req, res) => {
       id: '610159148224d543ae4e05cd',
       label: 'Pages',
       icon: 'pages',
-      name: 'posts',
-      params: { type: 'page' },
+      // name: 'posts',
+      // params: { type: 'page' },
       children: [
         { id: '610159148224d543ae4e05ce', label: 'All pages', name: 'posts', params: { type: 'page' } },
         req.can(Role.admin) && { id: '610159148224d543ae4e05cf', label: 'New page', name: 'new', params: { type: 'page' } }
@@ -86,7 +86,7 @@ router.get('/', (req, res) => {
       id: '610159148224d543ae4e05d0',
       label: 'Media',
       icon: 'media',
-      name: 'media',
+      // name: 'media',
       children: [
         { id: '610159148224d543ae4e05d1', label: 'Media library', name: 'media' },
         { id: '610159148224d543ae4e05d2', label: 'Upload', name: 'upload' }
@@ -96,7 +96,7 @@ router.get('/', (req, res) => {
       id: '610159148224d543ae4e05d3',
       label: 'Users',
       icon: 'users',
-      name: 'users',
+      // name: 'users',
       children: [
         { id: '610159148224d543ae4e05d4', label: 'All users', name: 'users' },
         { id: '610159148224d543ae4e05d5', label: 'Roles', name: 'roles' },
@@ -113,7 +113,7 @@ router.get('/', (req, res) => {
       id: '610159148224d543ae4e05d8',
       label: 'Themes',
       icon: 'themes',
-      name: 'themes',
+      // name: 'themes',
       children: [
         { id: '610159148224d543ae4e05d9', label: 'Themes', name: 'themes' },
         { id: '610159148224d543ae4e05da', label: 'Customization', name: 'customize' },
@@ -125,7 +125,7 @@ router.get('/', (req, res) => {
       id: '610159148224d543ae4e05dd',
       label: 'Plugins',
       icon: 'plugins',
-      name: 'plugins',
+      // name: 'plugins',
       children: [
         { id: '610159148224d543ae4e05de', label: 'Installed plugins', name: 'plugins' },
         { id: '610159148224d543ae4e05df', label: 'Install plugin', name: 'install', params: { type: 'plugin' } }
@@ -135,7 +135,7 @@ router.get('/', (req, res) => {
       id: '610159148224d543ae4e05e0',
       label: 'Tools',
       icon: 'tools',
-      name: 'tools',
+      // name: 'tools',
       children: [
         { id: '610159148224d543ae4e05e1', label: 'Available tools', name: 'tools' },
         { id: '610159148224d543ae4e05e2', label: 'Import', name: 'import' },
@@ -146,8 +146,8 @@ router.get('/', (req, res) => {
       id: '610159148224d543ae4e05e4',
       label: 'Settings',
       icon: 'settings',
-      name: 'options',
-      params: { type: 'general' },
+      // name: 'options',
+      // params: { type: 'general' },
       children: [
         { id: '610159148224d543ae4e05e5', label: 'General', name: 'options', params: { type: 'general' } },
         { id: '610159148224d543ae4e05e6', label: 'Writing', name: 'options', params: { type: 'writing' } },

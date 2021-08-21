@@ -1,14 +1,19 @@
+import { Store } from 'vuex'
 import { RouterLink, RouterView } from 'vue-router'
 import * as Naive from 'naive-ui/es/components'
+import { State } from './store'
 // for vite inject env
 import 'vite/client'
 
-type NaiveComponents = typeof Naive
-
 declare module 'vue' {
-  interface GlobalComponents extends NaiveComponents {
+  // global components
+  type GlobalComponents = typeof Naive & {
     RouterLink: typeof RouterLink
     RouterView: typeof RouterView
+  }
+
+  interface ComponentCustomProperties {
+    $store: Store<State>
   }
 }
 

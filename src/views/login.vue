@@ -2,7 +2,7 @@
 
 <template>
   <n-h1 style="--font-size: 60px; --font-weight: 100">
-    {{ store.state.name }}
+    {{ $store.state.name }}
   </n-h1>
   <n-card size="large" style="--padding-bottom: 30px">
     <n-h2 style="--font-weight: 400">Sign-in</n-h2>
@@ -21,12 +21,10 @@
 
 <script lang="ts" setup>
 import { computed, ref } from 'vue'
-import { useStore } from 'vuex'
 import { useRouter } from 'vue-router'
 import { useMessage } from 'naive-ui'
 import { token } from '../utils'
 
-const store = useStore()
 const router = useRouter()
 const message = useMessage()
 
