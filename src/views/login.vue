@@ -59,7 +59,7 @@ const handleLogin = async (e: Event): Promise<void> => {
     const redirect = route.query.redirect?.toString()
     await router.replace(redirect ?? route.redirectedFrom?.fullPath ?? '/')
   } catch (e) {
-    message.error(e.message)
+    message.error(e instanceof Error ? e.message : 'unknown error')
   }
   loading.value = false
 }
