@@ -29,5 +29,14 @@ const mock = (): Plugin => ({
 // })
 
 export default defineConfig({
-  plugins: [vue(), mock()]
+  plugins: [vue(), mock()],
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          'naive-ui': ['naive-ui']
+        }
+      }
+    }
+  }
 })
