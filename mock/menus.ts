@@ -25,25 +25,6 @@ router.get('/', (req, res) => {
           req.can(Role.admin) && { id: '610159148224d543ae4e05b8', label: 'User', name: 'users' }
         ].filter(Boolean)
       }
-      // // Labs Pages
-      // {
-      //   id: '610159148224d543ae4e05b9',
-      //   label: 'Labs',
-      //   icon: 'flask',
-      //   name: 'labs',
-      //   children: [
-      //     { id: '610159148224d543ae4e05ba', label: 'Icons', name: 'labs-icons' },
-      //     { id: '610159148224d543ae4e05bb', label: 'Button', name: 'labs-button' },
-      //     { id: '610159148224d543ae4e05bc', label: 'Table', name: 'labs-table' },
-      //     { id: '610159148224d543ae4e05be', label: 'Data', name: 'labs-data' },
-      //     { id: '610159148224d543ae4e05bf', label: 'Params', name: 'labs-params', params: { name: '汪磊' } },
-      //     { id: '610159148224d543ae4e05c0', label: 'Vuex', name: 'labs-vuex' },
-      //     { id: '610159148224d543ae4e05c1', label: 'I18n', name: 'labs-i18n' },
-      //     { id: '610159148224d543ae4e05c2', label: 'Proxy', name: 'labs-proxy' },
-      //     { id: '610159148224d543ae4e05c3', label: 'CORS', name: 'labs-cors' },
-      //     { id: '610159148224d543ae4e05c4', label: 'NotFound', name: '404' }
-      //   ].filter(Boolean)
-      // }
     ].filter(Boolean))
   }
 
@@ -156,6 +137,13 @@ router.get('/', (req, res) => {
         { id: '610159148224d543ae4e05e9', label: 'Media', name: 'options', params: { type: 'media' } },
         req.can(Role.admin) && { id: '610159148224d543ae4e05ea', label: 'Permalink', name: 'options', params: { type: 'permalink' } }
       ].filter(Boolean)
+    },
+    // Labs Pages
+    {
+      id: '610159148224d543ae4e05b9',
+      label: 'Labs',
+      icon: 'flask',
+      name: 'labs'
     }
   ].filter(Boolean))
 })
