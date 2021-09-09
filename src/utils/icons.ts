@@ -1,4 +1,5 @@
 export {
+  RefreshOutline as refresh,
   SpeedometerOutline as dashboard,
   CreateOutline as posts,
   // LibraryOutline as posts,

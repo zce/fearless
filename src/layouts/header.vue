@@ -1,5 +1,10 @@
 <template>
   <n-layout-header bordered>
+    <n-button text @click="router.go(0)">
+      <n-icon size="20" :depth="2">
+        <component :is="icons.refresh" />
+      </n-icon>
+    </n-button>
     <n-breadcrumb>
       <n-breadcrumb-item>Dashboard</n-breadcrumb-item>
       <n-breadcrumb-item>Home</n-breadcrumb-item>
@@ -91,6 +96,10 @@ const handleOptionsSelect = async (key: unknown): Promise<void> => {
   display: flex;
   align-items: center;
   padding: 9px 18px;
+}
+
+.n-button {
+  margin-right: 15px;
 }
 
 .n-space {
