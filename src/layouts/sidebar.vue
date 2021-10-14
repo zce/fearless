@@ -1,11 +1,6 @@
 <template>
   <n-layout-sider
-    :width="220"
-    :native-scrollbar="false"
-    :collapsed="collapsed"
-    collapse-mode="width"
-    show-trigger
-    bordered
+    :width="220" :native-scrollbar="false" :collapsed="collapsed" collapse-mode="width" show-trigger="bar" bordered
     @update:collapsed="toggle"
   >
     <router-link to="/" #="{ navigate, href }" custom>
