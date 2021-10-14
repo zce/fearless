@@ -5,7 +5,7 @@ const router = Router()
 
 const genToken = (): string => uuid() + uuid()
 
-const accessTokenLifetime = 1 * 60 * 1000 // 1 minute
+const accessTokenLifetime = 10 * 60 * 1000 // 10 minutes
 
 router.post('/token', (req, res) => {
   // eslint-disable-next-line @typescript-eslint/naming-convention
@@ -18,7 +18,6 @@ router.post('/token', (req, res) => {
     }
 
     const token = {
-      // id: uuid(),
       access: genToken(),
       refresh: genToken(),
       expires: Date.now() + accessTokenLifetime,
