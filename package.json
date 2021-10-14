@@ -43,7 +43,7 @@
     "@vicons/ionicons5": "0.11.0",
     "@vitejs/plugin-vue": "1.9.2",
     "@vue/compiler-sfc": "3.2.19",
-    "eslint": "7.32.0",
+    "eslint": "8.0.1",
     "eslint-config-standard-ts": "20.0.1",
     "eslint-plugin-vue": "7.18.0",
     "express": "4.17.1",
