@@ -54,7 +54,7 @@
     "typescript": "4.4.4",
     "vite": "2.6.10",
     "vue": "3.2.20",
-    "vue-router": "4.0.11",
+    "vue-router": "4.0.12",
     "vue-tsc": "0.28.7",
     "vuex": "4.0.2"
   }
