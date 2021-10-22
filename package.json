@@ -47,7 +47,7 @@
     "eslint-config-standard-ts": "21.0.0",
     "eslint-plugin-vue": "7.19.1",
     "express": "4.17.1",
-    "husky": "7.0.2",
+    "husky": "7.0.4",
     "ky": "0.28.6",
     "lint-staged": "11.2.3",
     "naive-ui": "2.19.11",
