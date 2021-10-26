@@ -49,7 +49,7 @@
     "express": "4.17.1",
     "husky": "7.0.4",
     "ky": "0.28.6",
-    "lint-staged": "11.2.3",
+    "lint-staged": "11.2.6",
     "naive-ui": "2.19.11",
     "typescript": "4.4.4",
     "vite": "2.6.10",
