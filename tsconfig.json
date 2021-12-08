@@ -6,5 +6,11 @@
     "strict": true,
     "esModuleInterop": true
   },
-  "include": ["**/*.ts", "**/*.vue"]
+  "include": [
+    "api/**/*.ts",
+    "api/**/*.d.ts",
+    "src/**/*.ts",
+    "src/**/*.d.ts",
+    "src/**/*.vue"
+  ]
 }
