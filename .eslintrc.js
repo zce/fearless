@@ -13,6 +13,7 @@ module.exports = {
   rules: {
     ...base.overrides[0].rules,
     '@typescript-eslint/strict-boolean-expressions': 'warn',
+    'vue/multi-word-component-names': 'off',
     'vue/singleline-html-element-content-newline': 'off',
     'vue/max-attributes-per-line': [
       'error',

@@ -23,7 +23,7 @@ export const users: User[] = [
     password: 'wanglei',
     role: Role.owner,
     name: '汪磊',
-    avatar: 'https://s.zceme.cn/avatar/zce.jpg'
+    avatar: 'https://cdn.zce.me/avatar/zce.jpg'
   },
   {
     id: uuid(),
@@ -31,7 +31,7 @@ export const users: User[] = [
     password: '123',
     role: Role.admin,
     name: 'Jack Ma',
-    avatar: 'https://s.zceme.cn/avatar/faker.svg'
+    avatar: 'https://cdn.zce.me/avatar/faker.svg'
   },
   {
     id: uuid(),
@@ -39,7 +39,7 @@ export const users: User[] = [
     password: '123',
     role: Role.staff,
     name: 'Pony Ma',
-    avatar: 'https://s.zceme.cn/avatar/faker.svg'
+    avatar: 'https://cdn.zce.me/avatar/faker.svg'
   },
   {
     id: uuid(),
@@ -47,7 +47,7 @@ export const users: User[] = [
     password: '123',
     role: Role.user,
     name: 'Tom Ma',
-    avatar: 'https://s.zceme.cn/avatar/faker.svg'
+    avatar: 'https://cdn.zce.me/avatar/faker.svg'
   }
 ]
 

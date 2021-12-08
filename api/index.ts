@@ -1,5 +1,5 @@
 import express from 'express'
-import mock from '../mock'
+import app from './app'
 
 // for vercel serverless functions
-export default express().use('/api', mock)
+export default express().use('/api', app)
