@@ -44,6 +44,7 @@
     "@vitejs/plugin-vue": "2.0.1",
     "@vue/compiler-sfc": "3.2.26",
     "eslint": "8.4.1",
+    "eslint-config-standard": "16.0.3",
     "eslint-config-standard-ts": "21.0.0",
     "eslint-plugin-vue": "8.2.0",
     "express": "4.17.1",

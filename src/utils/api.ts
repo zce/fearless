@@ -1,7 +1,7 @@
 import ky from 'ky'
 import { getAuth, refreshAuth } from './token'
 
-export const api = ky.extend({
+const api = ky.extend({
   prefixUrl: import.meta.env.VITE_API_BASE as string,
   hooks: {
     beforeRequest: [
@@ -23,3 +23,5 @@ export const api = ky.extend({
     ]
   }
 })
+
+export default api

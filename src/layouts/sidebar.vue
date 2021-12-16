@@ -33,10 +33,9 @@
 import { h, computed } from 'vue'
 import { useStore } from 'vuex'
 import { RouterLink } from 'vue-router'
-import { NIcon } from 'naive-ui'
+import { NIcon, MenuOption } from 'naive-ui'
 import { useMenus, Menu } from '../composables'
 import { icons } from '../utils'
-import type { MenuOption } from 'naive-ui'
 
 const store = useStore()
 

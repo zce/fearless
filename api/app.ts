@@ -1,3 +1,7 @@
+/**
+ * Mock Server App
+ */
+
 /* eslint-disable @typescript-eslint/no-var-requires */
 import express from 'express'
 import { tokens, users, Role } from './data'
