@@ -25,17 +25,17 @@
         <span>{{ store.state.name }}</span>
       </n-a>
     </router-link>
-    <n-menu :options="menuOptions" :root-indent="18" />
+    <n-menu :value="currentKey" :default-expanded-keys="expandedKeys" :options="options" :root-indent="18" @update:value="k => { currentKey = k }" />
   </n-layout-sider>
 </template>
 
 <script lang="ts" setup>
-import { h, computed } from 'vue'
+import { h, ref, computed, watchEffect } from 'vue'
 import { useStore } from 'vuex'
-import { RouterLink } from 'vue-router'
-import { NIcon, MenuOption } from 'naive-ui'
+import { useRoute, RouterLink } from 'vue-router'
+import { MenuOption } from 'naive-ui'
 import { useMenus, Menu } from '../composables'
-import { icons } from '../utils'
+import { Icon } from '../components'
 
 const store = useStore()
 
@@ -50,15 +50,35 @@ const mapping = (items: Menu[]): MenuOption[] => items.map(item => ({
   ...item,
   key: item.id,
   label: item.name != null ? () => h(RouterLink, { to: item }, { default: () => item.label }) : item.label,
-  icon: item.icon == null
-    ? undefined
-    : () => h(NIcon, null, { default: () => h(icons[item.icon as keyof typeof icons] ?? icons.fallback) }),
+  icon: item.icon != null ? () => h(Icon, { type: item.icon }) : undefined,
   children: item.children && mapping(item.children)
 }))
 
-const menuOptions = computed(() => (menus.value ? mapping(menus.value) : []))
+const options = computed(() => (menus.value ? mapping(menus.value) : []))
 
-// TODO: keep menu expanded state
+const route = useRoute()
+const currentKey = ref<string>('')
+const expandedKeys = ref<string[]>([])
+
+const routeMatched = (menu: Menu): boolean => {
+  return route.name === menu.name && (menu.params == null || JSON.stringify(route.params) === JSON.stringify(menu.params))
+}
+
+const matchExpanded = (items: Menu[]): boolean => {
+  let matched = false
+  for (const item of items) {
+    if (item.children != null) {
+      matchExpanded(item.children) && expandedKeys.value.push(item.id)
+    }
+    if (routeMatched(item)) {
+      currentKey.value = item.id
+      matched = true
+    }
+  }
+  return matched
+}
+
+watchEffect(() => menus.value && matchExpanded(menus.value))
 </script>
 
 <style scoped>

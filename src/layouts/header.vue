@@ -1,9 +1,7 @@
 <template>
   <n-layout-header bordered>
     <n-button text @click="router.go(0)">
-      <n-icon size="20" :depth="2">
-        <component :is="icons.refresh" />
-      </n-icon>
+      <icon type="refresh" size="20" :depth="2" />
     </n-button>
     <n-breadcrumb>
       <n-breadcrumb-item>Dashboard</n-breadcrumb-item>
@@ -13,9 +11,7 @@
       <n-tooltip>
         <template #trigger>
           <router-link :to="{ name: 'about' }">
-            <n-icon size="22" :depth="2">
-              <component :is="icons.help" />
-            </n-icon>
+            <icon type="help" size="22" :depth="2" />
           </router-link>
         </template>
         Dashboard help
@@ -23,9 +19,7 @@
       <n-tooltip>
         <template #trigger>
           <n-a href="https://github.com/zce/fearless" target="_blank">
-            <n-icon size="22" :depth="2">
-              <component :is="icons.github" />
-            </n-icon>
+            <icon type="github" size="22" :depth="2" />
           </n-a>
         </template>
         View on GitHub
@@ -33,9 +27,7 @@
       <n-popover trigger="click" placement="bottom-end" :width="300">
         <template #trigger>
           <n-badge dot processing>
-            <n-icon size="22" :depth="2">
-              <component :is="icons.notifications" />
-            </n-icon>
+            <icon type="notifications" size="22" :depth="2" />
           </n-badge>
         </template>
         <n-tabs type="line" justify-content="space-evenly" style="--pane-padding: 0">
@@ -63,7 +55,8 @@ import { h, computed } from 'vue'
 import { useMessage } from 'naive-ui'
 import { useRouter, RouterLink } from 'vue-router'
 import { useCurrentUser } from '../composables'
-import { token, icons } from '../utils'
+import { Icon } from '../components'
+import { token } from '../utils'
 
 const router = useRouter()
 const message = useMessage()
