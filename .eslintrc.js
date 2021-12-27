@@ -3,7 +3,7 @@ const base = require('eslint-config-standard-ts')
 /** @type {import('eslint').Linter.Config} */
 module.exports = {
   root: true,
-  extends: ['eslint-config-standard', 'plugin:vue/vue3-recommended'],
+  extends: ['standard', 'plugin:vue/vue3-recommended'],
   plugins: ['@typescript-eslint'],
   parserOptions: {
     parser: '@typescript-eslint/parser',
