@@ -46,4 +46,7 @@ app.use('/menus', require('./menus').default)
 app.use('/users', require('./users').default)
 app.use('/labs', require('./labs').default)
 
+// 404 responses
+app.use((req, res) => res.status(404).json({ message: 'Not Found' }))
+
 export default app
