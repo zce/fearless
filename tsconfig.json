@@ -8,9 +8,11 @@
   },
   "include": [
     "api/**/*.ts",
-    "api/**/*.d.ts",
+    "mock/**/*.ts",
+    "mock/**/*.d.ts",
     "src/**/*.ts",
     "src/**/*.d.ts",
-    "src/**/*.vue"
+    "src/**/*.vue",
+    "vite.config.ts"
   ]
 }

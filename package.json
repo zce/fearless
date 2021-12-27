@@ -17,7 +17,7 @@
   "license": "MIT",
   "author": "zce <w@zce.me> (https://zce.me)",
   "scripts": {
-    "lint": "eslint src api --ext .ts,.vue --fix",
+    "lint": "eslint src api mock --ext .ts,.vue --fix",
     "dev": "vite",
     "build": "vue-tsc --noEmit && vite build",
     "serve": "vite preview",

@@ -5,13 +5,13 @@
 
 import { defineConfig, Plugin } from 'vite'
 import vue from '@vitejs/plugin-vue'
-import mockApi from './api'
+import mockApp from './mock'
 
 const mock = (): Plugin => ({
   name: 'mock',
   configureServer: async server => {
-    // Add mock server, `/api` is the base url
-    server.middlewares.use(mockApi)
+    // mount mock server, `/api` is the base url
+    server.middlewares.use('/api', mockApp)
   }
 })
 

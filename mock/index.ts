@@ -42,7 +42,7 @@ app.use((req, res, next) => {
 
 // endpoints
 app.use('/auth', require('./auth').default)
-app.use('/menus', require('./menus').default)
+app.use('/menus1', require('./menus').default)
 app.use('/users', require('./users').default)
 app.use('/labs', require('./labs').default)
 

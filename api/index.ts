@@ -1,9 +1,9 @@
 /**
- * Root Express Application
+ * Standalone Express Application
  * for vercel serverless functions
  */
 
 import express from 'express'
-import app from './app'
+import mock from '../mock'
 
-export default express().use('/api', app)
+export default express().use('/api', mock)
