@@ -41,7 +41,7 @@
     "@commitlint/config-conventional": "16.0.0",
     "@types/express": "4.17.13",
     "@vicons/ionicons5": "0.11.0",
-    "@vitejs/plugin-vue": "2.0.1",
+    "@vitejs/plugin-vue": "2.3.4",
     "@vue/compiler-sfc": "3.2.26",
     "eslint": "8.5.0",
     "eslint-config-standard": "16.0.3",
