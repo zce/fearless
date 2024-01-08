@@ -1,6 +1,6 @@
 import { Router } from 'express'
 
-import { Role } from './data'
+import { Role } from './data.js'
 
 const router: Router = Router()
 
