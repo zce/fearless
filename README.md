@@ -2,8 +2,6 @@
 
 [![Build Status][actions-img]][actions-url]
 [![License][license-img]][license-url]
-[![Dependency Status][dependency-img]][dependency-url]
-[![devDependency Status][devdependency-img]][devdependency-url]
 [![Code Style][style-img]][style-url]
 
 > A dashboard scaffolding based on Vue.js 3.x & TypeScript created by Vite.
@@ -109,13 +107,9 @@ The built-in mock server starts as a vite plugin. that means you don't need to s
 
 [MIT](LICENSE) &copy; [zce](https://zce.me)
 
-[actions-img]: https://img.shields.io/github/workflow/status/zce/fearless/CI
+[actions-img]: https://img.shields.io/github/actions/workflow/status/zce/fearless/main.yml
 [actions-url]: https://github.com/zce/fearless/actions
 [license-img]: https://img.shields.io/github/license/zce/fearless
 [license-url]: https://github.com/zce/fearless/blob/master/LICENSE
-[dependency-img]: https://img.shields.io/david/zce/fearless
-[dependency-url]: https://david-dm.org/zce/fearless
-[devdependency-img]: https://img.shields.io/david/dev/zce/fearless
-[devdependency-url]: https://david-dm.org/zce/fearless?type=dev
 [style-img]: https://img.shields.io/badge/code%20style-standard-brightgreen
 [style-url]: https://standardjs.com
