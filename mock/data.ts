@@ -1,4 +1,4 @@
-export const uuid = (): string => Date.now().toString(16) + Math.floor((1 + Math.random()) * 0x10000).toString(16)
+export const uuid = (): string => Math.random().toString(16).slice(2)
 
 export enum Role {
   user,
@@ -20,10 +20,10 @@ export const users: User[] = [
   {
     id: uuid(),
     username: 'zce',
-    password: 'wanglei',
+    password: 'zce',
     role: Role.owner,
     name: '汪磊',
-    avatar: 'https://cdn.zce.me/avatar/zce.jpg'
+    avatar: 'https://s.zce.me/avatar/zce.jpg'
   },
   {
     id: uuid(),
@@ -31,7 +31,7 @@ export const users: User[] = [
     password: '123',
     role: Role.admin,
     name: 'Jack Ma',
-    avatar: 'https://cdn.zce.me/avatar/faker.svg'
+    avatar: 'https://s.zce.me/avatar/faker.svg'
   },
   {
     id: uuid(),
@@ -39,7 +39,7 @@ export const users: User[] = [
     password: '123',
     role: Role.staff,
     name: 'Pony Ma',
-    avatar: 'https://cdn.zce.me/avatar/faker.svg'
+    avatar: 'https://s.zce.me/avatar/faker.svg'
   },
   {
     id: uuid(),
@@ -47,7 +47,7 @@ export const users: User[] = [
     password: '123',
     role: Role.user,
     name: 'Tom Ma',
-    avatar: 'https://cdn.zce.me/avatar/faker.svg'
+    avatar: 'https://s.zce.me/avatar/faker.svg'
   }
 ]
 

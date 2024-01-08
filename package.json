@@ -1,11 +1,14 @@
 {
   "name": "fearless",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
   "description": "A dashboard scaffolding based on Vue.js 3.x & TypeScript created by Vite.",
   "keywords": [
     "fearless",
     "dashboard",
+    "scaffolding",
+    "starter",
+    "template",
     "vue",
     "vuejs",
     "vue3",
@@ -16,47 +19,44 @@
   "repository": "zce/fearless",
   "license": "MIT",
   "author": "zce <w@zce.me> (https://zce.me)",
+  "type": "module",
   "scripts": {
-    "lint": "eslint src api mock --ext .ts,.vue --fix",
     "dev": "vite",
-    "build": "vue-tsc --noEmit && vite build",
-    "serve": "vite preview",
-    "prepare": "husky install .github/husky"
+    "build": "run-p type-check \"build-only {@}\" --",
+    "preview": "vite preview",
+    "build-only": "vite build",
+    "type-check": "vue-tsc --build --force",
+    "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore",
+    "format": "prettier --write src/"
   },
-  "commitlint": {
-    "extends": [
-      "@commitlint/config-conventional"
-    ]
-  },
-  "lint-staged": {
-    "*.{ts,vue}": "eslint --fix"
-  },
-  "renovate": {
-    "extends": [
-      "zce"
-    ]
+  "prettier": "@zce/prettier-config",
+  "dependencies": {
+    "@vicons/ionicons5": "^0.12.0",
+    "ky": "^1.2.0",
+    "naive-ui": "^2.37.0",
+    "pinia": "^2.1.7",
+    "vue": "^3.4.5",
+    "vue-router": "^4.2.5"
   },
   "devDependencies": {
-    "@commitlint/cli": "16.0.0",
-    "@commitlint/config-conventional": "16.0.0",
-    "@types/express": "4.17.13",
-    "@vicons/ionicons5": "0.11.0",
-    "@vitejs/plugin-vue": "2.0.1",
-    "@vue/compiler-sfc": "3.2.26",
-    "eslint": "8.5.0",
-    "eslint-config-standard": "16.0.3",
-    "eslint-config-standard-ts": "21.0.0",
-    "eslint-plugin-vue": "8.2.0",
-    "express": "4.17.2",
-    "husky": "7.0.4",
-    "ky": "0.28.7",
-    "lint-staged": "12.1.4",
-    "naive-ui": "2.23.1",
-    "typescript": "4.5.4",
-    "vite": "2.7.7",
-    "vue": "3.2.26",
-    "vue-router": "4.0.12",
-    "vue-tsc": "0.30.1",
-    "vuex": "4.0.2"
-  }
+    "@rushstack/eslint-patch": "^1.3.3",
+    "@tsconfig/node18": "^18.2.2",
+    "@types/express": "^4.17.21",
+    "@types/node": "^18.19.3",
+    "@vitejs/plugin-vue": "^4.5.2",
+    "@vitejs/plugin-vue-jsx": "^3.1.0",
+    "@vue/eslint-config-prettier": "^8.0.0",
+    "@vue/eslint-config-typescript": "^12.0.0",
+    "@vue/tsconfig": "^0.5.0",
+    "@zce/prettier-config": "^0.2.0",
+    "eslint": "^8.49.0",
+    "eslint-plugin-vue": "^9.17.0",
+    "express": "^4.18.2",
+    "npm-run-all2": "^6.1.1",
+    "prettier": "^3.0.3",
+    "typescript": "~5.3.0",
+    "vite": "^5.0.10",
+    "vue-tsc": "^1.8.25"
+  },
+  "packageManager": "pnpm@8.14.0"
 }

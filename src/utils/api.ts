@@ -1,4 +1,5 @@
 import ky from 'ky'
+
 import { getAuth, refreshAuth } from './token'
 
 const api = ky.extend({

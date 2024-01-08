@@ -1,6 +1,7 @@
 import ky from 'ky'
-import { get, set, remove } from './storage'
+
 import router from '../router'
+import { get, remove, set } from './storage'
 
 interface TokenResult {
   token_type: string

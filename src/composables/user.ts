@@ -1,5 +1,7 @@
 import { api } from '../utils'
-import { useRequest, Result } from './request'
+import { useRequest } from './request'
+
+import type { Result } from './request'
 
 export interface User {
   id: string

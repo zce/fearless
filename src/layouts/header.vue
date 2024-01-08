@@ -51,11 +51,12 @@
 </template>
 
 <script lang="ts" setup>
-import { h, computed } from 'vue'
 import { useMessage } from 'naive-ui'
-import { useRouter, RouterLink } from 'vue-router'
-import { useCurrentUser } from '../composables'
+import { computed, h } from 'vue'
+import { RouterLink, useRouter } from 'vue-router'
+
 import { Icon } from '../components'
+import { useCurrentUser } from '../composables'
 import { token } from '../utils'
 
 const router = useRouter()
@@ -72,10 +73,10 @@ const options = computed(() => [
 ])
 
 const handleOptionsSelect = async (key: unknown): Promise<void> => {
-  if (key as string === 'logout') {
+  if ((key as string) === 'logout') {
     await token.revoke()
     await router.push({ name: 'login' })
-  } else if (key as string === 'me') {
+  } else if ((key as string) === 'me') {
     message.success(`Welcome back, ${me.value?.name as string}!`)
   }
 }

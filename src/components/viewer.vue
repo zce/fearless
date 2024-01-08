@@ -4,9 +4,8 @@
 
 <script lang="ts" setup>
 import { useLoadingBar } from 'naive-ui'
-import router from '../router'
 
-// todo: route transtion
+import router from '../router'
 
 const loadingBar = useLoadingBar()
 

@@ -10,8 +10,6 @@
 
 ## Todo
 
-- [ ] SWR composable
-- [ ] Global store
 - [ ] CRUD demos
 - [ ] Data virtualization
 - [ ] More demos
@@ -20,18 +18,18 @@
 
 - Modern Vue.js Ecosystem
   - vue 3.x
-  - vuex 4.x
+  - pinia 2.x
   - vue-router 4.x
 - Fully strongly typed
-  - typescript 4.x
+  - typescript 5.x
 - Next generation frontend tooling
-  - vite 2.x
+  - vite 5.x
 - HTTP request based on Fetch API
   - ky 0.x (not axios)
 - Customizable UI Library
   - naive-ui 2.x
 - Complete engineering workflow
-  - eslint 7.x
+  - eslint 8.x
   - husky 7.x
   - lint-staged 11.x
   - commitlint 13.x
@@ -49,7 +47,7 @@
 ## Online Preview
 
 - https://fearless.zce.me
-  - owner - username: zce; password: wanglei
+  - owner - username: zce; password: zce
   - admin - username: jack; password: 123
   - staff - username: pony; password: 123
   - owner - username: tom; password: 123
@@ -58,9 +56,7 @@
 
 ### Prerequisites
 
-- [Node.js](https://nodejs.org) (>= 12.10, 14.17 preferred)
-- [npm](https://www.npmjs.com) (>= 6.x) or [yarn](https://yarnpkg.com) (>= 1.22)
-- [Git](https://git-scm.com) (>= 2.20)
+- [Node.js](https://nodejs.org) (>= 18.17, 20.x preferred)
 
 ### Scaffolding tools
 
@@ -112,8 +108,6 @@ The built-in mock server starts as a vite plugin. that means you don't need to s
 ## License
 
 [MIT](LICENSE) &copy; [zce](https://zce.me)
-
-
 
 [actions-img]: https://img.shields.io/github/workflow/status/zce/fearless/CI
 [actions-url]: https://github.com/zce/fearless/actions

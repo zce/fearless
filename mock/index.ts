@@ -4,9 +4,12 @@
 
 /* eslint-disable @typescript-eslint/no-var-requires */
 import express from 'express'
-import { tokens, users, Role } from './data'
 
-const app = express()
+import { Role, tokens, users } from './data'
+
+import type { Express } from 'express'
+
+const app: Express = express()
 
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))

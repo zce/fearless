@@ -1,4 +1,6 @@
-import { ref, Ref, UnwrapRef } from 'vue'
+import { ref } from 'vue'
+
+import type { Ref, UnwrapRef } from 'vue'
 
 export interface Result<T> {
   data: Ref<UnwrapRef<T | null>>

@@ -12,8 +12,8 @@
 </template>
 
 <script lang="ts" setup>
+import { darkTheme, useOsTheme } from 'naive-ui'
 import { computed } from 'vue'
-import { useOsTheme, darkTheme } from 'naive-ui'
 
 const osTheme = useOsTheme()
 

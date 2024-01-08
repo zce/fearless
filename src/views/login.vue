@@ -1,9 +1,7 @@
 <!-- Sign In -->
 
 <template>
-  <n-h1 style="--font-size: 60px; --font-weight: 100">
-    {{ $store.state.name }}
-  </n-h1>
+  <n-h1 style="--font-size: 60px; --font-weight: 100">FEARLESS</n-h1>
   <n-card size="large" style="--padding-bottom: 30px">
     <n-h2 style="--font-weight: 400">Sign-in</n-h2>
     <n-form size="large" :rules="rules" :model="model">
@@ -15,14 +13,15 @@
       </n-form-item-row>
     </n-form>
     <n-button type="primary" size="large" block :loading="loading" :disabled="disabled" @click="handleLogin">Sign in</n-button>
-    <br>
+    <br />
   </n-card>
 </template>
 
 <script lang="ts" setup>
+import { useMessage } from 'naive-ui'
 import { computed, ref } from 'vue'
 import { useRouter } from 'vue-router'
-import { useMessage } from 'naive-ui'
+
 import { token } from '../utils'
 
 const router = useRouter()
@@ -43,7 +42,7 @@ const rules = {
 
 const model = ref({
   username: 'zce',
-  password: 'wanglei'
+  password: 'zce'
 })
 
 const loading = ref(false)

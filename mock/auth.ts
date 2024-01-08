@@ -1,7 +1,8 @@
 import { Router } from 'express'
-import { users, tokens, uuid } from './data'
 
-const router = Router()
+import { tokens, users, uuid } from './data'
+
+const router: Router = Router()
 
 const genToken = (): string => uuid() + uuid()
 

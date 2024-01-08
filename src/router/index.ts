@@ -1,4 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
+
 import { storage } from '../utils'
 import routes from './routes'
 
@@ -8,7 +9,7 @@ const router = createRouter({ history, routes })
 
 // Authorize (Make sure that is the first hook.)
 router.beforeEach(to => {
-  const { expires = 0 } = storage.get('token') ?? {}
+  const { expires = 0 } = storage.get<{ expires: number }>('token') ?? {}
   // already authorized
   if (to.name === 'login' && expires > Date.now()) {
     return to.query.redirect?.toString() ?? '/'

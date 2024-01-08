@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/promise-function-async */
-import { RouteRecordRaw } from 'vue-router'
+import { type RouteRecordRaw } from 'vue-router'
 
 const mainRoutes: RouteRecordRaw[] = [
   {

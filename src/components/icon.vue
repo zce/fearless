@@ -3,26 +3,26 @@
 </template>
 
 <script lang="ts" setup>
-import { NIcon } from 'naive-ui'
 import {
-  RefreshOutline as refresh,
-  SpeedometerOutline as dashboard,
-  CreateOutline as posts,
-  NewspaperOutline as pages,
-  ImagesOutline as media,
-  PeopleOutline as users,
-  ChatbubbleEllipsesOutline as comments,
-  ColorPaletteOutline as themes,
-  HardwareChipOutline as plugins,
-  BuildOutline as tools,
-  SettingsOutline as settings,
-  FlaskOutline as flask,
   AddOutline as add,
-  HelpCircleOutline as help,
-  NotificationsOutline as notifications,
+  ChatbubbleEllipsesOutline as comments,
+  SpeedometerOutline as dashboard,
+  AlertCircleOutline as fallback,
+  FlaskOutline as flask,
   LogoGithub as github,
-  AlertCircleOutline as fallback
+  HelpCircleOutline as help,
+  ImagesOutline as media,
+  NotificationsOutline as notifications,
+  NewspaperOutline as pages,
+  HardwareChipOutline as plugins,
+  CreateOutline as posts,
+  RefreshOutline as refresh,
+  SettingsOutline as settings,
+  ColorPaletteOutline as themes,
+  BuildOutline as tools,
+  PeopleOutline as users
 } from '@vicons/ionicons5'
+import { NIcon } from 'naive-ui'
 
 const icons = { refresh, dashboard, posts, pages, media, users, comments, themes, plugins, tools, settings, flask, add, help, notifications, github, fallback }
 
