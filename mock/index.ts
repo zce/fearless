@@ -5,7 +5,11 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 import express from 'express'
 
-import { Role, tokens, users } from './data'
+import authRouter from './auth.js'
+import { Role, tokens, users } from './data.js'
+import labsRouter from './labs.js'
+import menusRouter from './menus.js'
+import usersRouter from './users.js'
 
 import type { Express } from 'express'
 
@@ -44,10 +48,10 @@ app.use((req, res, next) => {
 })
 
 // endpoints
-app.use('/auth', require('./auth').default)
-app.use('/menus', require('./menus').default)
-app.use('/users', require('./users').default)
-app.use('/labs', require('./labs').default)
+app.use('/auth', authRouter)
+app.use('/menus', menusRouter)
+app.use('/users', usersRouter)
+app.use('/labs', labsRouter)
 
 // 404 responses
 app.use((req, res) => res.status(404).json({ message: 'Not Found' }))
