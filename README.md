@@ -88,17 +88,17 @@ $ git clone https://github.com/zce/fearless.git
 $ cd fearless
 
 # install dependencies
-$ npm install # or yarn
+$ pnpm install # or npm install
 ```
 
 ### Available Scripts
 
 ```shell
 # dev with hot reload at http://localhost:3000
-$ npm run dev # or yarn dev
+$ pnpm dev # or npm run dev
 
 # build for production with minification
-$ npm run build # or yarn build
+$ pnpm build # or npm run build
 ```
 
 ### Mock API Server
