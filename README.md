@@ -2,7 +2,7 @@
   <a href="https://fearless.zce.me">
     <picture>
       <source srcset="https://fearless.zce.me/logo-dark.svg" media="(prefers-color-scheme: dark)">
-      <img src="https://fearless.zce.me/logo.svg" width="300 alt="Fearless" title="Fearless">
+      <img src="https://fearless.zce.me/logo.svg" width="520" alt="Fearless" title="Fearless">
     </picture>
   </a>
   <p>A dashboard scaffolding based on Vue.js 3.x & TypeScript created by Vite.</p>
