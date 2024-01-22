@@ -4,8 +4,9 @@
   "compilerOptions": {
     "composite": true,
     "noEmit": true,
-    "module": "ESNext",
-    "moduleResolution": "Bundler",
+    "target": "esnext",
+    "module": "esnext",
+    "moduleResolution": "bundler",
     "types": ["node"]
   }
 }

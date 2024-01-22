@@ -1,6 +1,6 @@
 import { Router } from 'express'
 
-import { tokens, users, uuid } from './data.js'
+import { tokens, users, uuid } from './data'
 
 const router: Router = Router()
 

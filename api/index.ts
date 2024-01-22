@@ -5,6 +5,6 @@
 
 import express from 'express'
 
-import mock from '../mock/index.js'
+import mock from '../mock'
 
 export default express().use('/api', mock)

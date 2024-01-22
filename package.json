@@ -19,7 +19,6 @@
   "repository": "zce/fearless",
   "license": "MIT",
   "author": "zce <w@zce.me> (https://zce.me)",
-  "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "run-p type-check \"build-only {@}\" --",

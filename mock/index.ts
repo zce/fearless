@@ -2,14 +2,13 @@
  * Mock Server App
  */
 
-/* eslint-disable @typescript-eslint/no-var-requires */
 import express from 'express'
 
-import authRouter from './auth.js'
-import { Role, tokens, users } from './data.js'
-import labsRouter from './labs.js'
-import menusRouter from './menus.js'
-import usersRouter from './users.js'
+import authRouter from './auth'
+import { Role, tokens, users } from './data'
+import labsRouter from './labs'
+import menusRouter from './menus'
+import usersRouter from './users'
 
 import type { Express } from 'express'
 
